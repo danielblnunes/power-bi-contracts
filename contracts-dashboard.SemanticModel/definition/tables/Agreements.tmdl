@@ -1,0 +1,419 @@
+table Agreements
+	lineageTag: 4223d25d-85ad-4c50-bd6c-4c3922eaa3c0
+
+	measure 'Total Contract Value' = SUM(Agreements[Total_Contract_Value_AED])
+		formatString: #,##0
+		displayFolder: Base
+		lineageTag: f439c1d9-6e27-4a62-897e-c12dd4d24658
+
+	measure 'Total Annual Value' = SUM(Agreements[Annual_Value_AED])
+		formatString: #,##0
+		displayFolder: Base
+		lineageTag: a810cc24-7b20-4d2f-b412-60411e5eb0f3
+
+	measure 'Avg Contract Value' = AVERAGE(Agreements[Total_Contract_Value_AED])
+		formatString: #,##0
+		displayFolder: Base
+		lineageTag: b196eaed-0d15-40ae-9607-714253179015
+
+	measure 'Max Contract Value' = MAX(Agreements[Total_Contract_Value_AED])
+		formatString: #,##0
+		displayFolder: Base
+		lineageTag: 99fbca2b-fc85-450c-9c95-0921d13d2e7e
+
+	measure 'Total Agreements' = COUNTROWS(Agreements)
+		formatString: #,##0
+		displayFolder: Counts
+		lineageTag: cbb62b45-7691-4b2f-88e2-c51306f85161
+
+	measure 'Active Contracts' = CALCULATE([Total Agreements], Agreements[Status] = "Active")
+		formatString: #,##0
+		displayFolder: Counts
+		lineageTag: 2caae6a3-669e-4de7-b036-bfc09f7dc75a
+
+	measure 'Active Contract Value' = CALCULATE([Total Contract Value], Agreements[Status] = "Active")
+		formatString: #,##0
+		displayFolder: Counts
+		lineageTag: 636336af-998b-475a-affa-747b50078788
+
+	measure 'Contracts with Renewal Option' = CALCULATE([Total Agreements], Agreements[Renewal_Option] = "Yes")
+		formatString: #,##0
+		displayFolder: Counts
+		lineageTag: 239d74d8-8d79-4f5e-85b4-a26a7a6808e9
+
+	measure 'Auto Renewal Contracts' = CALCULATE([Total Agreements], Agreements[Auto_Renewal] = "Yes")
+		formatString: #,##0
+		displayFolder: Counts
+		lineageTag: 848c226b-7e56-401f-a695-712c431f62aa
+
+	measure 'Avg Term Months' = AVERAGE(Agreements[Term_Months])
+		formatString: #,##0
+		displayFolder: Lifecycle
+		lineageTag: ecb9f85b-3f8d-422d-b6b7-522901f05d6c
+
+	measure 'Days to Expiry' = DATEDIFF(TODAY(), MAX(Agreements[End_Date]), DAY)
+		formatString: #,##0
+		displayFolder: Lifecycle
+		lineageTag: 20350753-b5ea-4cf6-92a4-56135a2e8cdc
+
+	measure 'Contracts Expiring 90d' =
+			CALCULATE(
+			    [Total Agreements],
+			    Agreements[End_Date] >= TODAY(),
+			    Agreements[End_Date] <= TODAY() + 90
+			)
+		formatString: #,##0
+		displayFolder: Lifecycle
+		lineageTag: 48263cea-004b-48c3-b559-7af673a4f1b1
+
+	measure 'Contracts Expiring 180d' =
+			CALCULATE(
+			    [Total Agreements],
+			    Agreements[End_Date] >= TODAY(),
+			    Agreements[End_Date] <= TODAY() + 180
+			)
+		formatString: #,##0
+		displayFolder: Lifecycle
+		lineageTag: 6e6cc1f3-8d56-4104-ad87-3934def455b8
+
+	measure 'Contracts Expiring 365d' =
+			CALCULATE(
+			    [Total Agreements],
+			    Agreements[End_Date] >= TODAY(),
+			    Agreements[End_Date] <= TODAY() + 365
+			)
+		formatString: #,##0
+		displayFolder: Lifecycle
+		lineageTag: dc3b6711-1191-4555-bc29-3227a60e8147
+
+	measure 'Expired Still Active Flag' =
+			CALCULATE(
+			    [Total Agreements],
+			    Agreements[Status] = "Active",
+			    Agreements[End_Date] < TODAY()
+			)
+		formatString: #,##0
+		displayFolder: Lifecycle
+		lineageTag: b0fe0c91-b7ec-4e2e-88b5-7df9ea3e4bd1
+
+	measure 'Unique Counterparties' = DISTINCTCOUNT(Agreements[Counterparty_Name])
+		formatString: #,##0
+		displayFolder: Counterparties
+		lineageTag: 69bfd4ca-eeeb-4afe-876b-3570b9e2431a
+
+	measure 'YTD Contract Value' =
+			CALCULATE(
+			    [Total Contract Value],
+			    USERELATIONSHIP('Date'[Date], Agreements[Start_Date]),
+			    TOTALYTD('Date'[Date])
+			)
+		formatString: #,##0
+		displayFolder: Time Intelligence
+		lineageTag: 6b5c3571-b59c-426f-b8b8-7bd4df007e02
+
+	measure 'PY Contract Value' =
+			CALCULATE(
+			    [Total Contract Value],
+			    USERELATIONSHIP('Date'[Date], Agreements[Start_Date]),
+			    SAMEPERIODLASTYEAR('Date'[Date])
+			)
+		formatString: #,##0
+		displayFolder: Time Intelligence
+		lineageTag: 5c56dd91-08c5-4a4c-8faa-e2751d6e1f4a
+
+	measure 'YoY Contract Growth' = [Total Contract Value] - [PY Contract Value]
+		formatString: #,##0;-#,##0
+		displayFolder: Time Intelligence
+		lineageTag: 26596853-5877-4fbb-b509-446ed6a3bd81
+
+	measure 'YoY Growth %' =
+			VAR _py = [PY Contract Value]
+			RETURN DIVIDE([Total Contract Value] - _py, _py)
+		formatString: 0.0%;-0.0%
+		displayFolder: Time Intelligence
+		lineageTag: 4afc4400-66c3-4310-be69-346d440f722c
+
+	column Agreement_ID
+		dataType: string
+		lineageTag: 079900af-4367-45db-b8a7-be3dc4b1f7cf
+		summarizeBy: none
+		sourceColumn: Agreement_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Agreement_Type
+		dataType: string
+		lineageTag: 9dcfe09c-7d3b-41e9-bf0b-affa51a6b8a2
+		summarizeBy: none
+		sourceColumn: Agreement_Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Counterparty_Name
+		dataType: string
+		lineageTag: 0d4d986d-bce2-4b96-8e4b-907bc52b22c7
+		summarizeBy: none
+		sourceColumn: Counterparty_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Counterparty_Type
+		dataType: string
+		lineageTag: 40fd070c-77dd-4081-896e-d8045b7b9775
+		summarizeBy: none
+		sourceColumn: Counterparty_Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Agreement_Title
+		dataType: string
+		lineageTag: 9de4168c-6f14-40b3-96cb-cec035891143
+		summarizeBy: none
+		sourceColumn: Agreement_Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column Agreement_Number
+		dataType: string
+		lineageTag: 069a6beb-7c84-48c0-bf9d-37af349c08e9
+		summarizeBy: none
+		sourceColumn: Agreement_Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column Contract_Category
+		dataType: string
+		lineageTag: c1772e2e-dd74-482f-b718-94346eb105fe
+		summarizeBy: none
+		sourceColumn: Contract_Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column Department_Owner
+		dataType: string
+		lineageTag: 918d8c25-333e-4ee5-8329-4d71ee33f385
+		summarizeBy: none
+		sourceColumn: Department_Owner
+
+		annotation SummarizationSetBy = Automatic
+
+	column Legal_Owner
+		dataType: string
+		lineageTag: a912201b-82c9-472d-afd4-d931ffd2ffa4
+		summarizeBy: none
+		sourceColumn: Legal_Owner
+
+		annotation SummarizationSetBy = Automatic
+
+	column Commercial_Owner
+		dataType: string
+		lineageTag: b6389b31-501a-4e7e-a7d6-ac8c08b357cf
+		summarizeBy: none
+		sourceColumn: Commercial_Owner
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: bb3efbc7-353d-4b24-8a9a-b5d1d4c013b6
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Start_Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: fbba8f73-574f-4f26-a05e-a46744088c2c
+		summarizeBy: none
+		sourceColumn: Start_Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column End_Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: ec8a0d94-6a1f-432b-8bcc-460096d4500c
+		summarizeBy: none
+		sourceColumn: End_Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Term_Months
+		dataType: int64
+		formatString: 0
+		lineageTag: c3c93761-7c3f-4c81-ad83-92ecd7a15f65
+		summarizeBy: sum
+		sourceColumn: Term_Months
+
+		annotation SummarizationSetBy = Automatic
+
+	column Seasons_Covered
+		dataType: string
+		lineageTag: f91b9e34-977e-45c3-9636-63fe3ada1e78
+		summarizeBy: none
+		sourceColumn: Seasons_Covered
+
+		annotation SummarizationSetBy = Automatic
+
+	column Currency
+		dataType: string
+		lineageTag: 6078b17d-b561-4cc3-8a1b-a16bc83ed33a
+		summarizeBy: none
+		sourceColumn: Currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column Total_Contract_Value_AED
+		dataType: int64
+		formatString: 0
+		lineageTag: 61e7885b-6138-4638-b2cf-bb7d1f910609
+		summarizeBy: sum
+		sourceColumn: Total_Contract_Value_AED
+
+		annotation SummarizationSetBy = Automatic
+
+	column Annual_Value_AED
+		dataType: double
+		lineageTag: 18f68912-26d1-4c26-9dd3-1752479eae93
+		summarizeBy: sum
+		sourceColumn: Annual_Value_AED
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Payment_Frequency
+		dataType: string
+		lineageTag: 4a484c7e-bfc1-4cde-a439-0b712e3f0b9b
+		summarizeBy: none
+		sourceColumn: Payment_Frequency
+
+		annotation SummarizationSetBy = Automatic
+
+	column Renewal_Option
+		dataType: string
+		lineageTag: f5735951-6091-402a-83b0-abe9d7bbf05b
+		summarizeBy: none
+		sourceColumn: Renewal_Option
+
+		annotation SummarizationSetBy = Automatic
+
+	column Auto_Renewal
+		dataType: string
+		lineageTag: 3cb4fba6-ca60-4ea3-81ea-672ad1783916
+		summarizeBy: none
+		sourceColumn: Auto_Renewal
+
+		annotation SummarizationSetBy = Automatic
+
+	column Notice_Period_Days
+		dataType: int64
+		formatString: 0
+		lineageTag: 9fc77bc9-c994-4db5-81a8-cc9b21480b5a
+		summarizeBy: sum
+		sourceColumn: Notice_Period_Days
+
+		annotation SummarizationSetBy = Automatic
+
+	column Confidentiality_Level
+		dataType: string
+		lineageTag: 34df14da-abf8-4d8d-bd5a-2a9895f11acf
+		summarizeBy: none
+		sourceColumn: Confidentiality_Level
+
+		annotation SummarizationSetBy = Automatic
+
+	column Source_System
+		dataType: string
+		lineageTag: 9e92d04d-a287-482e-aada-486d83a6ec28
+		summarizeBy: none
+		sourceColumn: Source_System
+
+		annotation SummarizationSetBy = Automatic
+
+	column Document_Link
+		dataType: string
+		lineageTag: 1d8216a1-5d7f-4b85-b657-bf6cee3be52b
+		summarizeBy: none
+		sourceColumn: Document_Link
+
+		annotation SummarizationSetBy = Automatic
+
+	column Last_Reviewed_Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 3a393a1a-8656-4903-9094-193dcd59c247
+		summarizeBy: none
+		sourceColumn: Last_Reviewed_Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Next_Action_Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 260bcd3d-b0e3-4c27-a95b-41bda90a6090
+		summarizeBy: none
+		sourceColumn: Next_Action_Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Next_Action
+		dataType: string
+		lineageTag: 102a9243-9f74-4952-8a8e-ff3e28ae9fd7
+		summarizeBy: none
+		sourceColumn: Next_Action
+
+		annotation SummarizationSetBy = Automatic
+
+	column Notes
+		dataType: string
+		lineageTag: accb0c81-8d58-4eec-bdb0-491f79ec7e28
+		summarizeBy: none
+		sourceColumn: Notes
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Agreements = m
+		mode: import
+		source =
+				let
+				  Source = Excel.Workbook(File.Contents("C:\Users\danie\Code\power-bi-contracts\contracts_data_collection_template.xlsx"), null, true),
+				  #"Navigation 1" = Source{[Item = "AgreementsTable", Kind = "Table"]}[Data],
+				  #"Changed column type" = Table.TransformColumnTypes(#"Navigation 1", {{"Agreement_ID", type text}, {"Agreement_Type", type text}, {"Counterparty_Name", type text}, {"Counterparty_Type", type text}, {"Agreement_Title", type text}, {"Agreement_Number", type text}, {"Contract_Category", type text}, {"Department_Owner", type text}, {"Legal_Owner", type text}, {"Commercial_Owner", type text}, {"Status", type text}, {"Start_Date", type date}, {"End_Date", type date}, {"Term_Months", Int64.Type}, {"Seasons_Covered", type text}, {"Currency", type text}, {"Total_Contract_Value_AED", Int64.Type}, {"Annual_Value_AED", type number}, {"Payment_Frequency", type text}, {"Renewal_Option", type text}, {"Auto_Renewal", type text}, {"Notice_Period_Days", Int64.Type}, {"Confidentiality_Level", type text}, {"Source_System", type text}, {"Last_Reviewed_Date", type date}, {"Notes", type text}}, "en-US"),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Changed column type",{{"Next_Action_Date", type date}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Changed Type", each [Agreement_ID] <> null and [Agreement_ID] <> "")
+				in
+				  #"Filtered Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+	measure 'Missing Document Count' = CALCULATE([Total Agreements], Agreements[Document_Link] = BLANK())
+		formatString: #,##0
+		displayFolder: Compliance
+
+	measure 'Missing Legal Owner Count' = CALCULATE([Total Agreements], Agreements[Legal_Owner] = BLANK())
+		formatString: #,##0
+		displayFolder: Compliance
+
+	measure 'Overdue Review Count' = CALCULATE([Total Agreements], Agreements[Last_Reviewed_Date] < TODAY() - 365)
+		formatString: #,##0
+		displayFolder: Compliance
+
+	measure 'Avg Value Per Counterparty' = DIVIDE([Total Contract Value], [Unique Counterparties])
+		formatString: #,##0
+		displayFolder: Counterparties
+
+	measure 'Counterparty Rank by Value' = RANKX(ALL(Agreements[Counterparty_Name]), [Total Contract Value], , DESC, Dense)
+		formatString: #,##0
+		displayFolder: Counterparties

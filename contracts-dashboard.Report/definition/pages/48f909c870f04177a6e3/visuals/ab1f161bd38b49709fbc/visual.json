@@ -1,0 +1,139 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "ab1f161bd38b49709fbc",
+  "position": {
+    "x": 620.0,
+    "y": 580.0,
+    "z": 0.0,
+    "width": 590.0,
+    "height": 240.0,
+    "tabOrder": 8
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Agreements"
+                        }
+                      },
+                      "Property": "Agreement_ID"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(Agreements.Agreement_ID)",
+              "nativeQueryRef": "Agreement_ID",
+              "active": true
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Agreements"
+                        }
+                      },
+                      "Property": "Counterparty_Name"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(Agreements.Counterparty_Name)",
+              "nativeQueryRef": "Counterparty_Name"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Agreements"
+                        }
+                      },
+                      "Property": "Department_Owner"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(Agreements.Department_Owner)",
+              "nativeQueryRef": "Department_Owner"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Agreements"
+                        }
+                      },
+                      "Property": "Legal_Owner"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(Agreements.Legal_Owner)",
+              "nativeQueryRef": "Legal_Owner"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Agreements"
+                        }
+                      },
+                      "Property": "Document_Link"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(Agreements.Document_Link)",
+              "nativeQueryRef": "Document_Link"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Agreements"
+                        }
+                      },
+                      "Property": "Last_Reviewed_Date"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(Agreements.Last_Reviewed_Date)",
+              "nativeQueryRef": "Last_Reviewed_Date"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

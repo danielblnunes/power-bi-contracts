@@ -1,17 +1,16 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "bec0414d07634af2ad53",
   "position": {
-    "x": 620.0,
-    "y": 20.0,
-    "z": 0.0,
-    "width": 290.0,
-    "height": 120.0,
+    "x": 620,
+    "y": 120,
+    "z": 0,
+    "height": 120,
+    "width": 290,
     "tabOrder": 2
   },
   "visual": {
     "visualType": "card",
-    "drillFilterOtherVisuals": true,
     "query": {
       "queryState": {
         "Values": {
@@ -34,6 +33,25 @@
           ]
         }
       }
-    }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "2153156e41699077da55",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Payments"
+              }
+            },
+            "Property": "Outstanding Amount"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

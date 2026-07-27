@@ -1,0 +1,44 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "170a3a8ed26e4a6b8696",
+  "position": {
+    "x": 20,
+    "y": 10,
+    "z": 0,
+    "width": 460,
+    "height": 80,
+    "tabOrder": 7
+  },
+  "visual": {
+    "visualType": "slicer",
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Agreements"
+                        }
+                      },
+                      "Property": "Agreement_Type"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(Agreements.Agreement_Type)",
+              "nativeQueryRef": "Agreement_Type",
+              "active": true
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "89057ef224354dd89579",
+  "position": {
+    "x": 20.0,
+    "y": 260.0,
+    "z": 0.0,
+    "width": 590.0,
+    "height": 300.0,
+    "tabOrder": 6
+  },
+  "visual": {
+    "visualType": "stackedBarChart",
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Payments"
+                    }
+                  },
+                  "Property": "Season"
+                }
+              },
+              "queryRef": "Payments.Season",
+              "nativeQueryRef": "Season",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Payments"
+                    }
+                  },
+                  "Property": "Total Payment Amount"
+                }
+              },
+              "queryRef": "Payments.Total Payment Amount",
+              "nativeQueryRef": "Total Payment Amount",
+              "active": true
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Payments"
+                    }
+                  },
+                  "Property": "Payment_Type"
+                }
+              },
+              "queryRef": "Payments.Payment_Type",
+              "nativeQueryRef": "Payment_Type",
+              "active": true
+            }
+          ]
+        }
+      }
+    }
+  }
+}

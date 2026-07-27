@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "bae0c5bb0b204a728ddf",
+  "position": {
+    "x": 320.0,
+    "y": 120.0,
+    "z": 0.0,
+    "width": 290.0,
+    "height": 120.0,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "card",
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Payments"
+                    }
+                  },
+                  "Property": "Total Payment Amount"
+                }
+              },
+              "queryRef": "Payments.Total Payment Amount",
+              "nativeQueryRef": "Total Payment Amount",
+              "active": true
+            }
+          ]
+        }
+      }
+    }
+  }
+}

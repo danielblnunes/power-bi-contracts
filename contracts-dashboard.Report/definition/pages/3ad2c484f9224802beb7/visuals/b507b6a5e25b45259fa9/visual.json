@@ -1,0 +1,86 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "b507b6a5e25b45259fa9",
+  "position": {
+    "x": 620.0,
+    "y": 580.0,
+    "z": 0.0,
+    "width": 590.0,
+    "height": 240.0,
+    "tabOrder": 8
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Agreements"
+                        }
+                      },
+                      "Property": "Counterparty_Name"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(Agreements.Counterparty_Name)",
+              "nativeQueryRef": "Counterparty_Name",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Agreements"
+                    }
+                  },
+                  "Property": "Total Contract Value"
+                }
+              },
+              "queryRef": "Agreements.Total Contract Value",
+              "nativeQueryRef": "Total Contract Value"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Agreements"
+                    }
+                  },
+                  "Property": "Active Contracts"
+                }
+              },
+              "queryRef": "Agreements.Active Contracts",
+              "nativeQueryRef": "Active Contracts"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Agreements"
+                    }
+                  },
+                  "Property": "Counterparty Rank by Value"
+                }
+              },
+              "queryRef": "Agreements.Counterparty Rank by Value",
+              "nativeQueryRef": "Counterparty Rank by Value"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

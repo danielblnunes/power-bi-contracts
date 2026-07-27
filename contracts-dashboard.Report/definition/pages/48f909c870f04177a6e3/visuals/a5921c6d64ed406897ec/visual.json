@@ -1,0 +1,58 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "a5921c6d64ed406897ec",
+  "position": {
+    "x": 20.0,
+    "y": 260.0,
+    "z": 0.0,
+    "width": 590.0,
+    "height": 300.0,
+    "tabOrder": 6
+  },
+  "visual": {
+    "visualType": "donutChart",
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Agreements"
+                    }
+                  },
+                  "Property": "Confidentiality_Level"
+                }
+              },
+              "queryRef": "Agreements.Confidentiality_Level",
+              "nativeQueryRef": "Confidentiality_Level",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Agreements"
+                    }
+                  },
+                  "Property": "Total Agreements"
+                }
+              },
+              "queryRef": "Agreements.Total Agreements",
+              "nativeQueryRef": "Total Agreements",
+              "active": true
+            }
+          ]
+        }
+      }
+    }
+  }
+}

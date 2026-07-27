@@ -1,17 +1,16 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "7b4009abcfcd4b69aadf",
   "position": {
-    "x": 20.0,
-    "y": 500.0,
-    "z": 0.0,
-    "width": 1190.0,
-    "height": 220.0,
+    "x": 20,
+    "y": 600,
+    "z": 0,
+    "height": 220,
+    "width": 1190,
     "tabOrder": 6
   },
   "visual": {
     "visualType": "tableEx",
-    "drillFilterOtherVisuals": true,
     "query": {
       "queryState": {
         "Values": {
@@ -48,7 +47,8 @@
                 }
               },
               "queryRef": "Agreements.Total Contract Value",
-              "nativeQueryRef": "Total Contract Value"
+              "nativeQueryRef": "Total Contract Value",
+              "active": false
             },
             {
               "field": {
@@ -62,7 +62,8 @@
                 }
               },
               "queryRef": "Agreements.Active Contracts",
-              "nativeQueryRef": "Active Contracts"
+              "nativeQueryRef": "Active Contracts",
+              "active": false
             },
             {
               "field": {
@@ -81,7 +82,8 @@
                 }
               },
               "queryRef": "CountNonNull(Agreements.Status)",
-              "nativeQueryRef": "Status"
+              "nativeQueryRef": "Status",
+              "active": false
             },
             {
               "field": {
@@ -100,11 +102,13 @@
                 }
               },
               "queryRef": "CountNonNull(Agreements.End_Date)",
-              "nativeQueryRef": "End_Date"
+              "nativeQueryRef": "End_Date",
+              "active": false
             }
           ]
         }
       }
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

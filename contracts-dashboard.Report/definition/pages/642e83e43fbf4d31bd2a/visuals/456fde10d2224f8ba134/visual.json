@@ -1,0 +1,77 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "456fde10d2224f8ba134",
+  "position": {
+    "x": 20.0,
+    "y": 260.0,
+    "z": 0.0,
+    "width": 590.0,
+    "height": 300.0,
+    "tabOrder": 7
+  },
+  "visual": {
+    "visualType": "stackedBarChart",
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Deliverables"
+                    }
+                  },
+                  "Property": "Item_Group"
+                }
+              },
+              "queryRef": "Deliverables.Item_Group",
+              "nativeQueryRef": "Item_Group",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Deliverables"
+                    }
+                  },
+                  "Property": "Total Deliverables"
+                }
+              },
+              "queryRef": "Deliverables.Total Deliverables",
+              "nativeQueryRef": "Total Deliverables",
+              "active": true
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Deliverables"
+                    }
+                  },
+                  "Property": "Status"
+                }
+              },
+              "queryRef": "Deliverables.Status",
+              "nativeQueryRef": "Status",
+              "active": true
+            }
+          ]
+        }
+      }
+    }
+  }
+}

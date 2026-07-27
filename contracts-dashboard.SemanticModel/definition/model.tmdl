@@ -7,25 +7,16 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation __PBI_TimeIntelligenceEnabled = 1
+annotation __PBI_TimeIntelligenceEnabled = 0
 
-annotation PBI_QueryOrder = ["Agreements","Payments","Deliverables","Date"]
+annotation PBI_QueryOrder = ["Agreements","Payments","Deliverables"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
 ref table Agreements
-ref table Date
-ref table DateTableTemplate_f1774773-f789-4b74-8566-e08f6bc1bf04
-ref table LocalDateTable_634f067a-9270-4e66-a184-29488b22eeba
-ref table LocalDateTable_ecb8f8b3-8435-4214-959e-3921a5eef228
-ref table LocalDateTable_1aaf1489-5a14-4dd5-b427-ffc7399bed40
-ref table LocalDateTable_a03b5b61-9c41-4df5-91ae-fd81e7bcbd09
 ref table Payments
-ref table LocalDateTable_a294c64e-59de-4528-a446-2637bc1d2310
-ref table LocalDateTable_588e5361-b434-4868-8e96-aeca3957df2f
-ref table LocalDateTable_af502680-7f48-4a1f-903f-4f27f91ce7ac
 ref table Deliverables
-ref table LocalDateTable_cf75335d-de26-4b87-859d-3b8048138fd4
+ref table Date
 
 ref cultureInfo en-GB
 

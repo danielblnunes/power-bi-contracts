@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "c47fb5450c514dc58f4a",
+  "position": {
+    "x": 920.0,
+    "y": 120.0,
+    "z": 0.0,
+    "width": 290.0,
+    "height": 120.0,
+    "tabOrder": 5
+  },
+  "visual": {
+    "visualType": "card",
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Agreements"
+                    }
+                  },
+                  "Property": "Avg Value Per Counterparty"
+                }
+              },
+              "queryRef": "Agreements.Avg Value Per Counterparty",
+              "nativeQueryRef": "Avg Value Per Counterparty",
+              "active": true
+            }
+          ]
+        }
+      }
+    }
+  }
+}

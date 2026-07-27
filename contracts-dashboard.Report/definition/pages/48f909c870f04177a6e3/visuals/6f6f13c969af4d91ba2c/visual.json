@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "6f6f13c969af4d91ba2c",
+  "position": {
+    "x": 20.0,
+    "y": 120.0,
+    "z": 0.0,
+    "width": 290.0,
+    "height": 120.0,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "card",
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Agreements"
+                    }
+                  },
+                  "Property": "Auto Renewal Contracts"
+                }
+              },
+              "queryRef": "Agreements.Auto Renewal Contracts",
+              "nativeQueryRef": "Auto Renewal Contracts",
+              "active": true
+            }
+          ]
+        }
+      }
+    }
+  }
+}

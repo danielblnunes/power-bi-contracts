@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "ff3db91141544db6adcb",
+  "position": {
+    "x": 920.0,
+    "y": 120.0,
+    "z": 0.0,
+    "width": 290.0,
+    "height": 120.0,
+    "tabOrder": 5
+  },
+  "visual": {
+    "visualType": "card",
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Agreements"
+                    }
+                  },
+                  "Property": "Missing Legal Owner Count"
+                }
+              },
+              "queryRef": "Agreements.Missing Legal Owner Count",
+              "nativeQueryRef": "Missing Legal Owner Count",
+              "active": true
+            }
+          ]
+        }
+      }
+    }
+  }
+}

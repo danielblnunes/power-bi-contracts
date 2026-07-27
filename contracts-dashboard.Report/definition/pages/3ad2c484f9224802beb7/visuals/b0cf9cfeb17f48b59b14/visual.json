@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "b0cf9cfeb17f48b59b14",
+  "position": {
+    "x": 620.0,
+    "y": 120.0,
+    "z": 0.0,
+    "width": 290.0,
+    "height": 120.0,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "card",
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Agreements"
+                    }
+                  },
+                  "Property": "Max Contract Value"
+                }
+              },
+              "queryRef": "Agreements.Max Contract Value",
+              "nativeQueryRef": "Max Contract Value",
+              "active": true
+            }
+          ]
+        }
+      }
+    }
+  }
+}

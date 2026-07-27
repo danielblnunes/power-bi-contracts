@@ -1,17 +1,16 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "88b4ca8e1b0248b79ca9",
   "position": {
-    "x": 20.0,
-    "y": 500.0,
-    "z": 0.0,
-    "width": 1190.0,
-    "height": 220.0,
+    "x": 20,
+    "y": 600,
+    "z": 0,
+    "height": 220,
+    "width": 1190,
     "tabOrder": 6
   },
   "visual": {
     "visualType": "tableEx",
-    "drillFilterOtherVisuals": true,
     "query": {
       "queryState": {
         "Values": {
@@ -53,7 +52,8 @@
                 }
               },
               "queryRef": "CountNonNull(Payments.Agreement_ID)",
-              "nativeQueryRef": "Agreement_ID"
+              "nativeQueryRef": "Agreement_ID",
+              "active": false
             },
             {
               "field": {
@@ -72,7 +72,8 @@
                 }
               },
               "queryRef": "CountNonNull(Payments.Milestone)",
-              "nativeQueryRef": "Milestone"
+              "nativeQueryRef": "Milestone",
+              "active": false
             },
             {
               "field": {
@@ -91,7 +92,8 @@
                 }
               },
               "queryRef": "CountNonNull(Payments.Due_Date)",
-              "nativeQueryRef": "Due_Date"
+              "nativeQueryRef": "Due_Date",
+              "active": false
             },
             {
               "field": {
@@ -110,7 +112,8 @@
                 }
               },
               "queryRef": "Sum(Payments.Amount_AED)",
-              "nativeQueryRef": "Amount_AED"
+              "nativeQueryRef": "Amount_AED",
+              "active": false
             },
             {
               "field": {
@@ -129,7 +132,8 @@
                 }
               },
               "queryRef": "Sum(Payments.Days_To_Due)",
-              "nativeQueryRef": "Days_To_Due"
+              "nativeQueryRef": "Days_To_Due",
+              "active": false
             },
             {
               "field": {
@@ -148,11 +152,13 @@
                 }
               },
               "queryRef": "CountNonNull(Payments.Status)",
-              "nativeQueryRef": "Status"
+              "nativeQueryRef": "Status",
+              "active": false
             }
           ]
         }
       }
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

@@ -1,17 +1,16 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "b66de08050a7418d9409",
   "position": {
-    "x": 620.0,
-    "y": 160.0,
-    "z": 0.0,
-    "width": 590.0,
-    "height": 320.0,
+    "x": 620,
+    "y": 260,
+    "z": 0,
+    "height": 320,
+    "width": 590,
     "tabOrder": 5
   },
   "visual": {
     "visualType": "donutChart",
-    "drillFilterOtherVisuals": true,
     "query": {
       "queryState": {
         "Category": {
@@ -53,6 +52,39 @@
           ]
         }
       }
-    }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "928e0e51e04bdb709da4",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Status"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "03687ec2ecc6b137e05d",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Total Agreements"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

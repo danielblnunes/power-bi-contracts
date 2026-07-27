@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "642e83e43fbf4d31bd2a",
+  "displayName": "Deliverables & Obligations",
+  "displayOption": "FitToPage",
+  "height": 820,
+  "width": 1280
+}

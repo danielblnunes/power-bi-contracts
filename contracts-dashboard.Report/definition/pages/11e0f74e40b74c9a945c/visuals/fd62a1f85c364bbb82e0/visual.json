@@ -1,0 +1,100 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "fd62a1f85c364bbb82e0",
+  "position": {
+    "x": 20.0,
+    "y": 580.0,
+    "z": 0.0,
+    "width": 1190.0,
+    "height": 240.0,
+    "tabOrder": 8
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Payments"
+                        }
+                      },
+                      "Property": "Season"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(Payments.Season)",
+              "nativeQueryRef": "Season",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Payments"
+                    }
+                  },
+                  "Property": "Total Payment Amount"
+                }
+              },
+              "queryRef": "Payments.Total Payment Amount",
+              "nativeQueryRef": "Total Payment Amount"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Payments"
+                    }
+                  },
+                  "Property": "Cash Amount"
+                }
+              },
+              "queryRef": "Payments.Cash Amount",
+              "nativeQueryRef": "Cash Amount"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Payments"
+                    }
+                  },
+                  "Property": "VIK Amount"
+                }
+              },
+              "queryRef": "Payments.VIK Amount",
+              "nativeQueryRef": "VIK Amount"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Payments"
+                    }
+                  },
+                  "Property": "Payment Count"
+                }
+              },
+              "queryRef": "Payments.Payment Count",
+              "nativeQueryRef": "Payment Count"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

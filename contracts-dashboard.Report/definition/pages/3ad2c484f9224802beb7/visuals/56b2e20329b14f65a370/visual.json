@@ -1,0 +1,58 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "56b2e20329b14f65a370",
+  "position": {
+    "x": 20.0,
+    "y": 260.0,
+    "z": 0.0,
+    "width": 590.0,
+    "height": 300.0,
+    "tabOrder": 6
+  },
+  "visual": {
+    "visualType": "barChart",
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Agreements"
+                    }
+                  },
+                  "Property": "Counterparty_Type"
+                }
+              },
+              "queryRef": "Agreements.Counterparty_Type",
+              "nativeQueryRef": "Counterparty_Type",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Agreements"
+                    }
+                  },
+                  "Property": "Total Contract Value"
+                }
+              },
+              "queryRef": "Agreements.Total Contract Value",
+              "nativeQueryRef": "Total Contract Value",
+              "active": true
+            }
+          ]
+        }
+      }
+    }
+  }
+}

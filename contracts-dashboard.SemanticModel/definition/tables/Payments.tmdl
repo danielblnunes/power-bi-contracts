@@ -1,0 +1,255 @@
+table Payments
+	lineageTag: ef754e87-84d4-446b-9c32-e6fae744054b
+
+	measure 'Total Payment Amount' = SUM(Payments[Amount_AED])
+		formatString: #,##0
+		displayFolder: Payments
+		lineageTag: 8aef253d-d704-46b8-bc94-e794883b168a
+
+	measure 'Paid Amount' = CALCULATE([Total Payment Amount], Payments[Status] = "Paid")
+		formatString: #,##0
+		displayFolder: Payments
+		lineageTag: 0d49a144-6c6d-45b8-9699-5b746b640368
+
+	measure 'Invoiced Amount' = CALCULATE([Total Payment Amount], Payments[Status] = "Invoiced")
+		formatString: #,##0
+		displayFolder: Payments
+		lineageTag: 98807c7b-ee63-4269-bf04-412d2a7f917a
+
+	measure 'Overdue Amount' = CALCULATE([Total Payment Amount], Payments[Status] = "Overdue")
+		formatString: #,##0
+		displayFolder: Payments
+		lineageTag: bd2dd1bb-9334-493b-a291-a7eb9e2de62d
+
+	measure 'Due Amount' = CALCULATE([Total Payment Amount], Payments[Status] = "Due")
+		formatString: #,##0
+		displayFolder: Payments
+		lineageTag: 4899dd54-5373-47e7-94d8-06ad643ebc79
+
+	measure 'Outstanding Amount' =
+			CALCULATE(
+			    [Total Payment Amount],
+			    Payments[Status] IN {"Not Due", "Due", "Invoiced", "Overdue"}
+			)
+		formatString: #,##0
+		displayFolder: Payments
+		lineageTag: 2dfa12df-6492-4b4f-8ded-ac8259d2df99
+
+	measure 'Payment Collection Rate' = DIVIDE([Paid Amount], [Total Payment Amount])
+		formatString: 0.0%
+		displayFolder: Payments
+		lineageTag: bb274c7b-ae6d-4da1-834d-f754f19eed6f
+
+	measure 'Upcoming Payments 30d' =
+			CALCULATE(
+			    [Total Payment Amount],
+			    Payments[Due_Date] >= TODAY(),
+			    Payments[Due_Date] <= TODAY() + 30,
+			    Payments[Status] IN {"Not Due", "Due"}
+			)
+		formatString: #,##0
+		displayFolder: Payments
+		lineageTag: c90bd8ad-f89e-48f4-b2c8-4a22a0f4f837
+
+	measure 'Payment Count' = COUNTROWS(Payments)
+		formatString: #,##0
+		displayFolder: Payments
+		lineageTag: 8b5c408b-2e52-4d86-a340-3a56a2e12931
+
+	measure 'Paid Count' = CALCULATE([Payment Count], Payments[Status] = "Paid")
+		formatString: #,##0
+		displayFolder: Payments
+		lineageTag: 1f160774-8d10-4bd4-a7aa-551c8e5c73d9
+
+	measure 'Avg Days To Due' = AVERAGE(Payments[Days_To_Due])
+		formatString: #,##0
+		displayFolder: Payments
+		lineageTag: d40c4243-52a9-496f-9706-b63189e75b17
+
+	measure 'VIK Payment Amount' = CALCULATE([Total Payment Amount], Payments[Payment_Type] = "Value In Kind")
+		formatString: #,##0
+		displayFolder: Payments
+		lineageTag: c70dc3b2-77ec-4ba5-80a4-1e477f41da2e
+
+	column Payment_ID
+		dataType: string
+		lineageTag: 14fd846e-d49b-494e-b7c5-994777d92a04
+		summarizeBy: none
+		sourceColumn: Payment_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Agreement_ID
+		dataType: string
+		lineageTag: 07a43371-e792-48ab-867b-636e8e0f1e4e
+		summarizeBy: none
+		sourceColumn: Agreement_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Payment_Sequence
+		dataType: int64
+		formatString: 0
+		lineageTag: 3dbac24a-d7d0-4400-aca1-1eebb51f72d8
+		summarizeBy: sum
+		sourceColumn: Payment_Sequence
+
+		annotation SummarizationSetBy = Automatic
+
+	column Season
+		dataType: string
+		lineageTag: 20f27abd-b9da-484b-acc6-b88c646deca0
+		summarizeBy: none
+		sourceColumn: Season
+
+		annotation SummarizationSetBy = Automatic
+
+	column Payment_Type
+		dataType: string
+		lineageTag: 3308d9d4-0dd9-4539-bdda-cf9dd5896375
+		summarizeBy: none
+		sourceColumn: Payment_Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Milestone
+		dataType: string
+		lineageTag: 9c939ef6-8f2c-4c5a-b49c-6942f82e76f3
+		summarizeBy: none
+		sourceColumn: Milestone
+
+		annotation SummarizationSetBy = Automatic
+
+	column Due_Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c70569a8-a63a-4918-9217-0f3e926dddb2
+		summarizeBy: none
+		sourceColumn: Due_Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Invoice_Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: faa36212-34d7-494a-b9d1-befabaeeb949
+		summarizeBy: none
+		sourceColumn: Invoice_Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Payment_Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 56c95fe5-8c7f-4298-abab-45dc13ca6416
+		summarizeBy: none
+		sourceColumn: Payment_Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Currency
+		dataType: string
+		lineageTag: 84c8d93a-13df-482f-b741-785f49e0cdd4
+		summarizeBy: none
+		sourceColumn: Currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column Amount_AED
+		dataType: int64
+		formatString: 0
+		lineageTag: fae0fb43-e8da-4f0d-accd-b84246ec4a37
+		summarizeBy: sum
+		sourceColumn: Amount_AED
+
+		annotation SummarizationSetBy = Automatic
+
+	column Amount_Original
+		dataType: int64
+		formatString: 0
+		lineageTag: dd5354a5-7cb1-40a8-b687-3134cb31fdd0
+		summarizeBy: sum
+		sourceColumn: Amount_Original
+
+		annotation SummarizationSetBy = Automatic
+
+	column VAT_AED
+		dataType: double
+		lineageTag: 0304f982-0285-414e-ab2e-30d9ed466d62
+		summarizeBy: sum
+		sourceColumn: VAT_AED
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Status
+		dataType: string
+		lineageTag: c855ee1c-523a-47f6-a7d3-e05c40db0ea6
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Days_To_Due
+		dataType: int64
+		formatString: 0
+		lineageTag: d1a17db8-e006-48b2-ba41-39ee70c5ded3
+		summarizeBy: sum
+		sourceColumn: Days_To_Due
+
+		annotation SummarizationSetBy = Automatic
+
+	column Notes
+		dataType: string
+		lineageTag: 3e1c8163-d17b-481a-a393-a1c40e8c37e1
+		summarizeBy: none
+		sourceColumn: Notes
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Payments = m
+		mode: import
+		source =
+				let
+				  Source = Excel.Workbook(File.Contents("C:\Users\danie\Code\power-bi-contracts\contracts_data_collection_template.xlsx"), null, true),
+				  #"Navigation 1" = Source{[Item = "PaymentsTable", Kind = "Table"]}[Data],
+				  #"Changed column type" = Table.TransformColumnTypes(#"Navigation 1", {{"Payment_ID", type text}, {"Agreement_ID", type text}, {"Payment_Sequence", Int64.Type}, {"Season", type text}, {"Payment_Type", type text}, {"Milestone", type text}, {"Due_Date", type date}, {"Currency", type text}, {"Amount_AED", Int64.Type}, {"Amount_Original", Int64.Type}, {"Status", type text}, {"Days_To_Due", Int64.Type}}, "en-US"),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Changed column type",{{"Invoice_Date", type date}, {"Payment_Date", type date}, {"VAT_AED", type number}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Changed Type", each [Payment_ID] <> null and [Payment_ID] <> "")
+				in
+				  #"Filtered Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+	measure 'Cash Amount' = CALCULATE([Total Payment Amount], Payments[Payment_Type] = "Cash")
+		formatString: #,##0
+		displayFolder: Payments
+
+	measure 'VIK Amount' = CALCULATE([Total Payment Amount], Payments[Payment_Type] = "Value In Kind")
+		formatString: #,##0
+		displayFolder: Payments
+
+	measure 'Rolling 12M Total' = CALCULATE([Total Payment Amount], DATESINPERIOD('Date'[Date], MAX('Date'[Date]), -12, MONTH))
+		formatString: #,##0
+		displayFolder: Trends
+
+	measure 'MoM Growth %' =
+			VAR _prev = CALCULATE([Total Payment Amount], PREVIOUSMONTH('Date'[Date]))
+			RETURN DIVIDE([Total Payment Amount] - _prev, _prev)
+		formatString: 0.0%;-0.0%
+		displayFolder: Trends
+
+	measure 'QoQ Growth %' =
+			VAR _prev = CALCULATE([Total Payment Amount], PREVIOUSQUARTER('Date'[Date]))
+			RETURN DIVIDE([Total Payment Amount] - _prev, _prev)
+		formatString: 0.0%;-0.0%
+		displayFolder: Trends

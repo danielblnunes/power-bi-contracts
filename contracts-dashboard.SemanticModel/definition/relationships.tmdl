@@ -1,55 +1,3 @@
-relationship 19871ac4-f3a5-400e-ba66-bc46aad0263d
-	joinOnDateBehavior: datePartOnly
-	fromColumn: Agreements.Start_Date
-	toColumn: LocalDateTable_634f067a-9270-4e66-a184-29488b22eeba.Date
-
-relationship 1a5cba6e-78d2-48f4-b20f-3fc9f14ad927
-	joinOnDateBehavior: datePartOnly
-	fromColumn: Agreements.End_Date
-	toColumn: LocalDateTable_ecb8f8b3-8435-4214-959e-3921a5eef228.Date
-
-relationship c794ccfb-9303-4719-b7f7-432f89c56db4
-	joinOnDateBehavior: datePartOnly
-	fromColumn: Agreements.Last_Reviewed_Date
-	toColumn: LocalDateTable_1aaf1489-5a14-4dd5-b427-ffc7399bed40.Date
-
-relationship 6eb052e4-7234-4486-8278-46c48975c1f1
-	joinOnDateBehavior: datePartOnly
-	fromColumn: Agreements.Next_Action_Date
-	toColumn: LocalDateTable_a03b5b61-9c41-4df5-91ae-fd81e7bcbd09.Date
-
-relationship bc13864c-7f3e-496c-bad7-0c06e72133e4
-	joinOnDateBehavior: datePartOnly
-	isActive: false
-	fromColumn: Payments.Due_Date
-	toColumn: LocalDateTable_a294c64e-59de-4528-a446-2637bc1d2310.Date
-
-relationship b33d8014-78c4-43d0-bec0-54cc1e230afd
-	joinOnDateBehavior: datePartOnly
-	fromColumn: Payments.Due_Date
-	toColumn: Date.Date
-
-relationship 7396dd7d-c3b3-4059-b07e-aeb7b131e820
-	joinOnDateBehavior: datePartOnly
-	isActive: false
-	fromColumn: Agreements.Start_Date
-	toColumn: Date.Date
-
-relationship a97985f6-e591-4713-a838-4103d71c87d8
-	joinOnDateBehavior: datePartOnly
-	fromColumn: Payments.Invoice_Date
-	toColumn: LocalDateTable_588e5361-b434-4868-8e96-aeca3957df2f.Date
-
-relationship 8ffb912e-2657-469e-b6e8-ec80856e3299
-	joinOnDateBehavior: datePartOnly
-	fromColumn: Payments.Payment_Date
-	toColumn: LocalDateTable_af502680-7f48-4a1f-903f-4f27f91ce7ac.Date
-
-relationship 25def133-44d8-4c6d-8385-342bbc710e39
-	joinOnDateBehavior: datePartOnly
-	fromColumn: Deliverables.Date_Delivered
-	toColumn: LocalDateTable_cf75335d-de26-4b87-859d-3b8048138fd4.Date
-
 relationship bd18d988-1e08-8b22-c790-656bf162b8fe
 	fromColumn: Payments.Agreement_ID
 	toColumn: Agreements.Agreement_ID
@@ -57,4 +5,21 @@ relationship bd18d988-1e08-8b22-c790-656bf162b8fe
 relationship fa7a9789-ce23-e039-9676-28fb6bb7ee89
 	fromColumn: Deliverables.Agreement_ID
 	toColumn: Agreements.Agreement_ID
+
+relationship b33d8014-78c4-43d0-bec0-54cc1e230afd
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Payments.Due_Date
+	toColumn: Date.Date
+
+relationship 7396dd7d-c3b3-4059-b07e-aeb7b131e820
+	isActive: false
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Agreements.Start_Date
+	toColumn: Date.Date
+
+relationship 1be38850-9c13-4e21-a3c3-e7bd9ac62dd5
+	isActive: false
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Deliverables.Due_Date
+	toColumn: Date.Date
 

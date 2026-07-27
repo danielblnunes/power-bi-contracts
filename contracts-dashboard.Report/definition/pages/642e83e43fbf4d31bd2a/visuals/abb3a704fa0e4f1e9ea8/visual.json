@@ -1,0 +1,44 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "abb3a704fa0e4f1e9ea8",
+  "position": {
+    "x": 660.0,
+    "y": 10.0,
+    "z": 0.0,
+    "width": 300.0,
+    "height": 80.0,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "slicer",
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Deliverables"
+                        }
+                      },
+                      "Property": "Item_Group"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(Deliverables.Item_Group)",
+              "nativeQueryRef": "Item_Group",
+              "active": true
+            }
+          ]
+        }
+      }
+    }
+  }
+}

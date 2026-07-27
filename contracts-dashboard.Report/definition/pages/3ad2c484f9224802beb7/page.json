@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "3ad2c484f9224802beb7",
+  "displayName": "Counterparty & Relationship",
+  "displayOption": "FitToPage",
+  "height": 820,
+  "width": 1280
+}
