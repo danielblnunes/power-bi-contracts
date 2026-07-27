@@ -1,0 +1,19 @@
+# Power BI MCP Server (cloned dependency)
+/powerbi-mcp/
+
+# Environment secrets
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+
+# PBIP generated files (user data files remain)
+*.pbix
+
+# OS
+.DS_Store
+Thumbs.db
