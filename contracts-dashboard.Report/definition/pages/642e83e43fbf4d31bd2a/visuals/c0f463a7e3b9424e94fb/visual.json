@@ -17,121 +17,91 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Deliverables"
-                        }
-                      },
-                      "Property": "Item_ID"
+                    "SourceRef": {
+                      "Entity": "Deliverables"
                     }
                   },
-                  "Function": 5
+                  "Property": "Item_ID"
                 }
               },
-              "queryRef": "CountNonNull(Deliverables.Item_ID)",
+              "queryRef": "Deliverables.Item_ID",
               "nativeQueryRef": "Item_ID",
               "active": true
             },
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Deliverables"
-                        }
-                      },
-                      "Property": "Item_Name"
+                    "SourceRef": {
+                      "Entity": "Deliverables"
                     }
                   },
-                  "Function": 5
+                  "Property": "Item_Name"
                 }
               },
-              "queryRef": "CountNonNull(Deliverables.Item_Name)",
+              "queryRef": "Deliverables.Item_Name",
               "nativeQueryRef": "Item_Name",
               "active": false
             },
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Deliverables"
-                        }
-                      },
-                      "Property": "Due_Date"
+                    "SourceRef": {
+                      "Entity": "Deliverables"
                     }
                   },
-                  "Function": 5
+                  "Property": "Due_Date"
                 }
               },
-              "queryRef": "CountNonNull(Deliverables.Due_Date)",
+              "queryRef": "Deliverables.Due_Date",
               "nativeQueryRef": "Due_Date",
               "active": false
             },
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Deliverables"
-                        }
-                      },
-                      "Property": "Owner"
+                    "SourceRef": {
+                      "Entity": "Deliverables"
                     }
                   },
-                  "Function": 5
+                  "Property": "Owner"
                 }
               },
-              "queryRef": "CountNonNull(Deliverables.Owner)",
+              "queryRef": "Deliverables.Owner",
               "nativeQueryRef": "Owner",
               "active": false
             },
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Deliverables"
-                        }
-                      },
-                      "Property": "Status"
+                    "SourceRef": {
+                      "Entity": "Deliverables"
                     }
                   },
-                  "Function": 5
+                  "Property": "Status"
                 }
               },
-              "queryRef": "CountNonNull(Deliverables.Status)",
+              "queryRef": "Deliverables.Status",
               "nativeQueryRef": "Status",
               "active": false
             },
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Deliverables"
-                        }
-                      },
-                      "Property": "Responsible_Party"
+                    "SourceRef": {
+                      "Entity": "Deliverables"
                     }
                   },
-                  "Function": 5
+                  "Property": "Responsible_Party"
                 }
               },
-              "queryRef": "CountNonNull(Deliverables.Responsible_Party)",
+              "queryRef": "Deliverables.Responsible_Party",
               "nativeQueryRef": "Responsible_Party",
               "active": false
             }

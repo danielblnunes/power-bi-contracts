@@ -17,21 +17,16 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Agreements"
-                        }
-                      },
-                      "Property": "Counterparty_Name"
+                    "SourceRef": {
+                      "Entity": "Agreements"
                     }
                   },
-                  "Function": 5
+                  "Property": "Counterparty_Name"
                 }
               },
-              "queryRef": "CountNonNull(Agreements.Counterparty_Name)",
+              "queryRef": "Agreements.Counterparty_Name",
               "nativeQueryRef": "Counterparty_Name",
               "active": true
             },

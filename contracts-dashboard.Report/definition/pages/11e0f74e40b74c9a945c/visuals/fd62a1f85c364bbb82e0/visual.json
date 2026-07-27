@@ -17,21 +17,16 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Payments"
-                        }
-                      },
-                      "Property": "Season"
+                    "SourceRef": {
+                      "Entity": "Payments"
                     }
                   },
-                  "Function": 5
+                  "Property": "Season"
                 }
               },
-              "queryRef": "CountNonNull(Payments.Season)",
+              "queryRef": "Payments.Season",
               "nativeQueryRef": "Season",
               "active": true
             },

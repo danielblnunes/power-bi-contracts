@@ -17,181 +17,136 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Agreements"
-                        }
-                      },
-                      "Property": "Agreement_ID"
+                    "SourceRef": {
+                      "Entity": "Agreements"
                     }
                   },
-                  "Function": 5
+                  "Property": "Agreement_ID"
                 }
               },
-              "queryRef": "CountNonNull(Agreements.Agreement_ID)",
+              "queryRef": "Agreements.Agreement_ID",
               "nativeQueryRef": "Agreement_ID",
               "active": true
             },
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Agreements"
-                        }
-                      },
-                      "Property": "Agreement_Title"
+                    "SourceRef": {
+                      "Entity": "Agreements"
                     }
                   },
-                  "Function": 5
+                  "Property": "Agreement_Title"
                 }
               },
-              "queryRef": "CountNonNull(Agreements.Agreement_Title)",
+              "queryRef": "Agreements.Agreement_Title",
               "nativeQueryRef": "Agreement_Title",
               "active": false
             },
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Agreements"
-                        }
-                      },
-                      "Property": "Counterparty_Name"
+                    "SourceRef": {
+                      "Entity": "Agreements"
                     }
                   },
-                  "Function": 5
+                  "Property": "Counterparty_Name"
                 }
               },
-              "queryRef": "CountNonNull(Agreements.Counterparty_Name)",
+              "queryRef": "Agreements.Counterparty_Name",
               "nativeQueryRef": "Counterparty_Name",
               "active": false
             },
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Agreements"
-                        }
-                      },
-                      "Property": "Start_Date"
+                    "SourceRef": {
+                      "Entity": "Agreements"
                     }
                   },
-                  "Function": 5
+                  "Property": "Start_Date"
                 }
               },
-              "queryRef": "CountNonNull(Agreements.Start_Date)",
+              "queryRef": "Agreements.Start_Date",
               "nativeQueryRef": "Start_Date",
               "active": false
             },
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Agreements"
-                        }
-                      },
-                      "Property": "End_Date"
+                    "SourceRef": {
+                      "Entity": "Agreements"
                     }
                   },
-                  "Function": 5
+                  "Property": "End_Date"
                 }
               },
-              "queryRef": "CountNonNull(Agreements.End_Date)",
+              "queryRef": "Agreements.End_Date",
               "nativeQueryRef": "End_Date",
               "active": false
             },
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Agreements"
-                        }
-                      },
-                      "Property": "Term_Months"
+                    "SourceRef": {
+                      "Entity": "Agreements"
                     }
                   },
-                  "Function": 0
+                  "Property": "Term_Months"
                 }
               },
-              "queryRef": "Sum(Agreements.Term_Months)",
+              "queryRef": "Agreements.Term_Months",
               "nativeQueryRef": "Term_Months",
               "active": false
             },
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Agreements"
-                        }
-                      },
-                      "Property": "Status"
+                    "SourceRef": {
+                      "Entity": "Agreements"
                     }
                   },
-                  "Function": 5
+                  "Property": "Status"
                 }
               },
-              "queryRef": "CountNonNull(Agreements.Status)",
+              "queryRef": "Agreements.Status",
               "nativeQueryRef": "Status",
               "active": false
             },
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Agreements"
-                        }
-                      },
-                      "Property": "Renewal_Option"
+                    "SourceRef": {
+                      "Entity": "Agreements"
                     }
                   },
-                  "Function": 5
+                  "Property": "Renewal_Option"
                 }
               },
-              "queryRef": "CountNonNull(Agreements.Renewal_Option)",
+              "queryRef": "Agreements.Renewal_Option",
               "nativeQueryRef": "Renewal_Option",
               "active": false
             },
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Agreements"
-                        }
-                      },
-                      "Property": "Notice_Period_Days"
+                    "SourceRef": {
+                      "Entity": "Agreements"
                     }
                   },
-                  "Function": 0
+                  "Property": "Notice_Period_Days"
                 }
               },
-              "queryRef": "Sum(Agreements.Notice_Period_Days)",
+              "queryRef": "Agreements.Notice_Period_Days",
               "nativeQueryRef": "Notice_Period_Days",
               "active": false
             }

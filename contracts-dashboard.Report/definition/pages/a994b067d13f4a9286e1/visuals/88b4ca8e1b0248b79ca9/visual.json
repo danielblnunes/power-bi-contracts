@@ -17,141 +17,106 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Payments"
-                        }
-                      },
-                      "Property": "Payment_ID"
+                    "SourceRef": {
+                      "Entity": "Payments"
                     }
                   },
-                  "Function": 5
+                  "Property": "Payment_ID"
                 }
               },
-              "queryRef": "CountNonNull(Payments.Payment_ID)",
+              "queryRef": "Payments.Payment_ID",
               "nativeQueryRef": "Payment_ID",
               "active": true
             },
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Payments"
-                        }
-                      },
-                      "Property": "Agreement_ID"
+                    "SourceRef": {
+                      "Entity": "Payments"
                     }
                   },
-                  "Function": 5
+                  "Property": "Agreement_ID"
                 }
               },
-              "queryRef": "CountNonNull(Payments.Agreement_ID)",
+              "queryRef": "Payments.Agreement_ID",
               "nativeQueryRef": "Agreement_ID",
               "active": false
             },
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Payments"
-                        }
-                      },
-                      "Property": "Milestone"
+                    "SourceRef": {
+                      "Entity": "Payments"
                     }
                   },
-                  "Function": 5
+                  "Property": "Milestone"
                 }
               },
-              "queryRef": "CountNonNull(Payments.Milestone)",
+              "queryRef": "Payments.Milestone",
               "nativeQueryRef": "Milestone",
               "active": false
             },
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Payments"
-                        }
-                      },
-                      "Property": "Due_Date"
+                    "SourceRef": {
+                      "Entity": "Payments"
                     }
                   },
-                  "Function": 5
+                  "Property": "Due_Date"
                 }
               },
-              "queryRef": "CountNonNull(Payments.Due_Date)",
+              "queryRef": "Payments.Due_Date",
               "nativeQueryRef": "Due_Date",
               "active": false
             },
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Payments"
-                        }
-                      },
-                      "Property": "Amount_AED"
+                    "SourceRef": {
+                      "Entity": "Payments"
                     }
                   },
-                  "Function": 0
+                  "Property": "Amount_AED"
                 }
               },
-              "queryRef": "Sum(Payments.Amount_AED)",
+              "queryRef": "Payments.Amount_AED",
               "nativeQueryRef": "Amount_AED",
               "active": false
             },
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Payments"
-                        }
-                      },
-                      "Property": "Days_To_Due"
+                    "SourceRef": {
+                      "Entity": "Payments"
                     }
                   },
-                  "Function": 0
+                  "Property": "Days_To_Due"
                 }
               },
-              "queryRef": "Sum(Payments.Days_To_Due)",
+              "queryRef": "Payments.Days_To_Due",
               "nativeQueryRef": "Days_To_Due",
               "active": false
             },
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Payments"
-                        }
-                      },
-                      "Property": "Status"
+                    "SourceRef": {
+                      "Entity": "Payments"
                     }
                   },
-                  "Function": 5
+                  "Property": "Status"
                 }
               },
-              "queryRef": "CountNonNull(Payments.Status)",
+              "queryRef": "Payments.Status",
               "nativeQueryRef": "Status",
               "active": false
             }

@@ -17,41 +17,31 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Agreements"
-                        }
-                      },
-                      "Property": "Counterparty_Name"
+                    "SourceRef": {
+                      "Entity": "Agreements"
                     }
                   },
-                  "Function": 5
+                  "Property": "Counterparty_Name"
                 }
               },
-              "queryRef": "CountNonNull(Agreements.Counterparty_Name)",
+              "queryRef": "Agreements.Counterparty_Name",
               "nativeQueryRef": "Counterparty_Name",
               "active": true
             },
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Agreements"
-                        }
-                      },
-                      "Property": "Counterparty_Type"
+                    "SourceRef": {
+                      "Entity": "Agreements"
                     }
                   },
-                  "Function": 5
+                  "Property": "Counterparty_Type"
                 }
               },
-              "queryRef": "CountNonNull(Agreements.Counterparty_Type)",
+              "queryRef": "Agreements.Counterparty_Type",
               "nativeQueryRef": "Counterparty_Type",
               "active": false
             },
@@ -72,21 +62,16 @@
             },
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Agreements"
-                        }
-                      },
-                      "Property": "Status"
+                    "SourceRef": {
+                      "Entity": "Agreements"
                     }
                   },
-                  "Function": 5
+                  "Property": "Status"
                 }
               },
-              "queryRef": "CountNonNull(Agreements.Status)",
+              "queryRef": "Agreements.Status",
               "nativeQueryRef": "Status",
               "active": false
             }

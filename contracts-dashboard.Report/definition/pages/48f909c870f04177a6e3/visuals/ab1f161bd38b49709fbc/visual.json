@@ -17,121 +17,91 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Agreements"
-                        }
-                      },
-                      "Property": "Agreement_ID"
+                    "SourceRef": {
+                      "Entity": "Agreements"
                     }
                   },
-                  "Function": 5
+                  "Property": "Agreement_ID"
                 }
               },
-              "queryRef": "CountNonNull(Agreements.Agreement_ID)",
+              "queryRef": "Agreements.Agreement_ID",
               "nativeQueryRef": "Agreement_ID",
               "active": true
             },
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Agreements"
-                        }
-                      },
-                      "Property": "Counterparty_Name"
+                    "SourceRef": {
+                      "Entity": "Agreements"
                     }
                   },
-                  "Function": 5
+                  "Property": "Counterparty_Name"
                 }
               },
-              "queryRef": "CountNonNull(Agreements.Counterparty_Name)",
+              "queryRef": "Agreements.Counterparty_Name",
               "nativeQueryRef": "Counterparty_Name",
               "active": false
             },
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Agreements"
-                        }
-                      },
-                      "Property": "Department_Owner"
+                    "SourceRef": {
+                      "Entity": "Agreements"
                     }
                   },
-                  "Function": 5
+                  "Property": "Department_Owner"
                 }
               },
-              "queryRef": "CountNonNull(Agreements.Department_Owner)",
+              "queryRef": "Agreements.Department_Owner",
               "nativeQueryRef": "Department_Owner",
               "active": false
             },
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Agreements"
-                        }
-                      },
-                      "Property": "Legal_Owner"
+                    "SourceRef": {
+                      "Entity": "Agreements"
                     }
                   },
-                  "Function": 5
+                  "Property": "Legal_Owner"
                 }
               },
-              "queryRef": "CountNonNull(Agreements.Legal_Owner)",
+              "queryRef": "Agreements.Legal_Owner",
               "nativeQueryRef": "Legal_Owner",
               "active": false
             },
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Agreements"
-                        }
-                      },
-                      "Property": "Document_Link"
+                    "SourceRef": {
+                      "Entity": "Agreements"
                     }
                   },
-                  "Function": 5
+                  "Property": "Document_Link"
                 }
               },
-              "queryRef": "CountNonNull(Agreements.Document_Link)",
+              "queryRef": "Agreements.Document_Link",
               "nativeQueryRef": "Document_Link",
               "active": false
             },
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Agreements"
-                        }
-                      },
-                      "Property": "Last_Reviewed_Date"
+                    "SourceRef": {
+                      "Entity": "Agreements"
                     }
                   },
-                  "Function": 5
+                  "Property": "Last_Reviewed_Date"
                 }
               },
-              "queryRef": "CountNonNull(Agreements.Last_Reviewed_Date)",
+              "queryRef": "Agreements.Last_Reviewed_Date",
               "nativeQueryRef": "Last_Reviewed_Date",
               "active": false
             }
