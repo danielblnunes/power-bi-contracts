@@ -1,5 +1,4 @@
-# Power BI MCP Server (cloned dependency)
-/powerbi-mcp/
+
 
 # Environment secrets
 .env
