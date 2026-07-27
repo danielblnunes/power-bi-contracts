@@ -374,7 +374,7 @@ table Agreements
 			CALCULATE(
 			    [Total Contract Value],
 			    USERELATIONSHIP('Date'[Date], Agreements[Start_Date]),
-			    TOTALYTD([Total Contract Value], 'Date'[Date])
+			    TOTALYTD('Date'[Date])
 			)
 		formatString: #,##0
 		displayFolder: Time Intelligence

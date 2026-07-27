@@ -26,14 +26,14 @@ relationship bc13864c-7f3e-496c-bad7-0c06e72133e4
 
 relationship b33d8014-78c4-43d0-bec0-54cc1e230afd
 	joinOnDateBehavior: datePartOnly
-	fromColumn: Date.Date
-	toColumn: Payments.Due_Date
+	fromColumn: Payments.Due_Date
+	toColumn: Date.Date
 
 relationship 7396dd7d-c3b3-4059-b07e-aeb7b131e820
 	joinOnDateBehavior: datePartOnly
 	isActive: false
-	fromColumn: Date.Date
-	toColumn: Agreements.Start_Date
+	fromColumn: Agreements.Start_Date
+	toColumn: Date.Date
 
 relationship a97985f6-e591-4713-a838-4103d71c87d8
 	joinOnDateBehavior: datePartOnly

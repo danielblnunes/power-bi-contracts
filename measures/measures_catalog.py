@@ -177,7 +177,7 @@ AGREEMENTS_MEASURES = [
             "CALCULATE(\n"
             "    [Total Contract Value],\n"
             "    USERELATIONSHIP('Date'[Date], Agreements[Start_Date]),\n"
-            "    TOTALYTD([Total Contract Value], 'Date'[Date])\n"
+            "    TOTALYTD('Date'[Date])\n"
             ")"
         ),
         "format_string": "#,##0",
