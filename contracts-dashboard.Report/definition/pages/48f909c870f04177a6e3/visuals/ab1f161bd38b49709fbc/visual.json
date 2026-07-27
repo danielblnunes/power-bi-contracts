@@ -1,17 +1,16 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "ab1f161bd38b49709fbc",
   "position": {
-    "x": 810.0,
-    "y": 600.0,
-    "z": 0.0,
-    "width": 770.0,
-    "height": 290.0,
-    "tabOrder": 8
+    "x": 810,
+    "y": 600,
+    "z": 5000,
+    "height": 290,
+    "width": 770,
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "tableEx",
-    "drillFilterOtherVisuals": true,
     "query": {
       "queryState": {
         "Values": {
@@ -53,7 +52,8 @@
                 }
               },
               "queryRef": "CountNonNull(Agreements.Counterparty_Name)",
-              "nativeQueryRef": "Counterparty_Name"
+              "nativeQueryRef": "Counterparty_Name",
+              "active": false
             },
             {
               "field": {
@@ -72,7 +72,8 @@
                 }
               },
               "queryRef": "CountNonNull(Agreements.Department_Owner)",
-              "nativeQueryRef": "Department_Owner"
+              "nativeQueryRef": "Department_Owner",
+              "active": false
             },
             {
               "field": {
@@ -91,7 +92,8 @@
                 }
               },
               "queryRef": "CountNonNull(Agreements.Legal_Owner)",
-              "nativeQueryRef": "Legal_Owner"
+              "nativeQueryRef": "Legal_Owner",
+              "active": false
             },
             {
               "field": {
@@ -110,7 +112,8 @@
                 }
               },
               "queryRef": "CountNonNull(Agreements.Document_Link)",
-              "nativeQueryRef": "Document_Link"
+              "nativeQueryRef": "Document_Link",
+              "active": false
             },
             {
               "field": {
@@ -129,11 +132,13 @@
                 }
               },
               "queryRef": "CountNonNull(Agreements.Last_Reviewed_Date)",
-              "nativeQueryRef": "Last_Reviewed_Date"
+              "nativeQueryRef": "Last_Reviewed_Date",
+              "active": false
             }
           ]
         }
       }
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

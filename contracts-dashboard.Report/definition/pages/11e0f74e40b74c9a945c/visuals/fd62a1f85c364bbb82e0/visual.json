@@ -1,17 +1,16 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "fd62a1f85c364bbb82e0",
   "position": {
-    "x": 20.0,
-    "y": 600.0,
-    "z": 0.0,
-    "width": 1560.0,
-    "height": 290.0,
-    "tabOrder": 8
+    "x": 20,
+    "y": 600,
+    "z": 8000,
+    "height": 290,
+    "width": 1560,
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "tableEx",
-    "drillFilterOtherVisuals": true,
     "query": {
       "queryState": {
         "Values": {
@@ -48,7 +47,8 @@
                 }
               },
               "queryRef": "Payments.Total Payment Amount",
-              "nativeQueryRef": "Total Payment Amount"
+              "nativeQueryRef": "Total Payment Amount",
+              "active": false
             },
             {
               "field": {
@@ -62,7 +62,8 @@
                 }
               },
               "queryRef": "Payments.Cash Amount",
-              "nativeQueryRef": "Cash Amount"
+              "nativeQueryRef": "Cash Amount",
+              "active": false
             },
             {
               "field": {
@@ -76,7 +77,8 @@
                 }
               },
               "queryRef": "Payments.VIK Amount",
-              "nativeQueryRef": "VIK Amount"
+              "nativeQueryRef": "VIK Amount",
+              "active": false
             },
             {
               "field": {
@@ -90,11 +92,13 @@
                 }
               },
               "queryRef": "Payments.Payment Count",
-              "nativeQueryRef": "Payment Count"
+              "nativeQueryRef": "Payment Count",
+              "active": false
             }
           ]
         }
       }
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

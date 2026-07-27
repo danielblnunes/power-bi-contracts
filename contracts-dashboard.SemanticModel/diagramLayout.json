@@ -19,20 +19,20 @@
             "height": 300,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 1
         },
         {
           "location": {
-            "x": 284,
-            "y": 0
+            "x": 365,
+            "y": 393
           },
           "nodeIndex": "Deliverables",
           "nodeLineageTag": "5e8e99c6-db1d-4c43-94b9-260fa3b38a0c",
           "size": {
-            "height": 300,
+            "height": 259,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 4
         },
         {
           "location": {
@@ -45,11 +45,11 @@
             "height": 300,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 2
         },
         {
           "location": {
-            "x": 852,
+            "x": 983,
             "y": 0
           },
           "nodeIndex": "Date",
@@ -58,7 +58,7 @@
             "height": 300,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 3
         }
       ],
       "name": "All tables",

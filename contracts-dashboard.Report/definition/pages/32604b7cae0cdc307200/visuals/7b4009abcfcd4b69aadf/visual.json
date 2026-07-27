@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "7b4009abcfcd4b69aadf",
   "position": {
-    "x": 20.0,
-    "y": 600.0,
-    "z": 0.0,
-    "width": 1560.0,
-    "height": 290.0,
-    "tabOrder": 9
+    "x": 20,
+    "y": 600,
+    "z": 4000,
+    "height": 290,
+    "width": 1560,
+    "tabOrder": 9000
   },
   "visual": {
     "visualType": "tableEx",
@@ -17,98 +17,41 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Agreements"
-                        }
-                      },
-                      "Property": "Counterparty_Name"
+                    "SourceRef": {
+                      "Entity": "Agreements"
                     }
                   },
-                  "Function": 5
+                  "Property": "Counterparty_Name"
                 }
               },
               "queryRef": "CountNonNull(Agreements.Counterparty_Name)",
-              "nativeQueryRef": "Counterparty_Name",
+              "nativeQueryRef": "Counterparty_Name1",
               "active": true
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Agreements"
-                    }
-                  },
-                  "Property": "Total Contract Value"
-                }
-              },
-              "queryRef": "Agreements.Total Contract Value",
-              "nativeQueryRef": "Total Contract Value",
-              "active": false
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Agreements"
-                    }
-                  },
-                  "Property": "Active Contracts"
-                }
-              },
-              "queryRef": "Agreements.Active Contracts",
-              "nativeQueryRef": "Active Contracts",
-              "active": false
-            },
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Agreements"
-                        }
-                      },
-                      "Property": "Status"
-                    }
-                  },
-                  "Function": 5
-                }
-              },
-              "queryRef": "CountNonNull(Agreements.Status)",
-              "nativeQueryRef": "Status",
-              "active": false
-            },
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Agreements"
-                        }
-                      },
-                      "Property": "End_Date"
-                    }
-                  },
-                  "Function": 5
-                }
-              },
-              "queryRef": "CountNonNull(Agreements.End_Date)",
-              "nativeQueryRef": "End_Date",
-              "active": false
             }
           ]
         }
       }
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b88093b56b3cda9de170",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Counterparty_Name"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

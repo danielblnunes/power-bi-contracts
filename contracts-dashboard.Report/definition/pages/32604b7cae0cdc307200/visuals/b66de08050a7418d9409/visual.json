@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "b66de08050a7418d9409",
   "position": {
-    "x": 20.0,
-    "y": 260.0,
-    "z": 0.0,
-    "width": 770.0,
-    "height": 320.0,
-    "tabOrder": 7
+    "x": 20,
+    "y": 260,
+    "z": 5000,
+    "height": 320,
+    "width": 770,
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "donutChart",
@@ -58,7 +58,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "928e0e51e04bdb709da4",
+        "name": "3ded065615509426d592",
         "field": {
           "Column": {
             "Expression": {
@@ -72,7 +72,7 @@
         "type": "Categorical"
       },
       {
-        "name": "03687ec2ecc6b137e05d",
+        "name": "ddf63817802181d09030",
         "field": {
           "Measure": {
             "Expression": {

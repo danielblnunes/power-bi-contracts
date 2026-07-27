@@ -71,6 +71,35 @@ table Payments
 		displayFolder: Payments
 		lineageTag: c70dc3b2-77ec-4ba5-80a4-1e477f41da2e
 
+	measure 'Cash Amount' = CALCULATE([Total Payment Amount], Payments[Payment_Type] = "Cash")
+		formatString: #,##0
+		displayFolder: Payments
+		lineageTag: e07627f6-e857-43ac-bc74-95f36a95b9b7
+
+	measure 'VIK Amount' = CALCULATE([Total Payment Amount], Payments[Payment_Type] = "Value In Kind")
+		formatString: #,##0
+		displayFolder: Payments
+		lineageTag: 5d1575a9-e944-4592-9668-93b2cb7016a5
+
+	measure 'Rolling 12M Total' = CALCULATE([Total Payment Amount], DATESINPERIOD('Date'[Date], MAX('Date'[Date]), -12, MONTH))
+		formatString: #,##0
+		displayFolder: Trends
+		lineageTag: 653147f7-53bb-4924-aff2-d3ea5ecd7cb7
+
+	measure 'MoM Growth %' =
+			VAR _prev = CALCULATE([Total Payment Amount], PREVIOUSMONTH('Date'[Date]))
+			RETURN DIVIDE([Total Payment Amount] - _prev, _prev)
+		formatString: 0.0%;-0.0%
+		displayFolder: Trends
+		lineageTag: c038831c-5b82-44e0-8573-7f252158b634
+
+	measure 'QoQ Growth %' =
+			VAR _prev = CALCULATE([Total Payment Amount], PREVIOUSQUARTER('Date'[Date]))
+			RETURN DIVIDE([Total Payment Amount] - _prev, _prev)
+		formatString: 0.0%;-0.0%
+		displayFolder: Trends
+		lineageTag: 09f4af4f-887d-4002-b5d3-c24452d3505c
+
 	column Payment_ID
 		dataType: string
 		lineageTag: 14fd846e-d49b-494e-b7c5-994777d92a04
@@ -230,26 +259,3 @@ table Payments
 
 	annotation PBI_ResultType = Table
 
-	measure 'Cash Amount' = CALCULATE([Total Payment Amount], Payments[Payment_Type] = "Cash")
-		formatString: #,##0
-		displayFolder: Payments
-
-	measure 'VIK Amount' = CALCULATE([Total Payment Amount], Payments[Payment_Type] = "Value In Kind")
-		formatString: #,##0
-		displayFolder: Payments
-
-	measure 'Rolling 12M Total' = CALCULATE([Total Payment Amount], DATESINPERIOD('Date'[Date], MAX('Date'[Date]), -12, MONTH))
-		formatString: #,##0
-		displayFolder: Trends
-
-	measure 'MoM Growth %' =
-			VAR _prev = CALCULATE([Total Payment Amount], PREVIOUSMONTH('Date'[Date]))
-			RETURN DIVIDE([Total Payment Amount] - _prev, _prev)
-		formatString: 0.0%;-0.0%
-		displayFolder: Trends
-
-	measure 'QoQ Growth %' =
-			VAR _prev = CALCULATE([Total Payment Amount], PREVIOUSQUARTER('Date'[Date]))
-			RETURN DIVIDE([Total Payment Amount] - _prev, _prev)
-		formatString: 0.0%;-0.0%
-		displayFolder: Trends

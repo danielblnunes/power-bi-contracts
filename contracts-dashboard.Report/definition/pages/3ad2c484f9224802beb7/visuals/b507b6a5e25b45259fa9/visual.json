@@ -1,17 +1,16 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "b507b6a5e25b45259fa9",
   "position": {
-    "x": 810.0,
-    "y": 600.0,
-    "z": 0.0,
-    "width": 770.0,
-    "height": 290.0,
-    "tabOrder": 8
+    "x": 810,
+    "y": 600,
+    "z": 7000,
+    "height": 290,
+    "width": 770,
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "tableEx",
-    "drillFilterOtherVisuals": true,
     "query": {
       "queryState": {
         "Values": {
@@ -48,7 +47,8 @@
                 }
               },
               "queryRef": "Agreements.Total Contract Value",
-              "nativeQueryRef": "Total Contract Value"
+              "nativeQueryRef": "Total Contract Value",
+              "active": false
             },
             {
               "field": {
@@ -62,7 +62,8 @@
                 }
               },
               "queryRef": "Agreements.Active Contracts",
-              "nativeQueryRef": "Active Contracts"
+              "nativeQueryRef": "Active Contracts",
+              "active": false
             },
             {
               "field": {
@@ -76,11 +77,13 @@
                 }
               },
               "queryRef": "Agreements.Counterparty Rank by Value",
-              "nativeQueryRef": "Counterparty Rank by Value"
+              "nativeQueryRef": "Counterparty Rank by Value",
+              "active": false
             }
           ]
         }
       }
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

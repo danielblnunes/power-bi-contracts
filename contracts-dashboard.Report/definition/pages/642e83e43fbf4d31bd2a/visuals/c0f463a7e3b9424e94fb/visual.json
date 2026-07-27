@@ -1,17 +1,16 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "c0f463a7e3b9424e94fb",
   "position": {
-    "x": 20.0,
-    "y": 600.0,
-    "z": 0.0,
-    "width": 1560.0,
-    "height": 290.0,
-    "tabOrder": 9
+    "x": 20,
+    "y": 600,
+    "z": 8000,
+    "height": 290,
+    "width": 1560,
+    "tabOrder": 9000
   },
   "visual": {
     "visualType": "tableEx",
-    "drillFilterOtherVisuals": true,
     "query": {
       "queryState": {
         "Values": {
@@ -53,7 +52,8 @@
                 }
               },
               "queryRef": "CountNonNull(Deliverables.Item_Name)",
-              "nativeQueryRef": "Item_Name"
+              "nativeQueryRef": "Item_Name",
+              "active": false
             },
             {
               "field": {
@@ -72,7 +72,8 @@
                 }
               },
               "queryRef": "CountNonNull(Deliverables.Due_Date)",
-              "nativeQueryRef": "Due_Date"
+              "nativeQueryRef": "Due_Date",
+              "active": false
             },
             {
               "field": {
@@ -91,7 +92,8 @@
                 }
               },
               "queryRef": "CountNonNull(Deliverables.Owner)",
-              "nativeQueryRef": "Owner"
+              "nativeQueryRef": "Owner",
+              "active": false
             },
             {
               "field": {
@@ -110,7 +112,8 @@
                 }
               },
               "queryRef": "CountNonNull(Deliverables.Status)",
-              "nativeQueryRef": "Status"
+              "nativeQueryRef": "Status",
+              "active": false
             },
             {
               "field": {
@@ -129,11 +132,13 @@
                 }
               },
               "queryRef": "CountNonNull(Deliverables.Responsible_Party)",
-              "nativeQueryRef": "Responsible_Party"
+              "nativeQueryRef": "Responsible_Party",
+              "active": false
             }
           ]
         }
       }
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

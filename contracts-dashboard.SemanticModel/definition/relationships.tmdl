@@ -18,7 +18,6 @@ relationship 7396dd7d-c3b3-4059-b07e-aeb7b131e820
 	toColumn: Date.Date
 
 relationship 1be38850-9c13-4e21-a3c3-e7bd9ac62dd5
-	isActive: false
 	joinOnDateBehavior: datePartOnly
 	fromColumn: Deliverables.Due_Date
 	toColumn: Date.Date

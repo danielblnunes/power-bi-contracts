@@ -11,7 +11,7 @@
       "type": "SharedResources"
     },
     "customTheme": {
-      "name": "UAEPL Contracts",
+      "name": "UAEPL_Contracts009102226123061441.json",
       "reportVersionAtImport": {
         "visual": "2.11.0",
         "report": "3.4.0",
@@ -52,8 +52,8 @@
       "type": "RegisteredResources",
       "items": [
         {
-          "name": "UAEPL Contracts",
-          "path": "UAEPL Contracts",
+          "name": "UAEPL_Contracts009102226123061441.json",
+          "path": "UAEPL_Contracts009102226123061441.json",
           "type": "CustomTheme"
         }
       ]

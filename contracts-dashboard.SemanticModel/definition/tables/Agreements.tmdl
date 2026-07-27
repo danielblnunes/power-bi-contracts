@@ -133,6 +133,31 @@ table Agreements
 		displayFolder: Time Intelligence
 		lineageTag: 4afc4400-66c3-4310-be69-346d440f722c
 
+	measure 'Missing Document Count' = CALCULATE([Total Agreements], Agreements[Document_Link] = BLANK())
+		formatString: #,##0
+		displayFolder: Compliance
+		lineageTag: cf191866-0a2e-480c-99c6-3a02291b3121
+
+	measure 'Missing Legal Owner Count' = CALCULATE([Total Agreements], Agreements[Legal_Owner] = BLANK())
+		formatString: #,##0
+		displayFolder: Compliance
+		lineageTag: 1ef5bd1e-5547-43b1-a7d9-b69f0a69c147
+
+	measure 'Overdue Review Count' = CALCULATE([Total Agreements], Agreements[Last_Reviewed_Date] < TODAY() - 365)
+		formatString: #,##0
+		displayFolder: Compliance
+		lineageTag: ee8104b2-31c1-451a-890a-f73271fa4212
+
+	measure 'Avg Value Per Counterparty' = DIVIDE([Total Contract Value], [Unique Counterparties])
+		formatString: #,##0
+		displayFolder: Counterparties
+		lineageTag: 3bf7ed90-761e-44d3-99f3-4ece6e72d7b1
+
+	measure 'Counterparty Rank by Value' = RANKX(ALL(Agreements[Counterparty_Name]), [Total Contract Value], , DESC, Dense)
+		formatString: #,##0
+		displayFolder: Counterparties
+		lineageTag: 6cca8f08-8165-46be-9a0f-45d755da88d0
+
 	column Agreement_ID
 		dataType: string
 		lineageTag: 079900af-4367-45db-b8a7-be3dc4b1f7cf
@@ -398,22 +423,3 @@ table Agreements
 
 	annotation PBI_ResultType = Table
 
-	measure 'Missing Document Count' = CALCULATE([Total Agreements], Agreements[Document_Link] = BLANK())
-		formatString: #,##0
-		displayFolder: Compliance
-
-	measure 'Missing Legal Owner Count' = CALCULATE([Total Agreements], Agreements[Legal_Owner] = BLANK())
-		formatString: #,##0
-		displayFolder: Compliance
-
-	measure 'Overdue Review Count' = CALCULATE([Total Agreements], Agreements[Last_Reviewed_Date] < TODAY() - 365)
-		formatString: #,##0
-		displayFolder: Compliance
-
-	measure 'Avg Value Per Counterparty' = DIVIDE([Total Contract Value], [Unique Counterparties])
-		formatString: #,##0
-		displayFolder: Counterparties
-
-	measure 'Counterparty Rank by Value' = RANKX(ALL(Agreements[Counterparty_Name]), [Total Contract Value], , DESC, Dense)
-		formatString: #,##0
-		displayFolder: Counterparties

@@ -51,6 +51,31 @@ table Deliverables
 		displayFolder: Deliverables
 		lineageTag: 468a9cf3-3746-4512-823f-6dd28e1a4d58
 
+	measure 'Deliverables Due 30d' = CALCULATE([Total Deliverables], Deliverables[Due_Date] >= TODAY(), Deliverables[Due_Date] <= TODAY() + 30, Deliverables[Status] <> "Delivered")
+		formatString: #,##0
+		displayFolder: Delivery
+		lineageTag: dff03dfb-6cc1-4d17-a631-50e0cdd02404
+
+	measure 'Deliverables Past Due' = CALCULATE([Total Deliverables], Deliverables[Due_Date] < TODAY(), Deliverables[Status] <> "Delivered")
+		formatString: #,##0
+		displayFolder: Delivery
+		lineageTag: 3edf6a45-5f48-475c-8dc8-03ef539a2784
+
+	measure 'Deliverables Without Evidence' = CALCULATE([Delivered Count], Deliverables[Evidence_Link] = BLANK())
+		formatString: #,##0
+		displayFolder: Compliance
+		lineageTag: 10451dd6-deaa-4cc3-8000-b264d29a53d4
+
+	measure 'Avg VIK Value Per Item' = DIVIDE([Total VIK Value], CALCULATE([Total Deliverables], Deliverables[Item_Group] = "VIK"))
+		formatString: #,##0
+		displayFolder: Deliverables
+		lineageTag: d4d1d0a6-68f7-4666-82e8-f3644df01a59
+
+	measure 'Items Not Applicable' = CALCULATE([Total Deliverables], Deliverables[Applicable] = "No")
+		formatString: #,##0
+		displayFolder: Deliverables
+		lineageTag: 3eaf0257-a1bd-4fe2-931a-b2fb15ee1a2a
+
 	column Item_ID
 		dataType: string
 		lineageTag: 84ef47a7-aa6a-4ce3-90b7-bd2dcabb85d8
@@ -211,6 +236,14 @@ table Deliverables
 
 		annotation SummarizationSetBy = Automatic
 
+	column Due
+		dataType: string
+		lineageTag: 5fb968a3-a0d7-41f0-9e47-02716f550ebb
+		summarizeBy: none
+		sourceColumn: Due
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Deliverables = m
 		mode: import
 		source =
@@ -228,22 +261,3 @@ table Deliverables
 
 	annotation PBI_ResultType = Table
 
-	measure 'Deliverables Due 30d' = CALCULATE([Total Deliverables], Deliverables[Due_Date] >= TODAY(), Deliverables[Due_Date] <= TODAY() + 30, Deliverables[Status] <> "Delivered")
-		formatString: #,##0
-		displayFolder: Delivery
-
-	measure 'Deliverables Past Due' = CALCULATE([Total Deliverables], Deliverables[Due_Date] < TODAY(), Deliverables[Status] <> "Delivered")
-		formatString: #,##0
-		displayFolder: Delivery
-
-	measure 'Deliverables Without Evidence' = CALCULATE([Delivered Count], Deliverables[Evidence_Link] = BLANK())
-		formatString: #,##0
-		displayFolder: Compliance
-
-	measure 'Avg VIK Value Per Item' = DIVIDE([Total VIK Value], CALCULATE([Total Deliverables], Deliverables[Item_Group] = "VIK"))
-		formatString: #,##0
-		displayFolder: Deliverables
-
-	measure 'Items Not Applicable' = CALCULATE([Total Deliverables], Deliverables[Applicable] = "No")
-		formatString: #,##0
-		displayFolder: Deliverables
