@@ -11,9 +11,10 @@ __pycache__/
 *.egg-info/
 dist/
 
-# PBIP generated files (user data files remain)
-*.pbix
+
 
 # OS
 .DS_Store
 Thumbs.db
+
+*:Zone.Identifier
