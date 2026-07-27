@@ -1,16 +1,17 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
-  "name": "ab5589b78650444a913c",
+  "name": "8eb49f9951f54aebbcad",
   "position": {
-    "x": 810.0,
+    "x": 650.0,
     "y": 110.0,
     "z": 0.0,
-    "width": 375.0,
+    "width": 300.0,
     "height": 130.0,
-    "tabOrder": 4
+    "tabOrder": 6
   },
   "visual": {
     "visualType": "card",
+    "drillFilterOtherVisuals": true,
     "query": {
       "queryState": {
         "Values": {
@@ -23,17 +24,16 @@
                       "Entity": "Agreements"
                     }
                   },
-                  "Property": "Contracts Expiring 180d"
+                  "Property": "Total Annual Value"
                 }
               },
-              "queryRef": "Agreements.Contracts Expiring 180d",
-              "nativeQueryRef": "Contracts Expiring 180d",
+              "queryRef": "Agreements.Total Annual Value",
+              "nativeQueryRef": "Total Annual Value",
               "active": true
             }
           ]
         }
       }
-    },
-    "drillFilterOtherVisuals": true
+    }
   }
 }

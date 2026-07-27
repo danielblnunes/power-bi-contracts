@@ -66,11 +66,6 @@ table Payments
 		displayFolder: Payments
 		lineageTag: d40c4243-52a9-496f-9706-b63189e75b17
 
-	measure 'VIK Payment Amount' = CALCULATE([Total Payment Amount], Payments[Payment_Type] = "Value In Kind")
-		formatString: #,##0
-		displayFolder: Payments
-		lineageTag: c70dc3b2-77ec-4ba5-80a4-1e477f41da2e
-
 	measure 'Cash Amount' = CALCULATE([Total Payment Amount], Payments[Payment_Type] = "Cash")
 		formatString: #,##0
 		displayFolder: Payments
