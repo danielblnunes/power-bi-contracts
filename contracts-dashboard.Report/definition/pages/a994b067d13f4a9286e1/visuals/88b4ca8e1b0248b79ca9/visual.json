@@ -1,0 +1,158 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "88b4ca8e1b0248b79ca9",
+  "position": {
+    "x": 20.0,
+    "y": 500.0,
+    "z": 0.0,
+    "width": 1190.0,
+    "height": 220.0,
+    "tabOrder": 6
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Payments"
+                        }
+                      },
+                      "Property": "Payment_ID"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(Payments.Payment_ID)",
+              "nativeQueryRef": "Payment_ID",
+              "active": true
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Payments"
+                        }
+                      },
+                      "Property": "Agreement_ID"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(Payments.Agreement_ID)",
+              "nativeQueryRef": "Agreement_ID"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Payments"
+                        }
+                      },
+                      "Property": "Milestone"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(Payments.Milestone)",
+              "nativeQueryRef": "Milestone"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Payments"
+                        }
+                      },
+                      "Property": "Due_Date"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(Payments.Due_Date)",
+              "nativeQueryRef": "Due_Date"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Payments"
+                        }
+                      },
+                      "Property": "Amount_AED"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Payments.Amount_AED)",
+              "nativeQueryRef": "Amount_AED"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Payments"
+                        }
+                      },
+                      "Property": "Days_To_Due"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Payments.Days_To_Due)",
+              "nativeQueryRef": "Days_To_Due"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Payments"
+                        }
+                      },
+                      "Property": "Status"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(Payments.Status)",
+              "nativeQueryRef": "Status"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

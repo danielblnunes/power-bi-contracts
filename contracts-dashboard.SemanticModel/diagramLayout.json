@@ -13,7 +13,7 @@
             "x": 0,
             "y": 0
           },
-          "nodeIndex": "AgreementsTable",
+          "nodeIndex": "Agreements",
           "nodeLineageTag": "4223d25d-85ad-4c50-bd6c-4c3922eaa3c0",
           "size": {
             "height": 300,
@@ -26,7 +26,7 @@
             "x": 284,
             "y": 0
           },
-          "nodeIndex": "DeliverablesTable",
+          "nodeIndex": "Deliverables",
           "nodeLineageTag": "5e8e99c6-db1d-4c43-94b9-260fa3b38a0c",
           "size": {
             "height": 300,
@@ -39,7 +39,7 @@
             "x": 568,
             "y": 0
           },
-          "nodeIndex": "PaymentsTable",
+          "nodeIndex": "Payments",
           "nodeLineageTag": "ef754e87-84d4-446b-9c32-e6fae744054b",
           "size": {
             "height": 300,

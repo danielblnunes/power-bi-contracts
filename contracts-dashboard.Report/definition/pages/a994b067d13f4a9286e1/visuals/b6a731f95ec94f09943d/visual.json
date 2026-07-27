@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "b6a731f95ec94f09943d",
+  "position": {
+    "x": 920.0,
+    "y": 20.0,
+    "z": 0.0,
+    "width": 290.0,
+    "height": 120.0,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "card",
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Payments"
+                    }
+                  },
+                  "Property": "Upcoming Payments 30d"
+                }
+              },
+              "queryRef": "Payments.Upcoming Payments 30d",
+              "nativeQueryRef": "Upcoming Payments 30d",
+              "active": true
+            }
+          ]
+        }
+      }
+    }
+  }
+}

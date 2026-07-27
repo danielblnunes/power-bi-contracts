@@ -110,7 +110,7 @@ table LocalDateTable_a294c64e-59de-4528-a446-2637bc1d2310
 
 	partition LocalDateTable_a294c64e-59de-4528-a446-2637bc1d2310 = calculated
 		mode: import
-		source = Calendar(Date(Year(MIN('PaymentsTable'[Due_Date])), 1, 1), Date(Year(MAX('PaymentsTable'[Due_Date])), 12, 31))
+		source = Calendar(Date(Year(MIN(Payments[Due_Date])), 1, 1), Date(Year(MAX(Payments[Due_Date])), 12, 31))
 
 	annotation __PBI_LocalDateTable = true
 

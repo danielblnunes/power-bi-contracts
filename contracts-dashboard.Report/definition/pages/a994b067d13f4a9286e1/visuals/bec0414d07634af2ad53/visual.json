@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "bec0414d07634af2ad53",
+  "position": {
+    "x": 620.0,
+    "y": 20.0,
+    "z": 0.0,
+    "width": 290.0,
+    "height": 120.0,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "card",
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Payments"
+                    }
+                  },
+                  "Property": "Outstanding Amount"
+                }
+              },
+              "queryRef": "Payments.Outstanding Amount",
+              "nativeQueryRef": "Outstanding Amount",
+              "active": true
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-table AgreementsTable
+table Agreements
 	lineageTag: 4223d25d-85ad-4c50-bd6c-4c3922eaa3c0
 
 	column Agreement_ID
@@ -270,7 +270,7 @@ table AgreementsTable
 
 		annotation SummarizationSetBy = Automatic
 
-	partition AgreementsTable = m
+	partition Agreements = m
 		mode: import
 		source =
 				let
@@ -286,3 +286,114 @@ table AgreementsTable
 
 	annotation PBI_ResultType = Table
 
+	measure 'Total Contract Value' = SUM(Agreements[Total_Contract_Value_AED])
+		formatString: #,##0
+		displayFolder: Base
+
+	measure 'Total Annual Value' = SUM(Agreements[Annual_Value_AED])
+		formatString: #,##0
+		displayFolder: Base
+
+	measure 'Avg Contract Value' = AVERAGE(Agreements[Total_Contract_Value_AED])
+		formatString: #,##0
+		displayFolder: Base
+
+	measure 'Max Contract Value' = MAX(Agreements[Total_Contract_Value_AED])
+		formatString: #,##0
+		displayFolder: Base
+
+	measure 'Total Agreements' = COUNTROWS(Agreements)
+		formatString: #,##0
+		displayFolder: Counts
+
+	measure 'Active Contracts' = CALCULATE([Total Agreements], Agreements[Status] = "Active")
+		formatString: #,##0
+		displayFolder: Counts
+
+	measure 'Active Contract Value' = CALCULATE([Total Contract Value], Agreements[Status] = "Active")
+		formatString: #,##0
+		displayFolder: Counts
+
+	measure 'Contracts with Renewal Option' = CALCULATE([Total Agreements], Agreements[Renewal_Option] = "Yes")
+		formatString: #,##0
+		displayFolder: Counts
+
+	measure 'Auto Renewal Contracts' = CALCULATE([Total Agreements], Agreements[Auto_Renewal] = "Yes")
+		formatString: #,##0
+		displayFolder: Counts
+
+	measure 'Avg Term Months' = AVERAGE(Agreements[Term_Months])
+		formatString: #,##0
+		displayFolder: Lifecycle
+
+	measure 'Days to Expiry' = DATEDIFF(TODAY(), MAX(Agreements[End_Date]), DAY)
+		formatString: #,##0
+		displayFolder: Lifecycle
+
+	measure 'Contracts Expiring 90d' =
+			CALCULATE(
+			    [Total Agreements],
+			    Agreements[End_Date] >= TODAY(),
+			    Agreements[End_Date] <= TODAY() + 90
+			)
+		formatString: #,##0
+		displayFolder: Lifecycle
+
+	measure 'Contracts Expiring 180d' =
+			CALCULATE(
+			    [Total Agreements],
+			    Agreements[End_Date] >= TODAY(),
+			    Agreements[End_Date] <= TODAY() + 180
+			)
+		formatString: #,##0
+		displayFolder: Lifecycle
+
+	measure 'Contracts Expiring 365d' =
+			CALCULATE(
+			    [Total Agreements],
+			    Agreements[End_Date] >= TODAY(),
+			    Agreements[End_Date] <= TODAY() + 365
+			)
+		formatString: #,##0
+		displayFolder: Lifecycle
+
+	measure 'Expired Still Active Flag' =
+			CALCULATE(
+			    [Total Agreements],
+			    Agreements[Status] = "Active",
+			    Agreements[End_Date] < TODAY()
+			)
+		formatString: #,##0
+		displayFolder: Lifecycle
+
+	measure 'Unique Counterparties' = DISTINCTCOUNT(Agreements[Counterparty_Name])
+		formatString: #,##0
+		displayFolder: Counterparties
+
+	measure 'YTD Contract Value' =
+			CALCULATE(
+			    [Total Contract Value],
+			    USERELATIONSHIP('Date'[Date], Agreements[Start_Date]),
+			    TOTALYTD([Total Contract Value], 'Date'[Date])
+			)
+		formatString: #,##0
+		displayFolder: Time Intelligence
+
+	measure 'PY Contract Value' =
+			CALCULATE(
+			    [Total Contract Value],
+			    USERELATIONSHIP('Date'[Date], Agreements[Start_Date]),
+			    SAMEPERIODLASTYEAR('Date'[Date])
+			)
+		formatString: #,##0
+		displayFolder: Time Intelligence
+
+	measure 'YoY Contract Growth' = [Total Contract Value] - [PY Contract Value]
+		formatString: #,##0;-#,##0
+		displayFolder: Time Intelligence
+
+	measure 'YoY Growth %' =
+			VAR _py = [PY Contract Value]
+			RETURN DIVIDE([Total Contract Value] - _py, _py)
+		formatString: 0.0%;-0.0%
+		displayFolder: Time Intelligence

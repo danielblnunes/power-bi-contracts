@@ -1,4 +1,4 @@
-table DeliverablesTable
+table Deliverables
 	lineageTag: 5e8e99c6-db1d-4c43-94b9-260fa3b38a0c
 
 	column Item_ID
@@ -163,7 +163,7 @@ table DeliverablesTable
 
 		annotation SummarizationSetBy = Automatic
 
-	partition DeliverablesTable = m
+	partition Deliverables = m
 		mode: import
 		source =
 				let
@@ -178,3 +178,42 @@ table DeliverablesTable
 
 	annotation PBI_ResultType = Table
 
+	measure 'Total Deliverables' = COUNTROWS(Deliverables)
+		formatString: #,##0
+		displayFolder: Deliverables
+
+	measure 'Delivered Count' = CALCULATE([Total Deliverables], Deliverables[Status] = "Delivered")
+		formatString: #,##0
+		displayFolder: Deliverables
+
+	measure 'In Progress Count' = CALCULATE([Total Deliverables], Deliverables[Status] = "In Progress")
+		formatString: #,##0
+		displayFolder: Deliverables
+
+	measure 'Not Started Count' = CALCULATE([Total Deliverables], Deliverables[Status] = "Not Started")
+		formatString: #,##0
+		displayFolder: Deliverables
+
+	measure 'Overdue Deliverables Count' = CALCULATE([Total Deliverables], Deliverables[Status] = "Overdue")
+		formatString: #,##0
+		displayFolder: Deliverables
+
+	measure 'Applicable Deliverables' = CALCULATE([Total Deliverables], Deliverables[Applicable] = "Yes")
+		formatString: #,##0
+		displayFolder: Deliverables
+
+	measure 'Completion Rate' = DIVIDE([Delivered Count], [Applicable Deliverables])
+		formatString: 0.0%
+		displayFolder: Deliverables
+
+	measure 'Total VIK Value' = CALCULATE(SUM(Deliverables[Value_AED]), Deliverables[Item_Group] = "VIK")
+		formatString: #,##0
+		displayFolder: Deliverables
+
+	measure 'Total Deliverable Value' = SUM(Deliverables[Value_AED])
+		formatString: #,##0
+		displayFolder: Deliverables
+
+	measure 'Avg Deliverable Value' = AVERAGEX(Deliverables, Deliverables[Value_AED])
+		formatString: #,##0
+		displayFolder: Deliverables

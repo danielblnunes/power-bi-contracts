@@ -1,4 +1,4 @@
-table PaymentsTable
+table Payments
 	lineageTag: ef754e87-84d4-446b-9c32-e6fae744054b
 
 	column Payment_ID
@@ -159,7 +159,7 @@ table PaymentsTable
 
 		annotation SummarizationSetBy = Automatic
 
-	partition PaymentsTable = m
+	partition Payments = m
 		mode: import
 		source =
 				let
@@ -175,3 +175,60 @@ table PaymentsTable
 
 	annotation PBI_ResultType = Table
 
+	measure 'Total Payment Amount' = SUM(Payments[Amount_AED])
+		formatString: #,##0
+		displayFolder: Payments
+
+	measure 'Paid Amount' = CALCULATE([Total Payment Amount], Payments[Status] = "Paid")
+		formatString: #,##0
+		displayFolder: Payments
+
+	measure 'Invoiced Amount' = CALCULATE([Total Payment Amount], Payments[Status] = "Invoiced")
+		formatString: #,##0
+		displayFolder: Payments
+
+	measure 'Overdue Amount' = CALCULATE([Total Payment Amount], Payments[Status] = "Overdue")
+		formatString: #,##0
+		displayFolder: Payments
+
+	measure 'Due Amount' = CALCULATE([Total Payment Amount], Payments[Status] = "Due")
+		formatString: #,##0
+		displayFolder: Payments
+
+	measure 'Outstanding Amount' =
+			CALCULATE(
+			    [Total Payment Amount],
+			    Payments[Status] IN {"Not Due", "Due", "Invoiced", "Overdue"}
+			)
+		formatString: #,##0
+		displayFolder: Payments
+
+	measure 'Payment Collection Rate' = DIVIDE([Paid Amount], [Total Payment Amount])
+		formatString: 0.0%
+		displayFolder: Payments
+
+	measure 'Upcoming Payments 30d' =
+			CALCULATE(
+			    [Total Payment Amount],
+			    Payments[Due_Date] >= TODAY(),
+			    Payments[Due_Date] <= TODAY() + 30,
+			    Payments[Status] IN {"Not Due", "Due"}
+			)
+		formatString: #,##0
+		displayFolder: Payments
+
+	measure 'Payment Count' = COUNTROWS(Payments)
+		formatString: #,##0
+		displayFolder: Payments
+
+	measure 'Paid Count' = CALCULATE([Payment Count], Payments[Status] = "Paid")
+		formatString: #,##0
+		displayFolder: Payments
+
+	measure 'Avg Days To Due' = AVERAGE(Payments[Days_To_Due])
+		formatString: #,##0
+		displayFolder: Payments
+
+	measure 'VIK Payment Amount' = CALCULATE([Total Payment Amount], Payments[Payment_Type] = "Value In Kind")
+		formatString: #,##0
+		displayFolder: Payments

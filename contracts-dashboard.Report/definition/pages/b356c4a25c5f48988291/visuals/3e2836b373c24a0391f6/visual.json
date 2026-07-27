@@ -1,0 +1,58 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "3e2836b373c24a0391f6",
+  "position": {
+    "x": 20.0,
+    "y": 160.0,
+    "z": 0.0,
+    "width": 590.0,
+    "height": 320.0,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "barChart",
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Agreements"
+                    }
+                  },
+                  "Property": "Department_Owner"
+                }
+              },
+              "queryRef": "Agreements.Department_Owner",
+              "nativeQueryRef": "Department_Owner",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Agreements"
+                    }
+                  },
+                  "Property": "Total Agreements"
+                }
+              },
+              "queryRef": "Agreements.Total Agreements",
+              "nativeQueryRef": "Total Agreements",
+              "active": true
+            }
+          ]
+        }
+      }
+    }
+  }
+}

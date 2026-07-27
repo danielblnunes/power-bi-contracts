@@ -1,0 +1,58 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "19cb5b880da84f2dbe8e",
+  "position": {
+    "x": 620.0,
+    "y": 160.0,
+    "z": 0.0,
+    "width": 590.0,
+    "height": 320.0,
+    "tabOrder": 5
+  },
+  "visual": {
+    "visualType": "columnChart",
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Agreements"
+                    }
+                  },
+                  "Property": "Agreement_Type"
+                }
+              },
+              "queryRef": "Agreements.Agreement_Type",
+              "nativeQueryRef": "Agreement_Type",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Agreements"
+                    }
+                  },
+                  "Property": "Avg Term Months"
+                }
+              },
+              "queryRef": "Agreements.Avg Term Months",
+              "nativeQueryRef": "Avg Term Months",
+              "active": true
+            }
+          ]
+        }
+      }
+    }
+  }
+}
