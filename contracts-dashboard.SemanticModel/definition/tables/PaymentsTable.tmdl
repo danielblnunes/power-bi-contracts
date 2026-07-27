@@ -1,0 +1,177 @@
+table PaymentsTable
+	lineageTag: ef754e87-84d4-446b-9c32-e6fae744054b
+
+	column Payment_ID
+		dataType: string
+		lineageTag: 14fd846e-d49b-494e-b7c5-994777d92a04
+		summarizeBy: none
+		sourceColumn: Payment_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Agreement_ID
+		dataType: string
+		lineageTag: 07a43371-e792-48ab-867b-636e8e0f1e4e
+		summarizeBy: none
+		sourceColumn: Agreement_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Payment_Sequence
+		dataType: int64
+		formatString: 0
+		lineageTag: 3dbac24a-d7d0-4400-aca1-1eebb51f72d8
+		summarizeBy: sum
+		sourceColumn: Payment_Sequence
+
+		annotation SummarizationSetBy = Automatic
+
+	column Season
+		dataType: string
+		lineageTag: 20f27abd-b9da-484b-acc6-b88c646deca0
+		summarizeBy: none
+		sourceColumn: Season
+
+		annotation SummarizationSetBy = Automatic
+
+	column Payment_Type
+		dataType: string
+		lineageTag: 3308d9d4-0dd9-4539-bdda-cf9dd5896375
+		summarizeBy: none
+		sourceColumn: Payment_Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Milestone
+		dataType: string
+		lineageTag: 9c939ef6-8f2c-4c5a-b49c-6942f82e76f3
+		summarizeBy: none
+		sourceColumn: Milestone
+
+		annotation SummarizationSetBy = Automatic
+
+	column Due_Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c70569a8-a63a-4918-9217-0f3e926dddb2
+		summarizeBy: none
+		sourceColumn: Due_Date
+
+		variation Variation
+			isDefault
+			relationship: bc13864c-7f3e-496c-bad7-0c06e72133e4
+			defaultHierarchy: LocalDateTable_a294c64e-59de-4528-a446-2637bc1d2310.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Invoice_Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: faa36212-34d7-494a-b9d1-befabaeeb949
+		summarizeBy: none
+		sourceColumn: Invoice_Date
+
+		variation Variation
+			isDefault
+			relationship: a97985f6-e591-4713-a838-4103d71c87d8
+			defaultHierarchy: LocalDateTable_588e5361-b434-4868-8e96-aeca3957df2f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Payment_Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 56c95fe5-8c7f-4298-abab-45dc13ca6416
+		summarizeBy: none
+		sourceColumn: Payment_Date
+
+		variation Variation
+			isDefault
+			relationship: 8ffb912e-2657-469e-b6e8-ec80856e3299
+			defaultHierarchy: LocalDateTable_af502680-7f48-4a1f-903f-4f27f91ce7ac.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Currency
+		dataType: string
+		lineageTag: 84c8d93a-13df-482f-b741-785f49e0cdd4
+		summarizeBy: none
+		sourceColumn: Currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column Amount_AED
+		dataType: int64
+		formatString: 0
+		lineageTag: fae0fb43-e8da-4f0d-accd-b84246ec4a37
+		summarizeBy: sum
+		sourceColumn: Amount_AED
+
+		annotation SummarizationSetBy = Automatic
+
+	column Amount_Original
+		dataType: int64
+		formatString: 0
+		lineageTag: dd5354a5-7cb1-40a8-b687-3134cb31fdd0
+		summarizeBy: sum
+		sourceColumn: Amount_Original
+
+		annotation SummarizationSetBy = Automatic
+
+	column VAT_AED
+		dataType: double
+		lineageTag: 0304f982-0285-414e-ab2e-30d9ed466d62
+		summarizeBy: sum
+		sourceColumn: VAT_AED
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Status
+		dataType: string
+		lineageTag: c855ee1c-523a-47f6-a7d3-e05c40db0ea6
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Days_To_Due
+		dataType: int64
+		formatString: 0
+		lineageTag: d1a17db8-e006-48b2-ba41-39ee70c5ded3
+		summarizeBy: sum
+		sourceColumn: Days_To_Due
+
+		annotation SummarizationSetBy = Automatic
+
+	column Notes
+		dataType: string
+		lineageTag: 3e1c8163-d17b-481a-a393-a1c40e8c37e1
+		summarizeBy: none
+		sourceColumn: Notes
+
+		annotation SummarizationSetBy = Automatic
+
+	partition PaymentsTable = m
+		mode: import
+		source =
+				let
+				  Source = Excel.Workbook(File.Contents("C:\Users\danie\Code\power-bi-contracts\contracts_data_collection_template.xlsx"), null, true),
+				  #"Navigation 1" = Source{[Item = "PaymentsTable", Kind = "Table"]}[Data],
+				  #"Changed column type" = Table.TransformColumnTypes(#"Navigation 1", {{"Payment_ID", type text}, {"Agreement_ID", type text}, {"Payment_Sequence", Int64.Type}, {"Season", type text}, {"Payment_Type", type text}, {"Milestone", type text}, {"Due_Date", type date}, {"Currency", type text}, {"Amount_AED", Int64.Type}, {"Amount_Original", Int64.Type}, {"Status", type text}, {"Days_To_Due", Int64.Type}}, "en-US"),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Changed column type",{{"Invoice_Date", type date}, {"Payment_Date", type date}, {"VAT_AED", type number}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Changed Type", each [Payment_ID] <> null and [Payment_ID] <> "")
+				in
+				  #"Filtered Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
