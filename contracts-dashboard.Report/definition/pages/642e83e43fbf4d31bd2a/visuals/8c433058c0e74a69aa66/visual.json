@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "8c433058c0e74a69aa66",
   "position": {
-    "x": 340.0,
+    "x": 545.0,
     "y": 10.0,
     "z": 0.0,
-    "width": 300.0,
+    "width": 510.0,
     "height": 80.0,
     "tabOrder": 1
   },
@@ -18,21 +18,16 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Deliverables"
-                        }
-                      },
-                      "Property": "Status"
+                    "SourceRef": {
+                      "Entity": "Deliverables"
                     }
                   },
-                  "Function": 5
+                  "Property": "Status"
                 }
               },
-              "queryRef": "CountNonNull(Deliverables.Status)",
+              "queryRef": "Deliverables.Status",
               "nativeQueryRef": "Status",
               "active": true
             }

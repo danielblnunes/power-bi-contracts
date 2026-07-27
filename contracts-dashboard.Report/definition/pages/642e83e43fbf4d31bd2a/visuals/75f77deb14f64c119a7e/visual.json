@@ -5,7 +5,7 @@
     "x": 20.0,
     "y": 10.0,
     "z": 0.0,
-    "width": 300.0,
+    "width": 510.0,
     "height": 80.0,
     "tabOrder": 0
   },
@@ -18,21 +18,16 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Deliverables"
-                        }
-                      },
-                      "Property": "Owner"
+                    "SourceRef": {
+                      "Entity": "Deliverables"
                     }
                   },
-                  "Function": 5
+                  "Property": "Owner"
                 }
               },
-              "queryRef": "CountNonNull(Deliverables.Owner)",
+              "queryRef": "Deliverables.Owner",
               "nativeQueryRef": "Owner",
               "active": true
             }

@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
   "name": "31fe50d2867647749ece",
   "position": {
-    "x": 20,
-    "y": 10,
-    "z": 0,
-    "width": 460,
-    "height": 80,
-    "tabOrder": 7
+    "x": 20.0,
+    "y": 10.0,
+    "z": 0.0,
+    "width": 770.0,
+    "height": 80.0,
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "slicer",
@@ -18,21 +18,16 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Payments"
-                        }
-                      },
-                      "Property": "Status"
+                    "SourceRef": {
+                      "Entity": "Payments"
                     }
                   },
-                  "Function": 5
+                  "Property": "Status"
                 }
               },
-              "queryRef": "CountNonNull(Payments.Status)",
+              "queryRef": "Payments.Status",
               "nativeQueryRef": "Status",
               "active": true
             }

@@ -5,7 +5,7 @@
     "x": 20.0,
     "y": 10.0,
     "z": 0.0,
-    "width": 460.0,
+    "width": 770.0,
     "height": 80.0,
     "tabOrder": 0
   },
@@ -18,21 +18,16 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Payments"
-                        }
-                      },
-                      "Property": "Payment_Type"
+                    "SourceRef": {
+                      "Entity": "Payments"
                     }
                   },
-                  "Function": 5
+                  "Property": "Payment_Type"
                 }
               },
-              "queryRef": "CountNonNull(Payments.Payment_Type)",
+              "queryRef": "Payments.Payment_Type",
               "nativeQueryRef": "Payment_Type",
               "active": true
             }

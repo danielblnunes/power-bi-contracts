@@ -5,7 +5,7 @@
     "x": 20.0,
     "y": 10.0,
     "z": 0.0,
-    "width": 460.0,
+    "width": 770.0,
     "height": 80.0,
     "tabOrder": 0
   },
@@ -18,21 +18,16 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Agreements"
-                        }
-                      },
-                      "Property": "Counterparty_Type"
+                    "SourceRef": {
+                      "Entity": "Agreements"
                     }
                   },
-                  "Function": 5
+                  "Property": "Counterparty_Type"
                 }
               },
-              "queryRef": "CountNonNull(Agreements.Counterparty_Type)",
+              "queryRef": "Agreements.Counterparty_Type",
               "nativeQueryRef": "Counterparty_Type",
               "active": true
             }

@@ -5,7 +5,7 @@
     "x": 20.0,
     "y": 10.0,
     "z": 0.0,
-    "width": 460.0,
+    "width": 770.0,
     "height": 80.0,
     "tabOrder": 0
   },
@@ -18,21 +18,16 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Agreements"
-                        }
-                      },
-                      "Property": "Confidentiality_Level"
+                    "SourceRef": {
+                      "Entity": "Agreements"
                     }
                   },
-                  "Function": 5
+                  "Property": "Confidentiality_Level"
                 }
               },
-              "queryRef": "CountNonNull(Agreements.Confidentiality_Level)",
+              "queryRef": "Agreements.Confidentiality_Level",
               "nativeQueryRef": "Confidentiality_Level",
               "active": true
             }
