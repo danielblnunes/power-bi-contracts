@@ -1,8 +1,0 @@
-{
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
-  "name": "7678ffec0c42415dacfa",
-  "displayName": "Report - Expired Contracts",
-  "displayOption": "FitToPage",
-  "height": 1123,
-  "width": 794
-}

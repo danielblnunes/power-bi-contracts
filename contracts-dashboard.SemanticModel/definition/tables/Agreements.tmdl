@@ -158,6 +158,42 @@ table Agreements
 		displayFolder: Counterparties
 		lineageTag: 6cca8f08-8165-46be-9a0f-45d755da88d0
 
+	/// Count of expired agreements.
+	measure 'Expired Contracts' = CALCULATE([Total Agreements], Agreements[Status] = "Expired")
+		formatString: #,##0
+		displayFolder: Reporting
+		lineageTag: 73b9b2a8-b186-4ef9-8540-c10ab5bf3fc6
+
+	/// Total contract value of expired agreements.
+	measure 'Expired Contract Value' = CALCULATE([Total Contract Value], Agreements[Status] = "Expired")
+		formatString: #,##0
+		displayFolder: Reporting
+		lineageTag: c21dff7b-bc89-41a4-8d05-8b4c431a6939
+
+	/// Total contract value of agreements expiring within 90 days.
+	measure 'Expiring Soon Value' = CALCULATE([Total Contract Value], Agreements[End_Date] >= TODAY(), Agreements[End_Date] <= TODAY() + 90)
+		formatString: #,##0
+		displayFolder: Reporting
+		lineageTag: 7aca899c-8c35-4e24-a105-b6cc011d87c8
+
+	/// Count of draft agreements.
+	measure 'Draft Contracts' = CALCULATE([Total Agreements], Agreements[Status] = "Draft")
+		formatString: #,##0
+		displayFolder: Reporting
+		lineageTag: 4cb84ea1-7814-4767-a049-95b5f8f408cc
+
+	/// Count of agreements under review.
+	measure 'Under Review Contracts' = CALCULATE([Total Agreements], Agreements[Status] = "Under Review")
+		formatString: #,##0
+		displayFolder: Reporting
+		lineageTag: 648709b6-c5cc-4193-bab8-421130e3ec0c
+
+	/// Count of terminated agreements.
+	measure 'Terminated Contracts' = CALCULATE([Total Agreements], Agreements[Status] = "Terminated")
+		formatString: #,##0
+		displayFolder: Reporting
+		lineageTag: 6eafcf41-749c-4343-a191-0ed943dbf620
+
 	column Agreement_ID
 		dataType: string
 		lineageTag: 079900af-4367-45db-b8a7-be3dc4b1f7cf
@@ -423,32 +459,8 @@ table Agreements
 
 	annotation PBI_ResultType = Table
 
-	/// Count of expired agreements.
-	measure 'Expired Contracts' = CALCULATE([Total Agreements], Agreements[Status] = "Expired")
-		formatString: #,##0
-		displayFolder: Reporting
-
-	/// Total contract value of expired agreements.
-	measure 'Expired Contract Value' = CALCULATE([Total Contract Value], Agreements[Status] = "Expired")
-		formatString: #,##0
-		displayFolder: Reporting
-
-	/// Total contract value of agreements expiring within 90 days.
-	measure 'Expiring Soon Value' = CALCULATE([Total Contract Value], Agreements[End_Date] >= TODAY(), Agreements[End_Date] <= TODAY() + 90)
-		formatString: #,##0
-		displayFolder: Reporting
-
-	/// Count of draft agreements.
-	measure 'Draft Contracts' = CALCULATE([Total Agreements], Agreements[Status] = "Draft")
-		formatString: #,##0
-		displayFolder: Reporting
-
-	/// Count of agreements under review.
-	measure 'Under Review Contracts' = CALCULATE([Total Agreements], Agreements[Status] = "Under Review")
-		formatString: #,##0
-		displayFolder: Reporting
-
-	/// Count of terminated agreements.
-	measure 'Terminated Contracts' = CALCULATE([Total Agreements], Agreements[Status] = "Terminated")
-		formatString: #,##0
+	/// Dynamic title for the Contracts Report page based on Status slicer.
+	measure 'Contracts Report Title' =
+			VAR _sel = SELECTEDVALUE(Agreements[Status])
+			RETURN IF(_sel = BLANK(), "Contracts — All Statuses", "Contracts — " & _sel)
 		displayFolder: Reporting

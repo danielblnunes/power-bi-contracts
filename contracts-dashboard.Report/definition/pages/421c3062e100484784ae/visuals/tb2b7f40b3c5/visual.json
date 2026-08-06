@@ -1,0 +1,224 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "tb_88ba3d10",
+  "position": {
+    "x": 20,
+    "y": 240,
+    "z": 0,
+    "width": 754,
+    "height": 670,
+    "tabOrder": 9
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Agreements"
+                    }
+                  },
+                  "Property": "Counterparty_Name"
+                }
+              },
+              "queryRef": "Agreements.Counterparty_Name",
+              "nativeQueryRef": "Counterparty_Name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Agreements"
+                    }
+                  },
+                  "Property": "Agreement_Title"
+                }
+              },
+              "queryRef": "Agreements.Agreement_Title",
+              "nativeQueryRef": "Agreement_Title"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Agreements"
+                    }
+                  },
+                  "Property": "Contract_Category"
+                }
+              },
+              "queryRef": "Agreements.Contract_Category",
+              "nativeQueryRef": "Contract_Category"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Agreements"
+                    }
+                  },
+                  "Property": "Total_Contract_Value_AED"
+                }
+              },
+              "queryRef": "Agreements.Total_Contract_Value_AED",
+              "nativeQueryRef": "Total_Contract_Value_AED"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Agreements"
+                    }
+                  },
+                  "Property": "Start_Date"
+                }
+              },
+              "queryRef": "Agreements.Start_Date",
+              "nativeQueryRef": "Start_Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Agreements"
+                    }
+                  },
+                  "Property": "End_Date"
+                }
+              },
+              "queryRef": "Agreements.End_Date",
+              "nativeQueryRef": "End_Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Agreements"
+                    }
+                  },
+                  "Property": "Status"
+                }
+              },
+              "queryRef": "Agreements.Status",
+              "nativeQueryRef": "Status"
+            }
+          ]
+        }
+      }
+    },
+    "filterConfig": {
+      "filters": [
+        {
+          "name": "3061017ca4dd44c593a8",
+          "field": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Agreements"
+                }
+              },
+              "Property": "Counterparty_Name"
+            }
+          },
+          "type": "Categorical"
+        },
+        {
+          "name": "b1b0d936cb434d369515",
+          "field": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Agreements"
+                }
+              },
+              "Property": "Agreement_Title"
+            }
+          },
+          "type": "Categorical"
+        },
+        {
+          "name": "207c5e43ce124761bd3d",
+          "field": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Agreements"
+                }
+              },
+              "Property": "Contract_Category"
+            }
+          },
+          "type": "Categorical"
+        },
+        {
+          "name": "21f2d77ad78043749089",
+          "field": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Agreements"
+                }
+              },
+              "Property": "Total_Contract_Value_AED"
+            }
+          },
+          "type": "Categorical"
+        },
+        {
+          "name": "c37395631f1244aa9d19",
+          "field": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Agreements"
+                }
+              },
+              "Property": "Start_Date"
+            }
+          },
+          "type": "Categorical"
+        },
+        {
+          "name": "29be98b52f164996aa8e",
+          "field": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Agreements"
+                }
+              },
+              "Property": "End_Date"
+            }
+          },
+          "type": "Categorical"
+        },
+        {
+          "name": "7bcfd9a36b584142a289",
+          "field": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Agreements"
+                }
+              },
+              "Property": "Status"
+            }
+          },
+          "type": "Categorical"
+        }
+      ]
+    }
+  }
+}

@@ -1,8 +1,0 @@
-{
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
-  "name": "22058ae49e914abab93a",
-  "displayName": "Report - UAE PL Obligations",
-  "displayOption": "FitToPage",
-  "height": 1123,
-  "width": 794
-}
