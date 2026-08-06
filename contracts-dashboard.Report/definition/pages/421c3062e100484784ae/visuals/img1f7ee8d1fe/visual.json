@@ -11,13 +11,13 @@
   },
   "visual": {
     "visualType": "image",
-    "drillFilterOtherVisuals": true,
-    "image": {
-      "imageSrc": {
-        "resourcePackage": "RegisteredResources",
-        "resourceName": "uaepl-logo.png"
-      },
-      "imageScaling": "Fit"
-    }
+    "drillFilterOtherVisuals": true
+  },
+  "image": {
+    "imageSrc": {
+      "resourcePackage": "RegisteredResources",
+      "resourceName": "uaepl-logo.png"
+    },
+    "imageScaling": "Fit"
   }
 }
