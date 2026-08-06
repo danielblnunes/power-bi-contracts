@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "dc60ab37ce6144d4b708",
+  "displayName": "Report - Active Contracts",
+  "displayOption": "FitToPage",
+  "height": 1123,
+  "width": 794
+}

@@ -423,3 +423,32 @@ table Agreements
 
 	annotation PBI_ResultType = Table
 
+	/// Count of expired agreements.
+	measure 'Expired Contracts' = CALCULATE([Total Agreements], Agreements[Status] = "Expired")
+		formatString: #,##0
+		displayFolder: Reporting
+
+	/// Total contract value of expired agreements.
+	measure 'Expired Contract Value' = CALCULATE([Total Contract Value], Agreements[Status] = "Expired")
+		formatString: #,##0
+		displayFolder: Reporting
+
+	/// Total contract value of agreements expiring within 90 days.
+	measure 'Expiring Soon Value' = CALCULATE([Total Contract Value], Agreements[End_Date] >= TODAY(), Agreements[End_Date] <= TODAY() + 90)
+		formatString: #,##0
+		displayFolder: Reporting
+
+	/// Count of draft agreements.
+	measure 'Draft Contracts' = CALCULATE([Total Agreements], Agreements[Status] = "Draft")
+		formatString: #,##0
+		displayFolder: Reporting
+
+	/// Count of agreements under review.
+	measure 'Under Review Contracts' = CALCULATE([Total Agreements], Agreements[Status] = "Under Review")
+		formatString: #,##0
+		displayFolder: Reporting
+
+	/// Count of terminated agreements.
+	measure 'Terminated Contracts' = CALCULATE([Total Agreements], Agreements[Status] = "Terminated")
+		formatString: #,##0
+		displayFolder: Reporting

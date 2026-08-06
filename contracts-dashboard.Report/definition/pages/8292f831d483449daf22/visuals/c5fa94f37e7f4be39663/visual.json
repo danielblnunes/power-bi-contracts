@@ -1,0 +1,58 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "c5fa94f37e7f4be39663",
+  "position": {
+    "x": 20.0,
+    "y": 950.0,
+    "z": 0.0,
+    "width": 754.0,
+    "height": 150.0,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "barChart",
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Deliverables"
+                    }
+                  },
+                  "Property": "Status"
+                }
+              },
+              "queryRef": "Deliverables.Status",
+              "nativeQueryRef": "Status",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Deliverables"
+                    }
+                  },
+                  "Property": "Advertisement Rights Count"
+                }
+              },
+              "queryRef": "Deliverables.Advertisement Rights Count",
+              "nativeQueryRef": "Advertisement Rights Count",
+              "active": true
+            }
+          ]
+        }
+      }
+    }
+  }
+}

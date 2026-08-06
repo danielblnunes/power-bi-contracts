@@ -1,0 +1,158 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "d951d5410685415ab6cf",
+  "position": {
+    "x": 20.0,
+    "y": 190.0,
+    "z": 0.0,
+    "width": 754.0,
+    "height": 740.0,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Deliverables"
+                        }
+                      },
+                      "Property": "Item_Name"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(Deliverables.Item_Name)",
+              "nativeQueryRef": "Item_Name",
+              "active": true
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Deliverables"
+                        }
+                      },
+                      "Property": "Item_Category"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(Deliverables.Item_Category)",
+              "nativeQueryRef": "Item_Category"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Deliverables"
+                        }
+                      },
+                      "Property": "Value_AED"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Deliverables.Value_AED)",
+              "nativeQueryRef": "Value_AED"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Deliverables"
+                        }
+                      },
+                      "Property": "Status"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(Deliverables.Status)",
+              "nativeQueryRef": "Status"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Deliverables"
+                        }
+                      },
+                      "Property": "Due_Date"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(Deliverables.Due_Date)",
+              "nativeQueryRef": "Due_Date"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Deliverables"
+                        }
+                      },
+                      "Property": "Owner"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(Deliverables.Owner)",
+              "nativeQueryRef": "Owner"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Deliverables"
+                        }
+                      },
+                      "Property": "Responsible_Party"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(Deliverables.Responsible_Party)",
+              "nativeQueryRef": "Responsible_Party"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

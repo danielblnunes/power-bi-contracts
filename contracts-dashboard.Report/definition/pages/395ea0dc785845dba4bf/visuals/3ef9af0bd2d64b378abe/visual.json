@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "3ef9af0bd2d64b378abe",
+  "position": {
+    "x": 408.0,
+    "y": 90.0,
+    "z": 0.0,
+    "width": 180.0,
+    "height": 80.0,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "card",
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Deliverables"
+                    }
+                  },
+                  "Property": "Ticketing Completion %"
+                }
+              },
+              "queryRef": "Deliverables.Ticketing Completion %",
+              "nativeQueryRef": "Ticketing Completion %",
+              "active": true
+            }
+          ]
+        }
+      }
+    }
+  }
+}

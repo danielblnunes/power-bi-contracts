@@ -261,3 +261,191 @@ table Deliverables
 
 	annotation PBI_ResultType = Table
 
+	/// Total AED value of VIK deliverables.
+	measure 'VIK Value' = CALCULATE([Total Deliverable Value], Deliverables[Item_Group] = "VIK")
+		formatString: #,##0
+		displayFolder: Reporting
+
+	/// Count of VIK deliverables.
+	measure 'VIK Count' = CALCULATE([Total Deliverables], Deliverables[Item_Group] = "VIK")
+		formatString: #,##0
+		displayFolder: Reporting
+
+	/// Count of delivered VIK items.
+	measure 'VIK Delivered' = CALCULATE([Delivered Count], Deliverables[Item_Group] = "VIK")
+		formatString: #,##0
+		displayFolder: Reporting
+
+	/// Count of overdue VIK deliverables.
+	measure 'VIK Overdue' = CALCULATE([Overdue Deliverables Count], Deliverables[Item_Group] = "VIK")
+		formatString: #,##0
+		displayFolder: Reporting
+
+	/// VIK delivery completion rate.
+	measure 'VIK Completion %' =
+			VAR _cnt = [VIK Count]
+			RETURN DIVIDE([VIK Delivered], _cnt)
+		formatString: 0.0%
+		displayFolder: Reporting
+
+	/// Total AED value of Commercial Rights deliverables.
+	measure 'Commercial Rights Value' = CALCULATE([Total Deliverable Value], Deliverables[Item_Group] = "Commercial Rights")
+		formatString: #,##0
+		displayFolder: Reporting
+
+	/// Count of Commercial Rights deliverables.
+	measure 'Commercial Rights Count' = CALCULATE([Total Deliverables], Deliverables[Item_Group] = "Commercial Rights")
+		formatString: #,##0
+		displayFolder: Reporting
+
+	/// Count of delivered Commercial Rights items.
+	measure 'Commercial Rights Delivered' = CALCULATE([Delivered Count], Deliverables[Item_Group] = "Commercial Rights")
+		formatString: #,##0
+		displayFolder: Reporting
+
+	/// Count of overdue Commercial Rights deliverables.
+	measure 'Commercial Rights Overdue' = CALCULATE([Overdue Deliverables Count], Deliverables[Item_Group] = "Commercial Rights")
+		formatString: #,##0
+		displayFolder: Reporting
+
+	/// Commercial Rights delivery completion rate.
+	measure 'Commercial Rights Completion %' =
+			VAR _cnt = [Commercial Rights Count]
+			RETURN DIVIDE([Commercial Rights Delivered], _cnt)
+		formatString: 0.0%
+		displayFolder: Reporting
+
+	/// Total AED value of Advertisement Rights deliverables.
+	measure 'Advertisement Rights Value' = CALCULATE([Total Deliverable Value], Deliverables[Item_Group] = "Advertisement Rights")
+		formatString: #,##0
+		displayFolder: Reporting
+
+	/// Count of Advertisement Rights deliverables.
+	measure 'Advertisement Rights Count' = CALCULATE([Total Deliverables], Deliverables[Item_Group] = "Advertisement Rights")
+		formatString: #,##0
+		displayFolder: Reporting
+
+	/// Count of delivered Advertisement Rights items.
+	measure 'Advertisement Rights Delivered' = CALCULATE([Delivered Count], Deliverables[Item_Group] = "Advertisement Rights")
+		formatString: #,##0
+		displayFolder: Reporting
+
+	/// Count of overdue Advertisement Rights deliverables.
+	measure 'Advertisement Rights Overdue' = CALCULATE([Overdue Deliverables Count], Deliverables[Item_Group] = "Advertisement Rights")
+		formatString: #,##0
+		displayFolder: Reporting
+
+	/// Advertisement Rights delivery completion rate.
+	measure 'Advertisement Rights Completion %' =
+			VAR _cnt = [Advertisement Rights Count]
+			RETURN DIVIDE([Advertisement Rights Delivered], _cnt)
+		formatString: 0.0%
+		displayFolder: Reporting
+
+	/// Total AED value of Ticketing & Hospitality deliverables.
+	measure 'Ticketing Value' = CALCULATE([Total Deliverable Value], Deliverables[Item_Group] = "Ticketing & Hospitality")
+		formatString: #,##0
+		displayFolder: Reporting
+
+	/// Count of Ticketing & Hospitality deliverables.
+	measure 'Ticketing Count' = CALCULATE([Total Deliverables], Deliverables[Item_Group] = "Ticketing & Hospitality")
+		formatString: #,##0
+		displayFolder: Reporting
+
+	/// Count of delivered Ticketing & Hospitality items.
+	measure 'Ticketing Delivered' = CALCULATE([Delivered Count], Deliverables[Item_Group] = "Ticketing & Hospitality")
+		formatString: #,##0
+		displayFolder: Reporting
+
+	/// Count of overdue Ticketing & Hospitality deliverables.
+	measure 'Ticketing Overdue' = CALCULATE([Overdue Deliverables Count], Deliverables[Item_Group] = "Ticketing & Hospitality")
+		formatString: #,##0
+		displayFolder: Reporting
+
+	/// Ticketing & Hospitality delivery completion rate.
+	measure 'Ticketing Completion %' =
+			VAR _cnt = [Ticketing Count]
+			RETURN DIVIDE([Ticketing Delivered], _cnt)
+		formatString: 0.0%
+		displayFolder: Reporting
+
+	/// Total AED value of PRO League Obligation deliverables.
+	measure 'UAE PL Obligations Value' = CALCULATE([Total Deliverable Value], Deliverables[Item_Group] = "PRO League Obligation")
+		formatString: #,##0
+		displayFolder: Reporting
+
+	/// Count of PRO League Obligation deliverables.
+	measure 'UAE PL Obligations Count' = CALCULATE([Total Deliverables], Deliverables[Item_Group] = "PRO League Obligation")
+		formatString: #,##0
+		displayFolder: Reporting
+
+	/// Count of delivered PRO League Obligation items.
+	measure 'UAE PL Obligations Delivered' = CALCULATE([Delivered Count], Deliverables[Item_Group] = "PRO League Obligation")
+		formatString: #,##0
+		displayFolder: Reporting
+
+	/// Count of overdue PRO League Obligation deliverables.
+	measure 'UAE PL Obligations Overdue' = CALCULATE([Overdue Deliverables Count], Deliverables[Item_Group] = "PRO League Obligation")
+		formatString: #,##0
+		displayFolder: Reporting
+
+	/// PRO League Obligation delivery completion rate.
+	measure 'UAE PL Obligations Completion %' =
+			VAR _cnt = [UAE PL Obligations Count]
+			RETURN DIVIDE([UAE PL Obligations Delivered], _cnt)
+		formatString: 0.0%
+		displayFolder: Reporting
+
+	/// Total AED value of Supplier Service deliverables.
+	measure 'Supplier Service Value' = CALCULATE([Total Deliverable Value], Deliverables[Item_Group] = "Supplier Service")
+		formatString: #,##0
+		displayFolder: Reporting
+
+	/// Count of Supplier Service deliverables.
+	measure 'Supplier Service Count' = CALCULATE([Total Deliverables], Deliverables[Item_Group] = "Supplier Service")
+		formatString: #,##0
+		displayFolder: Reporting
+
+	/// Count of delivered Supplier Service items.
+	measure 'Supplier Service Delivered' = CALCULATE([Delivered Count], Deliverables[Item_Group] = "Supplier Service")
+		formatString: #,##0
+		displayFolder: Reporting
+
+	/// Count of overdue Supplier Service deliverables.
+	measure 'Supplier Service Overdue' = CALCULATE([Overdue Deliverables Count], Deliverables[Item_Group] = "Supplier Service")
+		formatString: #,##0
+		displayFolder: Reporting
+
+	/// Supplier Service delivery completion rate.
+	measure 'Supplier Service Completion %' =
+			VAR _cnt = [Supplier Service Count]
+			RETURN DIVIDE([Supplier Service Delivered], _cnt)
+		formatString: 0.0%
+		displayFolder: Reporting
+
+	/// Total AED value of Additional Rights deliverables.
+	measure 'Additional Rights Value' = CALCULATE([Total Deliverable Value], Deliverables[Item_Group] = "Additional Rights")
+		formatString: #,##0
+		displayFolder: Reporting
+
+	/// Count of Additional Rights deliverables.
+	measure 'Additional Rights Count' = CALCULATE([Total Deliverables], Deliverables[Item_Group] = "Additional Rights")
+		formatString: #,##0
+		displayFolder: Reporting
+
+	/// Count of delivered Additional Rights items.
+	measure 'Additional Rights Delivered' = CALCULATE([Delivered Count], Deliverables[Item_Group] = "Additional Rights")
+		formatString: #,##0
+		displayFolder: Reporting
+
+	/// Count of overdue Additional Rights deliverables.
+	measure 'Additional Rights Overdue' = CALCULATE([Overdue Deliverables Count], Deliverables[Item_Group] = "Additional Rights")
+		formatString: #,##0
+		displayFolder: Reporting
+
+	/// Additional Rights delivery completion rate.
+	measure 'Additional Rights Completion %' =
+			VAR _cnt = [Additional Rights Count]
+			RETURN DIVIDE([Additional Rights Delivered], _cnt)
+		formatString: 0.0%
+		displayFolder: Reporting

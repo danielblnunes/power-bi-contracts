@@ -1,0 +1,158 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "ecb2537212864048a4dd",
+  "position": {
+    "x": 20.0,
+    "y": 190.0,
+    "z": 0.0,
+    "width": 754.0,
+    "height": 740.0,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Agreements"
+                        }
+                      },
+                      "Property": "Counterparty_Name"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(Agreements.Counterparty_Name)",
+              "nativeQueryRef": "Counterparty_Name",
+              "active": true
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Agreements"
+                        }
+                      },
+                      "Property": "Agreement_Title"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(Agreements.Agreement_Title)",
+              "nativeQueryRef": "Agreement_Title"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Agreements"
+                        }
+                      },
+                      "Property": "Contract_Category"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(Agreements.Contract_Category)",
+              "nativeQueryRef": "Contract_Category"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Agreements"
+                        }
+                      },
+                      "Property": "Total_Contract_Value_AED"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Agreements.Total_Contract_Value_AED)",
+              "nativeQueryRef": "Total_Contract_Value_AED"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Agreements"
+                        }
+                      },
+                      "Property": "Start_Date"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(Agreements.Start_Date)",
+              "nativeQueryRef": "Start_Date"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Agreements"
+                        }
+                      },
+                      "Property": "End_Date"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(Agreements.End_Date)",
+              "nativeQueryRef": "End_Date"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Agreements"
+                        }
+                      },
+                      "Property": "Status"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(Agreements.Status)",
+              "nativeQueryRef": "Status"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

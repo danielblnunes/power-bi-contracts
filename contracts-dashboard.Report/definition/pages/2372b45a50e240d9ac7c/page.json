@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "2372b45a50e240d9ac7c",
+  "displayName": "Report - Commercial Rights",
+  "displayOption": "FitToPage",
+  "height": 1123,
+  "width": 794
+}
