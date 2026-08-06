@@ -472,3 +472,7 @@ table Agreements
 	/// Static slogan text for report page banners.
 	measure 'UAEPL Slogan' = "UAEPL Contracts"
 		displayFolder: Reporting
+
+	/// Static logo text placeholder for report page banners.
+	measure 'Logo Text' = "UAEPL"
+		displayFolder: Reporting
