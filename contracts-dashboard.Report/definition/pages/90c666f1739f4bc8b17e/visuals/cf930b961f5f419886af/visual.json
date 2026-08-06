@@ -43,7 +43,8 @@
                 }
               },
               "queryRef": "Agreements.Agreement_Title",
-              "nativeQueryRef": "Agreement_Title"
+              "nativeQueryRef": "Agreement_Title",
+              "active": false
             },
             {
               "field": {
@@ -57,7 +58,8 @@
                 }
               },
               "queryRef": "Agreements.Contract_Category",
-              "nativeQueryRef": "Contract_Category"
+              "nativeQueryRef": "Contract_Category",
+              "active": false
             },
             {
               "field": {
@@ -71,7 +73,8 @@
                 }
               },
               "queryRef": "Agreements.Total_Contract_Value_AED",
-              "nativeQueryRef": "Total_Contract_Value_AED"
+              "nativeQueryRef": "Total_Contract_Value_AED",
+              "active": false
             },
             {
               "field": {
@@ -85,7 +88,8 @@
                 }
               },
               "queryRef": "Agreements.Start_Date",
-              "nativeQueryRef": "Start_Date"
+              "nativeQueryRef": "Start_Date",
+              "active": false
             },
             {
               "field": {
@@ -99,7 +103,8 @@
                 }
               },
               "queryRef": "Agreements.End_Date",
-              "nativeQueryRef": "End_Date"
+              "nativeQueryRef": "End_Date",
+              "active": false
             },
             {
               "field": {
@@ -113,7 +118,8 @@
                 }
               },
               "queryRef": "Agreements.Status",
-              "nativeQueryRef": "Status"
+              "nativeQueryRef": "Status",
+              "active": false
             }
           ]
         }

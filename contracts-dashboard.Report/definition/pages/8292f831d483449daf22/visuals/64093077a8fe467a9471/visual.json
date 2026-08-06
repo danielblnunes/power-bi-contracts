@@ -44,7 +44,7 @@
               },
               "queryRef": "Deliverables.Item_Name",
               "nativeQueryRef": "Item_Name",
-              "active": true
+              "active": false
             },
             {
               "field": {
@@ -58,7 +58,8 @@
                 }
               },
               "queryRef": "Deliverables.Item_Category",
-              "nativeQueryRef": "Item_Category"
+              "nativeQueryRef": "Item_Category",
+              "active": false
             },
             {
               "field": {
@@ -72,7 +73,8 @@
                 }
               },
               "queryRef": "Deliverables.Value_AED",
-              "nativeQueryRef": "Value_AED"
+              "nativeQueryRef": "Value_AED",
+              "active": false
             },
             {
               "field": {
@@ -86,7 +88,8 @@
                 }
               },
               "queryRef": "Deliverables.Status",
-              "nativeQueryRef": "Status"
+              "nativeQueryRef": "Status",
+              "active": false
             },
             {
               "field": {
@@ -100,7 +103,8 @@
                 }
               },
               "queryRef": "Deliverables.Due_Date",
-              "nativeQueryRef": "Due_Date"
+              "nativeQueryRef": "Due_Date",
+              "active": false
             },
             {
               "field": {
@@ -114,7 +118,8 @@
                 }
               },
               "queryRef": "Deliverables.Owner",
-              "nativeQueryRef": "Owner"
+              "nativeQueryRef": "Owner",
+              "active": false
             },
             {
               "field": {
@@ -128,7 +133,8 @@
                 }
               },
               "queryRef": "Deliverables.Responsible_Party",
-              "nativeQueryRef": "Responsible_Party"
+              "nativeQueryRef": "Responsible_Party",
+              "active": false
             }
           ]
         }
