@@ -1,0 +1,336 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "tb17d9744eef",
+  "position": {
+    "x": 10,
+    "y": 160,
+    "z": 0,
+    "width": 1103,
+    "height": 510,
+    "tabOrder": 13
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "5182eed5fe2b4a22aa2c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Deliverables"
+              }
+            },
+            "Property": "Item_Group"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "684ee24c019a41969e20",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Deliverables"
+              }
+            },
+            "Property": "Item_Name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "0e1d3386f3db49e897a0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Deliverables"
+              }
+            },
+            "Property": "Item_Category"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e39e8e1dfa2145b8b08a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Deliverables"
+              }
+            },
+            "Property": "Value_AED"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "2a371416000446099467",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Deliverables"
+              }
+            },
+            "Property": "Status"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "48436af6acef408fb6ae",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Deliverables"
+              }
+            },
+            "Property": "Due_Date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f1dd6d9cfdcf41a28586",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Deliverables"
+              }
+            },
+            "Property": "Season"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "9479d2df6ce2488eae55",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Deliverables"
+              }
+            },
+            "Property": "Owner"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a329ae0082534a65b9e4",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Deliverables"
+              }
+            },
+            "Property": "Responsible_Party"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "4d879a9b56d24d5e88e9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Deliverables"
+              }
+            },
+            "Property": "Agreement_ID"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "0c0f6f21fd594d5a844c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Deliverables"
+              }
+            },
+            "Property": "Date_Delivered"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Deliverables"
+                    }
+                  },
+                  "Property": "Item_Group"
+                }
+              },
+              "queryRef": "Deliverables.Item_Group",
+              "nativeQueryRef": "Item_Group"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Deliverables"
+                    }
+                  },
+                  "Property": "Item_Name"
+                }
+              },
+              "queryRef": "Deliverables.Item_Name",
+              "nativeQueryRef": "Item_Name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Deliverables"
+                    }
+                  },
+                  "Property": "Item_Category"
+                }
+              },
+              "queryRef": "Deliverables.Item_Category",
+              "nativeQueryRef": "Item_Category"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Deliverables"
+                    }
+                  },
+                  "Property": "Value_AED"
+                }
+              },
+              "queryRef": "Deliverables.Value_AED",
+              "nativeQueryRef": "Value_AED"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Deliverables"
+                    }
+                  },
+                  "Property": "Status"
+                }
+              },
+              "queryRef": "Deliverables.Status",
+              "nativeQueryRef": "Status"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Deliverables"
+                    }
+                  },
+                  "Property": "Due_Date"
+                }
+              },
+              "queryRef": "Deliverables.Due_Date",
+              "nativeQueryRef": "Due_Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Deliverables"
+                    }
+                  },
+                  "Property": "Season"
+                }
+              },
+              "queryRef": "Deliverables.Season",
+              "nativeQueryRef": "Season"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Deliverables"
+                    }
+                  },
+                  "Property": "Owner"
+                }
+              },
+              "queryRef": "Deliverables.Owner",
+              "nativeQueryRef": "Owner"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Deliverables"
+                    }
+                  },
+                  "Property": "Responsible_Party"
+                }
+              },
+              "queryRef": "Deliverables.Responsible_Party",
+              "nativeQueryRef": "Responsible_Party"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Deliverables"
+                    }
+                  },
+                  "Property": "Agreement_ID"
+                }
+              },
+              "queryRef": "Deliverables.Agreement_ID",
+              "nativeQueryRef": "Agreement_ID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Deliverables"
+                    }
+                  },
+                  "Property": "Date_Delivered"
+                }
+              },
+              "queryRef": "Deliverables.Date_Delivered",
+              "nativeQueryRef": "Date_Delivered"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

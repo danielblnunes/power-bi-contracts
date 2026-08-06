@@ -55,6 +55,11 @@
           "name": "UAEPL_Contracts009102226123061441.json",
           "path": "UAEPL_Contracts009102226123061441.json",
           "type": "CustomTheme"
+        },
+        {
+          "name": "uaepl-logo.png",
+          "path": "uaepl-logo.png",
+          "type": "Image"
         }
       ]
     }

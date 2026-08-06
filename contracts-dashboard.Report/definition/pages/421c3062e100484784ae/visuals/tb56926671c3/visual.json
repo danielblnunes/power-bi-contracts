@@ -1,0 +1,280 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "tbb91bdf9e0f",
+  "position": {
+    "x": 10,
+    "y": 160,
+    "z": 0,
+    "width": 1103,
+    "height": 510,
+    "tabOrder": 13
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "bef8f443ca4649d1adb0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Counterparty_Name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "cc4e14bf40f94446a228",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Agreement_Title"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3a43cbdb7d214b879ded",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Agreement_Type"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "00b7da6bd36743e49c15",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Contract_Category"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "011f9830e00d4b2f87c6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Total_Contract_Value_AED"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "d81dd60b3e7d451ca94f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Start_Date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "96954bcd02404cc69998",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "End_Date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "95f1e1a772ea4907b86e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Status"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "7635195d779043a9844e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Renewal_Option"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Agreements"
+                    }
+                  },
+                  "Property": "Counterparty_Name"
+                }
+              },
+              "queryRef": "Agreements.Counterparty_Name",
+              "nativeQueryRef": "Counterparty_Name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Agreements"
+                    }
+                  },
+                  "Property": "Agreement_Title"
+                }
+              },
+              "queryRef": "Agreements.Agreement_Title",
+              "nativeQueryRef": "Agreement_Title"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Agreements"
+                    }
+                  },
+                  "Property": "Agreement_Type"
+                }
+              },
+              "queryRef": "Agreements.Agreement_Type",
+              "nativeQueryRef": "Agreement_Type"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Agreements"
+                    }
+                  },
+                  "Property": "Contract_Category"
+                }
+              },
+              "queryRef": "Agreements.Contract_Category",
+              "nativeQueryRef": "Contract_Category"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Agreements"
+                    }
+                  },
+                  "Property": "Total_Contract_Value_AED"
+                }
+              },
+              "queryRef": "Agreements.Total_Contract_Value_AED",
+              "nativeQueryRef": "Total_Contract_Value_AED"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Agreements"
+                    }
+                  },
+                  "Property": "Start_Date"
+                }
+              },
+              "queryRef": "Agreements.Start_Date",
+              "nativeQueryRef": "Start_Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Agreements"
+                    }
+                  },
+                  "Property": "End_Date"
+                }
+              },
+              "queryRef": "Agreements.End_Date",
+              "nativeQueryRef": "End_Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Agreements"
+                    }
+                  },
+                  "Property": "Status"
+                }
+              },
+              "queryRef": "Agreements.Status",
+              "nativeQueryRef": "Status"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Agreements"
+                    }
+                  },
+                  "Property": "Renewal_Option"
+                }
+              },
+              "queryRef": "Agreements.Renewal_Option",
+              "nativeQueryRef": "Renewal_Option"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

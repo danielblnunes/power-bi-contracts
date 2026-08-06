@@ -1,0 +1,23 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "imgde258bf224",
+  "position": {
+    "x": 10,
+    "y": 2,
+    "z": 0,
+    "width": 48,
+    "height": 46,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "image",
+    "drillFilterOtherVisuals": true,
+    "image": {
+      "imageSrc": {
+        "resourcePackage": "RegisteredResources",
+        "resourceName": "uaepl-logo.png"
+      },
+      "imageScaling": "Fit"
+    }
+  }
+}

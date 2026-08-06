@@ -464,3 +464,11 @@ table Agreements
 			VAR _sel = SELECTEDVALUE(Agreements[Status])
 			RETURN IF(_sel = BLANK(), "Contracts — All Statuses", "Contracts — " & _sel)
 		displayFolder: Reporting
+
+	/// Static footer text for report pages.
+	measure 'Report Footer' = "Confidential — UAEPL Contract Management"
+		displayFolder: Reporting
+
+	/// Static slogan text for report page banners.
+	measure 'UAEPL Slogan' = "UAEPL Contracts"
+		displayFolder: Reporting

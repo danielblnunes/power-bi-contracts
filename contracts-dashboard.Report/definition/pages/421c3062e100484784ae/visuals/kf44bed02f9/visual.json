@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "k30575cb152",
+  "position": {
+    "x": 10,
+    "y": 95,
+    "z": 0,
+    "width": 212,
+    "height": 58,
+    "tabOrder": 8
+  },
+  "visual": {
+    "visualType": "card",
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Agreements"
+                    }
+                  },
+                  "Property": "Total Agreements"
+                }
+              },
+              "queryRef": "Agreements.Total Agreements",
+              "nativeQueryRef": "Total Agreements"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

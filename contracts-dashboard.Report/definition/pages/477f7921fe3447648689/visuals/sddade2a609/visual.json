@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "sb50adc905f",
+  "position": {
+    "x": 670,
+    "y": 55,
+    "z": 0,
+    "width": 210,
+    "height": 32,
+    "tabOrder": 6
+  },
+  "visual": {
+    "visualType": "slicer",
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Deliverables"
+                    }
+                  },
+                  "Property": "Responsible_Party"
+                }
+              },
+              "queryRef": "Deliverables.Responsible_Party",
+              "nativeQueryRef": "Responsible_Party"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
