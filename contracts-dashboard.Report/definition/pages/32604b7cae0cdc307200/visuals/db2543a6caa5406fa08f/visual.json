@@ -4,10 +4,10 @@
   "position": {
     "x": 1205,
     "y": 10,
-    "z": 0,
-    "width": 380,
+    "z": 10000,
     "height": 80,
-    "tabOrder": 3
+    "width": 380,
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "slicer",
@@ -50,23 +50,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "d6f004abdc9239a10c12",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Agreements"
-              }
-            },
-            "Property": "Status"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

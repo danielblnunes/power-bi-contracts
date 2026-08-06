@@ -5,9 +5,9 @@
     "x": 20,
     "y": 260,
     "z": 0,
-    "width": 770,
     "height": 320,
-    "tabOrder": 9
+    "width": 770,
+    "tabOrder": 9000
   },
   "visual": {
     "visualType": "donutChart",
@@ -54,37 +54,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "3ded065615509426d592",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Agreements"
-              }
-            },
-            "Property": "Status"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "ddf63817802181d09030",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Agreements"
-              }
-            },
-            "Property": "Total Agreements"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

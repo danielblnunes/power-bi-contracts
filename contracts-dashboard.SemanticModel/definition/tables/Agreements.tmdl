@@ -194,6 +194,24 @@ table Agreements
 		displayFolder: Reporting
 		lineageTag: 6eafcf41-749c-4343-a191-0ed943dbf620
 
+	/// Dynamic title for the Contracts Report page based on Status slicer.
+	measure 'Contracts Report Title' =
+			VAR _sel = SELECTEDVALUE(Agreements[Status])
+			RETURN IF(_sel = BLANK(), "Contracts — All Statuses", "Contracts — " & _sel)
+		displayFolder: Reporting
+
+	/// Static footer text for report pages.
+	measure 'Report Footer' = "Confidential — UAEPL Contract Management"
+		displayFolder: Reporting
+
+	/// Static slogan text for report page banners.
+	measure 'UAEPL Slogan' = "UAEPL Contracts"
+		displayFolder: Reporting
+
+	/// Static logo text placeholder for report page banners.
+	measure 'Logo Text' = "UAEPL"
+		displayFolder: Reporting
+
 	column Agreement_ID
 		dataType: string
 		lineageTag: 079900af-4367-45db-b8a7-be3dc4b1f7cf
@@ -459,20 +477,3 @@ table Agreements
 
 	annotation PBI_ResultType = Table
 
-	/// Dynamic title for the Contracts Report page based on Status slicer.
-	measure 'Contracts Report Title' =
-			VAR _sel = SELECTEDVALUE(Agreements[Status])
-			RETURN IF(_sel = BLANK(), "Contracts — All Statuses", "Contracts — " & _sel)
-		displayFolder: Reporting
-
-	/// Static footer text for report pages.
-	measure 'Report Footer' = "Confidential — UAEPL Contract Management"
-		displayFolder: Reporting
-
-	/// Static slogan text for report page banners.
-	measure 'UAEPL Slogan' = "UAEPL Contracts"
-		displayFolder: Reporting
-
-	/// Static logo text placeholder for report page banners.
-	measure 'Logo Text' = "UAEPL"
-		displayFolder: Reporting

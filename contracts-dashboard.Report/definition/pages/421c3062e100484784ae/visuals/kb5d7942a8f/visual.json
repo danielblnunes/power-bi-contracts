@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "kb5d7942a8f",
+  "position": {
+    "x": 642,
+    "y": 100,
+    "z": 0,
+    "width": 306,
+    "height": 58,
+    "tabOrder": 12
+  },
+  "visual": {
+    "visualType": "card",
+    "drillFilterOtherVisuals": true,
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Agreements"
+                    }
+                  },
+                  "Property": "Avg Contract Value"
+                }
+              },
+              "queryRef": "Agreements.Avg Contract Value",
+              "nativeQueryRef": "Avg Contract Value"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

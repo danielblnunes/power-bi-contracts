@@ -4,9 +4,9 @@
   "position": {
     "x": 20,
     "y": 10,
-    "z": 0,
-    "width": 510,
+    "z": 5000,
     "height": 80,
+    "width": 510,
     "tabOrder": 0
   },
   "visual": {

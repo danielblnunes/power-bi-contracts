@@ -4,10 +4,10 @@
   "position": {
     "x": 20,
     "y": 600,
-    "z": 0,
-    "width": 1560,
+    "z": 3000,
     "height": 290,
-    "tabOrder": 11
+    "width": 1560,
+    "tabOrder": 11000
   },
   "visual": {
     "visualType": "tableEx",
@@ -90,51 +90,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "e44614a799e54b68b874",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Agreements"
-              }
-            },
-            "Property": "Counterparty_Name"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "e5ca2de7afb04ccf9ae7",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Agreements"
-              }
-            },
-            "Property": "Status"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "a514d89fc9e6496390c8",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Agreements"
-              }
-            },
-            "Property": "End_Date"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

@@ -90,23 +90,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "b596dc33106141d2aaaf",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Payments"
-              }
-            },
-            "Property": "Season"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

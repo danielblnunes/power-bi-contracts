@@ -32,25 +32,6 @@
             }
           ]
         },
-        "Y": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Payments"
-                    }
-                  },
-                  "Property": "Total Payment Amount"
-                }
-              },
-              "queryRef": "Payments.Total Payment Amount",
-              "nativeQueryRef": "Total Payment Amount",
-              "active": true
-            }
-          ]
-        },
         "Series": {
           "projections": [
             {
@@ -69,55 +50,28 @@
               "active": true
             }
           ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Payments"
+                    }
+                  },
+                  "Property": "Total Payment Amount"
+                }
+              },
+              "queryRef": "Payments.Total Payment Amount",
+              "nativeQueryRef": "Total Payment Amount",
+              "active": true
+            }
+          ]
         }
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "1323f6446e08b5c525c0",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Payments"
-              }
-            },
-            "Property": "Season"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "4302d2ce70020092ac02",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Payments"
-              }
-            },
-            "Property": "Total Payment Amount"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "ce04c77fedb44e15a8cc",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Payments"
-              }
-            },
-            "Property": "Payment_Type"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

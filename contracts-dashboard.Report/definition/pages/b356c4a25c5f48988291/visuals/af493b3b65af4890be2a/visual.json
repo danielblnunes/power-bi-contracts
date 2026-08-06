@@ -5,9 +5,9 @@
     "x": 1205,
     "y": 110,
     "z": 0,
-    "width": 375,
     "height": 130,
-    "tabOrder": 5
+    "width": 375,
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "card",

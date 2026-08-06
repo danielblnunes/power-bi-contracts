@@ -4,10 +4,10 @@
   "position": {
     "x": 415,
     "y": 10,
-    "z": 0,
-    "width": 380,
+    "z": 8000,
     "height": 80,
-    "tabOrder": 1
+    "width": 380,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "slicer",
@@ -50,23 +50,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "d202c1a6db701edabcee",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Agreements"
-              }
-            },
-            "Property": "Department_Owner"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

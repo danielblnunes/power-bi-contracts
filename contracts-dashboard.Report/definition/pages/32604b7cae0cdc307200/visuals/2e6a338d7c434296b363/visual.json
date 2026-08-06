@@ -4,9 +4,9 @@
   "position": {
     "x": 20,
     "y": 10,
-    "z": 0,
-    "width": 380,
+    "z": 11000,
     "height": 80,
+    "width": 380,
     "tabOrder": 0
   },
   "visual": {
@@ -73,23 +73,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "ad0c8275ee0875774db0",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Agreements"
-              }
-            },
-            "Property": "Agreement_Type"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

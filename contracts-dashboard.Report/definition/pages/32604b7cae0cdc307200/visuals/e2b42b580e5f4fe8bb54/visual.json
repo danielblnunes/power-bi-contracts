@@ -4,10 +4,10 @@
   "position": {
     "x": 965,
     "y": 110,
-    "z": 0,
-    "width": 300,
+    "z": 4000,
     "height": 130,
-    "tabOrder": 7
+    "width": 300,
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "card",
@@ -35,23 +35,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "1ec407bd454606ac9334",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Deliverables"
-              }
-            },
-            "Property": "Completion Rate"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

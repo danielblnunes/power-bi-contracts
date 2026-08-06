@@ -4,10 +4,10 @@
   "position": {
     "x": 1280,
     "y": 110,
-    "z": 0,
-    "width": 300,
+    "z": 6000,
     "height": 130,
-    "tabOrder": 8
+    "width": 300,
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "card",
@@ -35,23 +35,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "dc73f680989eed04999c",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Agreements"
-              }
-            },
-            "Property": "Total Contract Value"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

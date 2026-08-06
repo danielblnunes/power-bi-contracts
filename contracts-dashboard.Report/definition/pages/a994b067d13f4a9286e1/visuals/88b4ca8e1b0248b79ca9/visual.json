@@ -4,10 +4,10 @@
   "position": {
     "x": 20,
     "y": 600,
-    "z": 0,
+    "z": 7000,
     "height": 290,
     "width": 1560,
-    "tabOrder": 9
+    "tabOrder": 9000
   },
   "visual": {
     "visualType": "tableEx",
@@ -118,107 +118,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "e1fad423587043cda284",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Payments"
-              }
-            },
-            "Property": "Payment_ID"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "225432a8f7274e459b4e",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Payments"
-              }
-            },
-            "Property": "Agreement_ID"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "e91313da84f7436bad63",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Payments"
-              }
-            },
-            "Property": "Milestone"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "bdb2c775aff14d81bed6",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Payments"
-              }
-            },
-            "Property": "Due_Date"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "d6021bb689c4448bb5f7",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Payments"
-              }
-            },
-            "Property": "Amount_AED"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "d66bcf5f60db40e19af6",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Payments"
-              }
-            },
-            "Property": "Days_To_Due"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "80582c73cc5043a3b14e",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Payments"
-              }
-            },
-            "Property": "Status"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

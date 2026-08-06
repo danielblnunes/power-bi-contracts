@@ -4,10 +4,10 @@
   "position": {
     "x": 20,
     "y": 110,
-    "z": 0,
-    "width": 300,
+    "z": 5000,
     "height": 130,
-    "tabOrder": 4
+    "width": 300,
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "card",
@@ -35,23 +35,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "5fe61f7139d5b6eac005",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Agreements"
-              }
-            },
-            "Property": "Active Contracts"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -300,6 +300,12 @@ table Deliverables
 		displayFolder: Reporting
 		lineageTag: 47c857d5-447e-43ac-80b5-8808f98465ae
 
+	/// Dynamic title for the Deliverables Report page based on Item_Group slicer.
+	measure 'Deliverables Report Title' =
+			VAR _sel = SELECTEDVALUE(Deliverables[Item_Group])
+			RETURN IF(_sel = BLANK(), "Deliverables — All Categories", "Deliverables — " & _sel)
+		displayFolder: Reporting
+
 	column Item_ID
 		dataType: string
 		lineageTag: 84ef47a7-aa6a-4ce3-90b7-bd2dcabb85d8
@@ -485,8 +491,3 @@ table Deliverables
 
 	annotation PBI_ResultType = Table
 
-	/// Dynamic title for the Deliverables Report page based on Item_Group slicer.
-	measure 'Deliverables Report Title' =
-			VAR _sel = SELECTEDVALUE(Deliverables[Item_Group])
-			RETURN IF(_sel = BLANK(), "Deliverables — All Categories", "Deliverables — " & _sel)
-		displayFolder: Reporting

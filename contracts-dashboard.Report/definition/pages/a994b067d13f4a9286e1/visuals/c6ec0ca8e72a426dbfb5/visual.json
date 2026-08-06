@@ -5,9 +5,9 @@
     "x": 810,
     "y": 260,
     "z": 0,
-    "width": 770,
     "height": 320,
-    "tabOrder": 8
+    "width": 770,
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "lineChart",

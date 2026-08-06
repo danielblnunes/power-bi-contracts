@@ -4,10 +4,10 @@
   "position": {
     "x": 810,
     "y": 260,
-    "z": 0,
-    "width": 770,
+    "z": 7000,
     "height": 320,
-    "tabOrder": 10
+    "width": 770,
+    "tabOrder": 10000
   },
   "visual": {
     "visualType": "barChart",
@@ -54,37 +54,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "51a1b5a595b285e90038",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Agreements"
-              }
-            },
-            "Property": "Agreement_Type"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "8a7257df21e01480e440",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Agreements"
-              }
-            },
-            "Property": "Total Contract Value"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }
