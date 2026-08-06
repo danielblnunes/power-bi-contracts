@@ -27,8 +27,7 @@
                 }
               },
               "queryRef": "Agreements.Counterparty_Name",
-              "nativeQueryRef": "Counterparty_Name",
-              "active": true
+              "nativeQueryRef": "Counterparty_Name"
             },
             {
               "field": {
@@ -42,8 +41,7 @@
                 }
               },
               "queryRef": "Agreements.Counterparty_Type",
-              "nativeQueryRef": "Counterparty_Type",
-              "active": false
+              "nativeQueryRef": "Counterparty_Type"
             },
             {
               "field": {
@@ -57,8 +55,7 @@
                 }
               },
               "queryRef": "Agreements.Total Contract Value",
-              "nativeQueryRef": "Total Contract Value",
-              "active": false
+              "nativeQueryRef": "Total Contract Value"
             },
             {
               "field": {
@@ -72,8 +69,7 @@
                 }
               },
               "queryRef": "Agreements.Active Contracts",
-              "nativeQueryRef": "Active Contracts",
-              "active": false
+              "nativeQueryRef": "Active Contracts"
             },
             {
               "field": {
@@ -87,8 +83,7 @@
                 }
               },
               "queryRef": "Agreements.Status",
-              "nativeQueryRef": "Status",
-              "active": false
+              "nativeQueryRef": "Status"
             },
             {
               "field": {
@@ -102,13 +97,58 @@
                 }
               },
               "queryRef": "Agreements.Counterparty Rank by Value",
-              "nativeQueryRef": "Counterparty Rank by Value",
-              "active": false
+              "nativeQueryRef": "Counterparty Rank by Value"
             }
           ]
         }
       }
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "2756b6c7e06443a38431",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Counterparty_Name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "20928c75bc6b43d981c9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Counterparty_Type"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "7a56f4f1cf8e4b479779",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Status"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

@@ -27,8 +27,7 @@
                 }
               },
               "queryRef": "Agreements.Agreement_ID",
-              "nativeQueryRef": "Agreement_ID",
-              "active": true
+              "nativeQueryRef": "Agreement_ID"
             },
             {
               "field": {
@@ -42,8 +41,7 @@
                 }
               },
               "queryRef": "Agreements.Counterparty_Name",
-              "nativeQueryRef": "Counterparty_Name",
-              "active": false
+              "nativeQueryRef": "Counterparty_Name"
             },
             {
               "field": {
@@ -57,8 +55,7 @@
                 }
               },
               "queryRef": "Agreements.Department_Owner",
-              "nativeQueryRef": "Department_Owner",
-              "active": false
+              "nativeQueryRef": "Department_Owner"
             },
             {
               "field": {
@@ -72,8 +69,7 @@
                 }
               },
               "queryRef": "Agreements.Legal_Owner",
-              "nativeQueryRef": "Legal_Owner",
-              "active": false
+              "nativeQueryRef": "Legal_Owner"
             },
             {
               "field": {
@@ -87,8 +83,7 @@
                 }
               },
               "queryRef": "Agreements.Document_Link",
-              "nativeQueryRef": "Document_Link",
-              "active": false
+              "nativeQueryRef": "Document_Link"
             },
             {
               "field": {
@@ -102,13 +97,100 @@
                 }
               },
               "queryRef": "Agreements.Last_Reviewed_Date",
-              "nativeQueryRef": "Last_Reviewed_Date",
-              "active": false
+              "nativeQueryRef": "Last_Reviewed_Date"
             }
           ]
         }
       }
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "9c524a5e09784289b5fa",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Agreement_ID"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "cbb21f84743a465483d4",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Counterparty_Name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "706e73c7ac6749e8b226",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Department_Owner"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "bed23bde9f5941dfa06f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Legal_Owner"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "94fbb64f12294f14b1ae",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Document_Link"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "4b1b1a25760543ee8d45",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Last_Reviewed_Date"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

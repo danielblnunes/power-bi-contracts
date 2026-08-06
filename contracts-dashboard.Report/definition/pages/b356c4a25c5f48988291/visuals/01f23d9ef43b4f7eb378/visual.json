@@ -27,8 +27,7 @@
                 }
               },
               "queryRef": "Agreements.Agreement_ID",
-              "nativeQueryRef": "Agreement_ID",
-              "active": true
+              "nativeQueryRef": "Agreement_ID"
             },
             {
               "field": {
@@ -42,8 +41,7 @@
                 }
               },
               "queryRef": "Agreements.Agreement_Title",
-              "nativeQueryRef": "Agreement_Title",
-              "active": false
+              "nativeQueryRef": "Agreement_Title"
             },
             {
               "field": {
@@ -57,8 +55,7 @@
                 }
               },
               "queryRef": "Agreements.Counterparty_Name",
-              "nativeQueryRef": "Counterparty_Name",
-              "active": false
+              "nativeQueryRef": "Counterparty_Name"
             },
             {
               "field": {
@@ -72,8 +69,7 @@
                 }
               },
               "queryRef": "Agreements.Start_Date",
-              "nativeQueryRef": "Start_Date",
-              "active": false
+              "nativeQueryRef": "Start_Date"
             },
             {
               "field": {
@@ -87,8 +83,7 @@
                 }
               },
               "queryRef": "Agreements.End_Date",
-              "nativeQueryRef": "End_Date",
-              "active": false
+              "nativeQueryRef": "End_Date"
             },
             {
               "field": {
@@ -102,8 +97,7 @@
                 }
               },
               "queryRef": "Agreements.Term_Months",
-              "nativeQueryRef": "Term_Months",
-              "active": false
+              "nativeQueryRef": "Term_Months"
             },
             {
               "field": {
@@ -117,8 +111,7 @@
                 }
               },
               "queryRef": "Agreements.Status",
-              "nativeQueryRef": "Status",
-              "active": false
+              "nativeQueryRef": "Status"
             },
             {
               "field": {
@@ -132,8 +125,7 @@
                 }
               },
               "queryRef": "Agreements.Renewal_Option",
-              "nativeQueryRef": "Renewal_Option",
-              "active": false
+              "nativeQueryRef": "Renewal_Option"
             },
             {
               "field": {
@@ -147,8 +139,7 @@
                 }
               },
               "queryRef": "Agreements.Notice_Period_Days",
-              "nativeQueryRef": "Notice_Period_Days",
-              "active": false
+              "nativeQueryRef": "Notice_Period_Days"
             }
           ]
         }
@@ -159,7 +150,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "041427342a517d1cde64",
+        "name": "b5f176c9e89e48b48743",
         "field": {
           "Column": {
             "Expression": {
@@ -173,7 +164,7 @@
         "type": "Categorical"
       },
       {
-        "name": "e8f4c9caa0d557ac0ad9",
+        "name": "d28c28dbab244f3c8d8e",
         "field": {
           "Column": {
             "Expression": {
@@ -187,7 +178,7 @@
         "type": "Categorical"
       },
       {
-        "name": "ac43b1d4a1b66dd8d0e0",
+        "name": "002dadd16fe542a58396",
         "field": {
           "Column": {
             "Expression": {
@@ -201,7 +192,7 @@
         "type": "Categorical"
       },
       {
-        "name": "ef3511064840daab7993",
+        "name": "3160603607df4e4eaa3d",
         "field": {
           "Column": {
             "Expression": {
@@ -215,7 +206,7 @@
         "type": "Categorical"
       },
       {
-        "name": "205e57c80acd186aa7e0",
+        "name": "5003d14f524c44eb8041",
         "field": {
           "Column": {
             "Expression": {
@@ -229,7 +220,7 @@
         "type": "Categorical"
       },
       {
-        "name": "528da885e1eed3d0595b",
+        "name": "47ddd01824dc40b585e8",
         "field": {
           "Column": {
             "Expression": {
@@ -240,10 +231,10 @@
             "Property": "Term_Months"
           }
         },
-        "type": "Advanced"
+        "type": "Categorical"
       },
       {
-        "name": "1fb2d93012053d2b9ddc",
+        "name": "19a529ac664c44a5b07c",
         "field": {
           "Column": {
             "Expression": {
@@ -257,7 +248,7 @@
         "type": "Categorical"
       },
       {
-        "name": "ec25df887bec09a2c7dc",
+        "name": "e607853f227c40a1877b",
         "field": {
           "Column": {
             "Expression": {
@@ -271,7 +262,7 @@
         "type": "Categorical"
       },
       {
-        "name": "d376a67891534b6c89a5",
+        "name": "4c69be5d8c874a7c89a1",
         "field": {
           "Column": {
             "Expression": {
@@ -282,7 +273,7 @@
             "Property": "Notice_Period_Days"
           }
         },
-        "type": "Advanced"
+        "type": "Categorical"
       }
     ]
   }

@@ -27,8 +27,7 @@
                 }
               },
               "queryRef": "Deliverables.Item_ID",
-              "nativeQueryRef": "Item_ID",
-              "active": true
+              "nativeQueryRef": "Item_ID"
             },
             {
               "field": {
@@ -42,8 +41,7 @@
                 }
               },
               "queryRef": "Deliverables.Item_Name",
-              "nativeQueryRef": "Item_Name",
-              "active": false
+              "nativeQueryRef": "Item_Name"
             },
             {
               "field": {
@@ -57,8 +55,7 @@
                 }
               },
               "queryRef": "Deliverables.Due_Date",
-              "nativeQueryRef": "Due_Date",
-              "active": false
+              "nativeQueryRef": "Due_Date"
             },
             {
               "field": {
@@ -72,8 +69,7 @@
                 }
               },
               "queryRef": "Deliverables.Owner",
-              "nativeQueryRef": "Owner",
-              "active": false
+              "nativeQueryRef": "Owner"
             },
             {
               "field": {
@@ -87,8 +83,7 @@
                 }
               },
               "queryRef": "Deliverables.Status",
-              "nativeQueryRef": "Status",
-              "active": false
+              "nativeQueryRef": "Status"
             },
             {
               "field": {
@@ -102,8 +97,7 @@
                 }
               },
               "queryRef": "Deliverables.Responsible_Party",
-              "nativeQueryRef": "Responsible_Party",
-              "active": false
+              "nativeQueryRef": "Responsible_Party"
             }
           ]
         }
@@ -114,7 +108,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "a13b485e200ce2166460",
+        "name": "e48cfb25e5a341249c6d",
         "field": {
           "Column": {
             "Expression": {
@@ -128,7 +122,7 @@
         "type": "Categorical"
       },
       {
-        "name": "9e07a2d0709353b07d3e",
+        "name": "66e9d8f1a40e4181b947",
         "field": {
           "Column": {
             "Expression": {
@@ -142,7 +136,7 @@
         "type": "Categorical"
       },
       {
-        "name": "13cf2f123401c20ae205",
+        "name": "44291438c38d4f5aaf24",
         "field": {
           "Column": {
             "Expression": {
@@ -156,7 +150,7 @@
         "type": "Categorical"
       },
       {
-        "name": "06836300861bd20512eb",
+        "name": "af8fd4faf6444b208aee",
         "field": {
           "Column": {
             "Expression": {
@@ -170,7 +164,7 @@
         "type": "Categorical"
       },
       {
-        "name": "758a1fa29c8ac82eb970",
+        "name": "c9a18508bdad43d19e3f",
         "field": {
           "Column": {
             "Expression": {
@@ -184,7 +178,7 @@
         "type": "Categorical"
       },
       {
-        "name": "6b18c530006702d4cc05",
+        "name": "ddaf1171bea641888eb0",
         "field": {
           "Column": {
             "Expression": {

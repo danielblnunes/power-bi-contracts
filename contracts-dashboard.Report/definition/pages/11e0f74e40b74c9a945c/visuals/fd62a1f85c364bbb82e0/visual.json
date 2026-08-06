@@ -27,8 +27,7 @@
                 }
               },
               "queryRef": "Payments.Season",
-              "nativeQueryRef": "Season",
-              "active": true
+              "nativeQueryRef": "Season"
             },
             {
               "field": {
@@ -42,8 +41,7 @@
                 }
               },
               "queryRef": "Payments.Total Payment Amount",
-              "nativeQueryRef": "Total Payment Amount",
-              "active": false
+              "nativeQueryRef": "Total Payment Amount"
             },
             {
               "field": {
@@ -57,8 +55,7 @@
                 }
               },
               "queryRef": "Payments.Cash Amount",
-              "nativeQueryRef": "Cash Amount",
-              "active": false
+              "nativeQueryRef": "Cash Amount"
             },
             {
               "field": {
@@ -72,8 +69,7 @@
                 }
               },
               "queryRef": "Payments.VIK Amount",
-              "nativeQueryRef": "VIK Amount",
-              "active": false
+              "nativeQueryRef": "VIK Amount"
             },
             {
               "field": {
@@ -87,8 +83,7 @@
                 }
               },
               "queryRef": "Payments.Payment Count",
-              "nativeQueryRef": "Payment Count",
-              "active": false
+              "nativeQueryRef": "Payment Count"
             }
           ]
         }
@@ -99,7 +94,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "3ea59dc71eb8c58aa10b",
+        "name": "b596dc33106141d2aaaf",
         "field": {
           "Column": {
             "Expression": {
@@ -111,62 +106,6 @@
           }
         },
         "type": "Categorical"
-      },
-      {
-        "name": "341c1749c4c7208021be",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Payments"
-              }
-            },
-            "Property": "Total Payment Amount"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "66a93f1ae82417b2386d",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Payments"
-              }
-            },
-            "Property": "Cash Amount"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "6fb4ef3f60b4080320a4",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Payments"
-              }
-            },
-            "Property": "VIK Amount"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "151be24aa3ec53aeeb37",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Payments"
-              }
-            },
-            "Property": "Payment Count"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

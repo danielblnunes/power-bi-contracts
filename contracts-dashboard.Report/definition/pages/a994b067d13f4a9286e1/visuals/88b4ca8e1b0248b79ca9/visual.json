@@ -27,8 +27,7 @@
                 }
               },
               "queryRef": "Payments.Payment_ID",
-              "nativeQueryRef": "Payment_ID",
-              "active": true
+              "nativeQueryRef": "Payment_ID"
             },
             {
               "field": {
@@ -42,8 +41,7 @@
                 }
               },
               "queryRef": "Payments.Agreement_ID",
-              "nativeQueryRef": "Agreement_ID",
-              "active": false
+              "nativeQueryRef": "Agreement_ID"
             },
             {
               "field": {
@@ -57,8 +55,7 @@
                 }
               },
               "queryRef": "Payments.Milestone",
-              "nativeQueryRef": "Milestone",
-              "active": false
+              "nativeQueryRef": "Milestone"
             },
             {
               "field": {
@@ -72,8 +69,7 @@
                 }
               },
               "queryRef": "Payments.Due_Date",
-              "nativeQueryRef": "Due_Date",
-              "active": false
+              "nativeQueryRef": "Due_Date"
             },
             {
               "field": {
@@ -87,8 +83,7 @@
                 }
               },
               "queryRef": "Payments.Amount_AED",
-              "nativeQueryRef": "Amount_AED",
-              "active": false
+              "nativeQueryRef": "Amount_AED"
             },
             {
               "field": {
@@ -102,8 +97,7 @@
                 }
               },
               "queryRef": "Payments.Days_To_Due",
-              "nativeQueryRef": "Days_To_Due",
-              "active": false
+              "nativeQueryRef": "Days_To_Due"
             },
             {
               "field": {
@@ -117,8 +111,7 @@
                 }
               },
               "queryRef": "Payments.Status",
-              "nativeQueryRef": "Status",
-              "active": false
+              "nativeQueryRef": "Status"
             }
           ]
         }
@@ -129,7 +122,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "922fbb4280c615086a04",
+        "name": "e1fad423587043cda284",
         "field": {
           "Column": {
             "Expression": {
@@ -143,7 +136,7 @@
         "type": "Categorical"
       },
       {
-        "name": "89496b09e705726a171b",
+        "name": "225432a8f7274e459b4e",
         "field": {
           "Column": {
             "Expression": {
@@ -157,7 +150,7 @@
         "type": "Categorical"
       },
       {
-        "name": "05d4571b9816ad2e52ba",
+        "name": "e91313da84f7436bad63",
         "field": {
           "Column": {
             "Expression": {
@@ -171,7 +164,7 @@
         "type": "Categorical"
       },
       {
-        "name": "531abc5e32356066c64b",
+        "name": "bdb2c775aff14d81bed6",
         "field": {
           "Column": {
             "Expression": {
@@ -185,7 +178,7 @@
         "type": "Categorical"
       },
       {
-        "name": "9bb4204660180ee00723",
+        "name": "d6021bb689c4448bb5f7",
         "field": {
           "Column": {
             "Expression": {
@@ -196,10 +189,10 @@
             "Property": "Amount_AED"
           }
         },
-        "type": "Advanced"
+        "type": "Categorical"
       },
       {
-        "name": "9f87b12945cdb09c6057",
+        "name": "d66bcf5f60db40e19af6",
         "field": {
           "Column": {
             "Expression": {
@@ -210,10 +203,10 @@
             "Property": "Days_To_Due"
           }
         },
-        "type": "Advanced"
+        "type": "Categorical"
       },
       {
-        "name": "8aa2071e8e67078641d7",
+        "name": "80582c73cc5043a3b14e",
         "field": {
           "Column": {
             "Expression": {

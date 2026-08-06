@@ -27,8 +27,7 @@
                 }
               },
               "queryRef": "Agreements.Counterparty_Name",
-              "nativeQueryRef": "Counterparty_Name",
-              "active": true
+              "nativeQueryRef": "Counterparty_Name"
             },
             {
               "field": {
@@ -42,8 +41,7 @@
                 }
               },
               "queryRef": "Agreements.Total Contract Value",
-              "nativeQueryRef": "Total Contract Value",
-              "active": false
+              "nativeQueryRef": "Total Contract Value"
             },
             {
               "field": {
@@ -57,8 +55,7 @@
                 }
               },
               "queryRef": "Agreements.Active Contracts",
-              "nativeQueryRef": "Active Contracts",
-              "active": false
+              "nativeQueryRef": "Active Contracts"
             },
             {
               "field": {
@@ -72,8 +69,7 @@
                 }
               },
               "queryRef": "Agreements.Status",
-              "nativeQueryRef": "Status",
-              "active": false
+              "nativeQueryRef": "Status"
             },
             {
               "field": {
@@ -87,13 +83,58 @@
                 }
               },
               "queryRef": "Agreements.End_Date",
-              "nativeQueryRef": "End_Date",
-              "active": false
+              "nativeQueryRef": "End_Date"
             }
           ]
         }
       }
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e44614a799e54b68b874",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Counterparty_Name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e5ca2de7afb04ccf9ae7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Status"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a514d89fc9e6496390c8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "End_Date"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }
