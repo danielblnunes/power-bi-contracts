@@ -110,5 +110,93 @@
       }
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "a13b485e200ce2166460",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Deliverables"
+              }
+            },
+            "Property": "Item_ID"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "9e07a2d0709353b07d3e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Deliverables"
+              }
+            },
+            "Property": "Item_Name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "13cf2f123401c20ae205",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Deliverables"
+              }
+            },
+            "Property": "Due_Date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "06836300861bd20512eb",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Deliverables"
+              }
+            },
+            "Property": "Owner"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "758a1fa29c8ac82eb970",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Deliverables"
+              }
+            },
+            "Property": "Status"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "6b18c530006702d4cc05",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Deliverables"
+              }
+            },
+            "Property": "Responsible_Party"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

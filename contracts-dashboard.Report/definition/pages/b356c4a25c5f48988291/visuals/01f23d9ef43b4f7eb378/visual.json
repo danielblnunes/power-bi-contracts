@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "01f23d9ef43b4f7eb378",
   "position": {
-    "x": 20.0,
-    "y": 600.0,
-    "z": 0.0,
-    "width": 1560.0,
-    "height": 290.0,
+    "x": 20,
+    "y": 600,
+    "z": 0,
+    "height": 290,
+    "width": 1560,
     "tabOrder": 8
   },
   "visual": {
@@ -155,5 +155,135 @@
       }
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "041427342a517d1cde64",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Agreement_ID"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e8f4c9caa0d557ac0ad9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Agreement_Title"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ac43b1d4a1b66dd8d0e0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Counterparty_Name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ef3511064840daab7993",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Start_Date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "205e57c80acd186aa7e0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "End_Date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "528da885e1eed3d0595b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Term_Months"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1fb2d93012053d2b9ddc",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Status"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ec25df887bec09a2c7dc",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Renewal_Option"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "d376a67891534b6c89a5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Notice_Period_Days"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

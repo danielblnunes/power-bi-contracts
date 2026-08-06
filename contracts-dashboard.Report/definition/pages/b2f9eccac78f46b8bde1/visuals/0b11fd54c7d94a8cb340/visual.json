@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "0b11fd54c7d94a8cb340",
   "position": {
-    "x": 20.0,
-    "y": 190.0,
-    "z": 0.0,
-    "width": 754.0,
-    "height": 740.0,
+    "x": 20,
+    "y": 190,
+    "z": 0,
+    "width": 754,
+    "height": 740,
     "tabOrder": 0
   },
   "visual": {
@@ -28,8 +28,7 @@
                 }
               },
               "queryRef": "Deliverables.Item_Group",
-              "nativeQueryRef": "Item_Group",
-              "active": true
+              "nativeQueryRef": "Item_Group"
             },
             {
               "field": {
@@ -43,8 +42,7 @@
                 }
               },
               "queryRef": "Deliverables.Item_Name",
-              "nativeQueryRef": "Item_Name",
-              "active": false
+              "nativeQueryRef": "Item_Name"
             },
             {
               "field": {
@@ -58,8 +56,7 @@
                 }
               },
               "queryRef": "Deliverables.Item_Category",
-              "nativeQueryRef": "Item_Category",
-              "active": false
+              "nativeQueryRef": "Item_Category"
             },
             {
               "field": {
@@ -73,8 +70,7 @@
                 }
               },
               "queryRef": "Deliverables.Value_AED",
-              "nativeQueryRef": "Value_AED",
-              "active": false
+              "nativeQueryRef": "Value_AED"
             },
             {
               "field": {
@@ -88,8 +84,7 @@
                 }
               },
               "queryRef": "Deliverables.Status",
-              "nativeQueryRef": "Status",
-              "active": false
+              "nativeQueryRef": "Status"
             },
             {
               "field": {
@@ -103,8 +98,7 @@
                 }
               },
               "queryRef": "Deliverables.Due_Date",
-              "nativeQueryRef": "Due_Date",
-              "active": false
+              "nativeQueryRef": "Due_Date"
             },
             {
               "field": {
@@ -118,8 +112,7 @@
                 }
               },
               "queryRef": "Deliverables.Owner",
-              "nativeQueryRef": "Owner",
-              "active": false
+              "nativeQueryRef": "Owner"
             },
             {
               "field": {
@@ -133,12 +126,127 @@
                 }
               },
               "queryRef": "Deliverables.Responsible_Party",
-              "nativeQueryRef": "Responsible_Party",
-              "active": false
+              "nativeQueryRef": "Responsible_Party"
             }
           ]
         }
       }
     }
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "cc4fc14707cd4654a162",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Deliverables"
+              }
+            },
+            "Property": "Item_Group"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ca0f345cb2ed4c5e80e6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Deliverables"
+              }
+            },
+            "Property": "Item_Name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "09d44826f16e4d3b8c26",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Deliverables"
+              }
+            },
+            "Property": "Item_Category"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "4e69b448e4cf49c1aaa2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Deliverables"
+              }
+            },
+            "Property": "Value_AED"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f890c822bc9f4c669b07",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Deliverables"
+              }
+            },
+            "Property": "Status"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "37842640aa824cfba761",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Deliverables"
+              }
+            },
+            "Property": "Due_Date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a54d0aed6b3f4612af5d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Deliverables"
+              }
+            },
+            "Property": "Owner"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "6a96a81fdf044d849574",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Deliverables"
+              }
+            },
+            "Property": "Responsible_Party"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

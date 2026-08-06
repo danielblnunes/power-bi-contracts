@@ -1,72 +1,61 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
-  "name": "89057ef224354dd89579",
+  "name": "0dfeab32ebeb146224a1",
   "position": {
-    "x": 20,
-    "y": 260,
-    "z": 3000,
-    "height": 320,
-    "width": 770,
-    "tabOrder": 6000
+    "x": 148.83753122735678,
+    "y": 126.68908908042869,
+    "z": 0,
+    "height": 280,
+    "width": 280,
+    "tabOrder": 0
   },
   "visual": {
-    "visualType": "barChart",
+    "visualType": "tableEx",
     "query": {
       "queryState": {
-        "Category": {
+        "Values": {
           "projections": [
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Payments"
+                      "Entity": "Deliverables"
                     }
                   },
-                  "Property": "Season"
+                  "Property": "Item_Group"
                 }
               },
-              "queryRef": "Payments.Season",
-              "nativeQueryRef": "Season",
-              "active": true
-            }
-          ]
-        },
-        "Y": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Payments"
-                    }
-                  },
-                  "Property": "Total Payment Amount"
-                }
-              },
-              "queryRef": "Payments.Total Payment Amount",
-              "nativeQueryRef": "Total Payment Amount",
-              "active": true
-            }
-          ]
-        },
-        "Series": {
-          "projections": [
+              "queryRef": "Deliverables.Item_Group",
+              "nativeQueryRef": "Item_Group"
+            },
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Payments"
+                      "Entity": "Deliverables"
                     }
                   },
-                  "Property": "Payment_Type"
+                  "Property": "Item_Name"
                 }
               },
-              "queryRef": "Payments.Payment_Type",
-              "nativeQueryRef": "Payment_Type",
-              "active": true
+              "queryRef": "Deliverables.Item_Name",
+              "nativeQueryRef": "Item_Name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Deliverables"
+                    }
+                  },
+                  "Property": "Status"
+                }
+              },
+              "queryRef": "Deliverables.Status",
+              "nativeQueryRef": "Status"
             }
           ]
         }
@@ -77,43 +66,43 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "1323f6446e08b5c525c0",
+        "name": "0243b9e023294e440061",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Payments"
+                "Entity": "Deliverables"
               }
             },
-            "Property": "Season"
+            "Property": "Item_Group"
           }
         },
         "type": "Categorical"
       },
       {
-        "name": "4302d2ce70020092ac02",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Payments"
-              }
-            },
-            "Property": "Total Payment Amount"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "ce04c77fedb44e15a8cc",
+        "name": "bdf781be204bb7c21e8a",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Payments"
+                "Entity": "Deliverables"
               }
             },
-            "Property": "Payment_Type"
+            "Property": "Item_Name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "27acc9bfdaeeb3e8b05a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Deliverables"
+              }
+            },
+            "Property": "Status"
           }
         },
         "type": "Categorical"

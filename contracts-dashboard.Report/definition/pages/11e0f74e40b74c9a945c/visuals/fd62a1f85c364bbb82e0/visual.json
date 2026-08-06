@@ -95,5 +95,79 @@
       }
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "3ea59dc71eb8c58aa10b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Payments"
+              }
+            },
+            "Property": "Season"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "341c1749c4c7208021be",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Payments"
+              }
+            },
+            "Property": "Total Payment Amount"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "66a93f1ae82417b2386d",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Payments"
+              }
+            },
+            "Property": "Cash Amount"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6fb4ef3f60b4080320a4",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Payments"
+              }
+            },
+            "Property": "VIK Amount"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "151be24aa3ec53aeeb37",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Payments"
+              }
+            },
+            "Property": "Payment Count"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

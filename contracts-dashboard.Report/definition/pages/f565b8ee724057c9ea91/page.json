@@ -1,8 +1,8 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
-  "name": "1ef170e7efc6458a9dbb",
-  "displayName": "Report - Supplier Service",
+  "name": "f565b8ee724057c9ea91",
+  "displayName": "Page 1",
   "displayOption": "FitToPage",
-  "height": 1123,
-  "width": 794
+  "height": 720,
+  "width": 1280
 }
