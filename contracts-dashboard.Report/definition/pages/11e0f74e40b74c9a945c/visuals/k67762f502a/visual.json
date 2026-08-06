@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
-  "name": "slf47841a2a2",
+  "name": "k67762f502a",
   "position": {
-    "x": 1200,
-    "y": 8,
+    "x": 1268,
+    "y": 158,
     "z": 0,
-    "width": 390,
-    "height": 40,
-    "tabOrder": 14600
+    "width": 306,
+    "height": 100,
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "card",
@@ -21,14 +21,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Agreements"
+                      "Entity": "Payments"
                     }
                   },
-                  "Property": "UAEPL Slogan"
+                  "Property": "Paid Amount"
                 }
               },
-              "queryRef": "Agreements.UAEPL Slogan",
-              "nativeQueryRef": "UAEPL Slogan"
+              "queryRef": "Payments.Paid Amount",
+              "nativeQueryRef": "Paid Amount"
             }
           ]
         }

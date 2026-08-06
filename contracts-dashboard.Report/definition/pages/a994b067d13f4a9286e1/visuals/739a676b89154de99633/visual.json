@@ -3,10 +3,10 @@
   "name": "739a676b89154de99633",
   "position": {
     "x": 20,
-    "y": 163.2,
+    "y": 158,
     "z": 8000,
-    "height": 130,
-    "width": 375,
+    "height": 100,
+    "width": 306,
     "tabOrder": 3000
   },
   "visual": {
@@ -35,5 +35,23 @@
       }
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "bfb0ec5fdb62e725d6c3",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Payments"
+              }
+            },
+            "Property": "Payment Collection Rate"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

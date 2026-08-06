@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "c7829f04a75b4463b69e",
   "position": {
-    "x": 810,
-    "y": 313.2,
-    "z": 7000,
-    "height": 320,
-    "width": 770,
+    "x": 20.192509150963161,
+    "y": 559.08009711729255,
+    "z": 8000,
+    "height": 320.55608277154022,
+    "width": 769.83941138047055,
     "tabOrder": 10000
   },
   "visual": {
@@ -27,8 +27,9 @@
                 }
               },
               "queryRef": "Agreements.Agreement_Type",
-              "nativeQueryRef": "Agreement_Type",
-              "active": true
+              "nativeQueryRef": "Agreement Type",
+              "active": true,
+              "displayName": "Agreement Type"
             }
           ]
         },
@@ -54,5 +55,37 @@
       }
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "639a2ff350d2125ac89b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Agreement_Type"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "6f2e786107b8a0647355",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Total Contract Value"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

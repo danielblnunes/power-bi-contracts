@@ -1,0 +1,78 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "13968c42851e16eb8ab6",
+  "position": {
+    "x": 810.22442968239693,
+    "y": 63.101591096759883,
+    "z": 15003,
+    "height": 79.50800478191745,
+    "width": 374.82345111475371,
+    "tabOrder": 14402
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Agreements"
+                    }
+                  },
+                  "Property": "Counterparty_Type"
+                }
+              },
+              "queryRef": "Agreements.Counterparty_Type",
+              "nativeQueryRef": "Counterparty Type",
+              "active": true,
+              "displayName": "Counterparty Type"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "4c72bd68ac7bdea58368",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Counterparty_Type"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

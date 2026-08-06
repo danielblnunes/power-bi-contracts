@@ -3,10 +3,10 @@
   "name": "10f5754266a64bd685e3",
   "position": {
     "x": 20,
-    "y": 163.2,
+    "y": 158,
     "z": 5000,
-    "height": 130,
-    "width": 375,
+    "height": 100,
+    "width": 306,
     "tabOrder": 2000
   },
   "visual": {
@@ -35,5 +35,23 @@
       }
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "bf5b19b7e5605d06ac81",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Expired Still Active Flag"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

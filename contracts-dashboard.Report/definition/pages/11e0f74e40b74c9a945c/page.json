@@ -4,5 +4,6 @@
   "displayName": "Season Analysis",
   "displayOption": "FitToPage",
   "height": 900,
-  "width": 1600
+  "width": 1600,
+  "visibility": "HiddenInViewMode"
 }

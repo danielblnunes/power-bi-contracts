@@ -1,6 +1,6 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
-  "name": "10803f36504db5c7a120",
+  "name": "e653d7305ecb2163d1b4",
   "position": {
     "x": 0,
     "y": 0,
@@ -89,5 +89,5 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "a8be1173387a699a370e"
+  "parentGroupName": "80bdbc4c897ee04175e0"
 }

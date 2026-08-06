@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "170a3a8ed26e4a6b8696",
   "position": {
-    "x": 20,
-    "y": 63.2,
+    "x": 20.192509150963161,
+    "y": 63.101591096759883,
     "z": 4000,
-    "height": 80,
-    "width": 770,
+    "height": 79.50800478191745,
+    "width": 374.82345111475371,
     "tabOrder": 0
   },
   "visual": {
@@ -27,8 +27,9 @@
                 }
               },
               "queryRef": "Agreements.Agreement_Type",
-              "nativeQueryRef": "Agreement_Type",
-              "active": true
+              "nativeQueryRef": "Agreement Type",
+              "active": true,
+              "displayName": "Agreement Type"
             }
           ]
         }
@@ -55,5 +56,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "4ced75f2751a20309176",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Agreement_Type"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "67efb2f865c54fa0b13f",
   "position": {
-    "x": 20,
-    "y": 313.2,
+    "x": 20.192509150963161,
+    "y": 275.12293718187311,
     "z": 4000,
-    "height": 320,
-    "width": 770,
+    "height": 266.28871442832673,
+    "width": 769.83941138047055,
     "tabOrder": 7000
   },
   "visual": {
@@ -54,5 +54,37 @@
       }
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "95c0ae6a5c6037c94a2b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Payments"
+              }
+            },
+            "Property": "Status"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "11fd883ec2147c7dba76",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Payments"
+              }
+            },
+            "Property": "Total Payment Amount"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

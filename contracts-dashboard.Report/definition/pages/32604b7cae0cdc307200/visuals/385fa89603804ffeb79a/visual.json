@@ -4,7 +4,7 @@
   "position": {
     "x": 415,
     "y": 63.2,
-    "z": 8000,
+    "z": 10000,
     "height": 80,
     "width": 380,
     "tabOrder": 1000
@@ -27,8 +27,9 @@
                 }
               },
               "queryRef": "Agreements.Department_Owner",
-              "nativeQueryRef": "Department_Owner",
-              "active": true
+              "nativeQueryRef": "Department Owner",
+              "active": true,
+              "displayName": "Department Owner"
             }
           ]
         }
@@ -50,5 +51,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b89d1e64dbbc090e145b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Department_Owner"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

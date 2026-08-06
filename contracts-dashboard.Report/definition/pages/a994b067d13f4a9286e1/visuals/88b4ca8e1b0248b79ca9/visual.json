@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "88b4ca8e1b0248b79ca9",
   "position": {
-    "x": 20,
-    "y": 653.2,
+    "x": 810.22442968239693,
+    "y": 275.12293718187311,
     "z": 7000,
-    "height": 290,
-    "width": 1560,
+    "height": 604.51324270695966,
+    "width": 769.83941138047055,
     "tabOrder": 9000
   },
   "visual": {
@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "Payments.Payment_ID",
-              "nativeQueryRef": "Payment_ID"
+              "nativeQueryRef": "Payment ID",
+              "displayName": "Payment ID"
             },
             {
               "field": {
@@ -41,7 +42,8 @@
                 }
               },
               "queryRef": "Payments.Agreement_ID",
-              "nativeQueryRef": "Agreement_ID"
+              "nativeQueryRef": "Agreement ID",
+              "displayName": "Agreement ID"
             },
             {
               "field": {
@@ -69,7 +71,8 @@
                 }
               },
               "queryRef": "Payments.Due_Date",
-              "nativeQueryRef": "Due_Date"
+              "nativeQueryRef": "Due Date",
+              "displayName": "Due Date"
             },
             {
               "field": {
@@ -83,7 +86,8 @@
                 }
               },
               "queryRef": "Payments.Amount_AED",
-              "nativeQueryRef": "Amount_AED"
+              "nativeQueryRef": "Amount AED",
+              "displayName": "Amount AED"
             },
             {
               "field": {
@@ -97,7 +101,8 @@
                 }
               },
               "queryRef": "Payments.Days_To_Due",
-              "nativeQueryRef": "Days_To_Due"
+              "nativeQueryRef": "Days To Due",
+              "displayName": "Days To Due"
             },
             {
               "field": {
@@ -118,5 +123,107 @@
       }
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "9c728f6ac651c03aac05",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Payments"
+              }
+            },
+            "Property": "Payment_ID"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "364430f00ba6bd29a38b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Payments"
+              }
+            },
+            "Property": "Agreement_ID"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "80b1c25eee0e327001ab",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Payments"
+              }
+            },
+            "Property": "Milestone"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "88b4b8964162db59660c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Payments"
+              }
+            },
+            "Property": "Due_Date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "0808efbc1aa2a1868ea8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Payments"
+              }
+            },
+            "Property": "Amount_AED"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "494ea6260080944082e0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Payments"
+              }
+            },
+            "Property": "Days_To_Due"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "24102c14e560bdc388ca",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Payments"
+              }
+            },
+            "Property": "Status"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

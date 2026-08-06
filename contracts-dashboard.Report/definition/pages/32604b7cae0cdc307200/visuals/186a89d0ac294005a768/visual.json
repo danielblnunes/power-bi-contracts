@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "186a89d0ac294005a768",
   "position": {
-    "x": 20,
-    "y": 163.2,
-    "z": 5000,
-    "height": 130,
+    "x": 19.700265696788904,
+    "y": 151.18178296718494,
+    "z": 6000,
+    "height": 105,
     "width": 300,
     "tabOrder": 4000
   },
@@ -35,5 +35,23 @@
       }
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "01942d08b0ea5e691ab8",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Active Contracts"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

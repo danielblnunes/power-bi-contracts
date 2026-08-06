@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "3e2836b373c24a0391f6",
   "position": {
-    "x": 810,
-    "y": 313.2,
+    "x": 20.192509150963161,
+    "y": 569.17635169277412,
     "z": 7000,
-    "height": 320,
-    "width": 770,
+    "height": 306.67373273025305,
+    "width": 657.518579228238,
     "tabOrder": 7000
   },
   "visual": {
@@ -27,8 +27,9 @@
                 }
               },
               "queryRef": "Agreements.Department_Owner",
-              "nativeQueryRef": "Department_Owner",
-              "active": true
+              "nativeQueryRef": "Department Owner",
+              "active": true,
+              "displayName": "Department Owner"
             }
           ]
         },
@@ -54,5 +55,37 @@
       }
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "350d65632d52d2ca2805",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Department_Owner"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "fdf4c2d01a10d1b7b66a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Total Agreements"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

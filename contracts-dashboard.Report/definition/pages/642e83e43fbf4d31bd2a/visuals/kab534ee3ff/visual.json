@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
-  "name": "t9077c44146",
+  "name": "kab534ee3ff",
   "position": {
-    "x": 90,
-    "y": 5,
+    "x": 1268,
+    "y": 158,
     "z": 0,
-    "width": 500,
-    "height": 42,
-    "tabOrder": 14500
+    "width": 306,
+    "height": 100,
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "card",
@@ -21,14 +21,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Agreements"
+                      "Entity": "Deliverables"
                     }
                   },
-                  "Property": "Deliverables & Obligations Title"
+                  "Property": "Deliverables Without Evidence"
                 }
               },
-              "queryRef": "Agreements.Deliverables & Obligations Title",
-              "nativeQueryRef": "Deliverables & Obligations Title"
+              "queryRef": "Deliverables.Deliverables Without Evidence",
+              "nativeQueryRef": "Deliverables Without Evidence"
             }
           ]
         }

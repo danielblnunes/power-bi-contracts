@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
-  "name": "t35f0db3a32",
+  "name": "k060b25925b",
   "position": {
-    "x": 90,
-    "y": 5,
+    "x": 1268,
+    "y": 158,
     "z": 0,
-    "width": 500,
-    "height": 42,
-    "tabOrder": 14500
+    "width": 306,
+    "height": 100,
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "card",
@@ -24,11 +24,11 @@
                       "Entity": "Agreements"
                     }
                   },
-                  "Property": "Payment & Cashflow Title"
+                  "Property": "Expiring Soon Value"
                 }
               },
-              "queryRef": "Agreements.Payment & Cashflow Title",
-              "nativeQueryRef": "Payment & Cashflow Title"
+              "queryRef": "Agreements.Expiring Soon Value",
+              "nativeQueryRef": "Expiring Soon Value"
             }
           ]
         }

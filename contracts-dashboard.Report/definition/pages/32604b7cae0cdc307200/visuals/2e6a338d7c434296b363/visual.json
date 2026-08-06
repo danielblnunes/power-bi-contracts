@@ -4,7 +4,7 @@
   "position": {
     "x": 20,
     "y": 63.2,
-    "z": 11000,
+    "z": 13000,
     "height": 80,
     "width": 380,
     "tabOrder": 0
@@ -27,8 +27,9 @@
                 }
               },
               "queryRef": "Agreements.Agreement_Type",
-              "nativeQueryRef": "Agreement_Type",
-              "active": true
+              "nativeQueryRef": "Agreement Type",
+              "active": true,
+              "displayName": "Agreement Type"
             }
           ]
         }
@@ -73,5 +74,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "091e1558780be1180b0c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Agreement_Type"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

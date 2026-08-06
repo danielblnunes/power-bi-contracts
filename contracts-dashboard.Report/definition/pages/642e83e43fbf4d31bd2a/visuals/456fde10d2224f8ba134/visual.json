@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "456fde10d2224f8ba134",
   "position": {
-    "x": 20,
-    "y": 313.2,
+    "x": 20.192509150963161,
+    "y": 275.12293718187311,
     "z": 1000,
-    "height": 320,
-    "width": 770,
+    "height": 604.51324270695966,
+    "width": 676.449056557266,
     "tabOrder": 7000
   },
   "visual": {
@@ -27,7 +27,27 @@
                 }
               },
               "queryRef": "Deliverables.Item_Group",
-              "nativeQueryRef": "Item_Group",
+              "nativeQueryRef": "Item Group",
+              "active": true,
+              "displayName": "Item Group"
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Deliverables"
+                    }
+                  },
+                  "Property": "Status"
+                }
+              },
+              "queryRef": "Deliverables.Status",
+              "nativeQueryRef": "Status",
               "active": true
             }
           ]
@@ -50,28 +70,55 @@
               "active": true
             }
           ]
-        },
-        "Series": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Deliverables"
-                    }
-                  },
-                  "Property": "Status"
-                }
-              },
-              "queryRef": "Deliverables.Status",
-              "nativeQueryRef": "Status",
-              "active": true
-            }
-          ]
         }
       }
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "25cf6ce76c4ae6b6d598",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Deliverables"
+              }
+            },
+            "Property": "Item_Group"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "cd86c3308d44831b702c",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Deliverables"
+              }
+            },
+            "Property": "Total Deliverables"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "83a8dfceca0984104203",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Deliverables"
+              }
+            },
+            "Property": "Status"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

@@ -197,7 +197,7 @@ table Agreements
 	/// Dynamic title for the Contracts Report page based on Status slicer.
 	measure 'Contracts Report Title' =
 			VAR _sel = SELECTEDVALUE(Agreements[Status])
-			RETURN IF(_sel = BLANK(), "Contracts — All Statuses", "Contracts — " & _sel)
+			RETURN IF(_sel = BLANK(), UPPER("Contracts — All Statuses"),UPPER("Contracts — " & _sel))
 		displayFolder: Reporting
 		lineageTag: 7f30be80-e2f8-40dd-967d-bc65ff41a3d8
 
@@ -215,6 +215,41 @@ table Agreements
 	measure 'Logo Text' = "UAEPL"
 		displayFolder: Reporting
 		lineageTag: 7adf0937-31be-4014-bcbc-3e3042ae9444
+
+	/// Static title for the Portfolio Overview page banner.
+	measure 'Portfolio Overview Title' = UPPER("Portfolio Overview")
+		displayFolder: Reporting
+		lineageTag: 2d1f928f-7476-4873-be1e-9bb50c90d152
+
+	/// Static title for the Contract Lifecycle page banner.
+	measure 'Contract Lifecycle Title' = UPPER("Contract Lifecycle")
+		displayFolder: Reporting
+		lineageTag: a8a45c7c-ac18-4a37-b3ca-30c885824c74
+
+	/// Static title for the Payment & Cashflow page banner.
+	measure 'Payment & Cashflow Title' = UPPER("Payment & Cashflow")
+		displayFolder: Reporting
+		lineageTag: 6bc1f8eb-e8b8-4ac0-8b26-2a59facca373
+
+	/// Static title for the Season Analysis page banner.
+	measure 'Season Analysis Title' = "Season Analysis"
+		displayFolder: Reporting
+		lineageTag: 5e630380-0253-41ea-83d2-0f03e0fac7a3
+
+	/// Static title for the Deliverables & Obligations page banner.
+	measure 'Deliverables & Obligations Title' = UPPER("Deliverables & Obligations")
+		displayFolder: Reporting
+		lineageTag: 3de86d08-5705-4317-bd8b-1424134651d6
+
+	/// Static title for the Counterparty & Relationship page banner.
+	measure 'Counterparty & Relationship Title' = "Counterparty & Relationship"
+		displayFolder: Reporting
+		lineageTag: dab3394f-277b-4c1a-9fc9-9c2c3ca38354
+
+	/// Static title for the Compliance & Governance page banner.
+	measure 'Compliance & Governance Title' = "Compliance & Governance"
+		displayFolder: Reporting
+		lineageTag: 792c1ae4-713d-4dc4-9c42-e0ab82e18874
 
 	column Agreement_ID
 		dataType: string
@@ -481,30 +516,3 @@ table Agreements
 
 	annotation PBI_ResultType = Table
 
-	/// Static title for the Portfolio Overview page banner.
-	measure 'Portfolio Overview Title' = "Portfolio Overview"
-		displayFolder: Reporting
-
-	/// Static title for the Contract Lifecycle page banner.
-	measure 'Contract Lifecycle Title' = "Contract Lifecycle"
-		displayFolder: Reporting
-
-	/// Static title for the Payment & Cashflow page banner.
-	measure 'Payment & Cashflow Title' = "Payment & Cashflow"
-		displayFolder: Reporting
-
-	/// Static title for the Season Analysis page banner.
-	measure 'Season Analysis Title' = "Season Analysis"
-		displayFolder: Reporting
-
-	/// Static title for the Deliverables & Obligations page banner.
-	measure 'Deliverables & Obligations Title' = "Deliverables & Obligations"
-		displayFolder: Reporting
-
-	/// Static title for the Counterparty & Relationship page banner.
-	measure 'Counterparty & Relationship Title' = "Counterparty & Relationship"
-		displayFolder: Reporting
-
-	/// Static title for the Compliance & Governance page banner.
-	measure 'Compliance & Governance Title' = "Compliance & Governance"
-		displayFolder: Reporting

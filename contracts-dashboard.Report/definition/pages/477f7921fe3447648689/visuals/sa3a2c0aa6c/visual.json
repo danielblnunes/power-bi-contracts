@@ -2,8 +2,8 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "s59b210f4e6",
   "position": {
-    "x": 647.84193279764679,
-    "y": 65.445459601055632,
+    "x": 13.882350041287173,
+    "y": 65.625654740630281,
     "z": 8000,
     "height": 80.841813836287542,
     "width": 302.3262353055685,
@@ -23,12 +23,13 @@
                       "Entity": "Deliverables"
                     }
                   },
-                  "Property": "Season"
+                  "Property": "Agreement_ID"
                 }
               },
-              "queryRef": "Deliverables.Season",
-              "nativeQueryRef": "Season",
-              "active": true
+              "queryRef": "Deliverables.Agreement_ID",
+              "nativeQueryRef": "Agreement ID",
+              "active": true,
+              "displayName": "Agreement ID"
             }
           ]
         }
@@ -47,6 +48,11 @@
             }
           }
         }
+      ],
+      "general": [
+        {
+          "properties": {}
+        }
       ]
     },
     "drillFilterOtherVisuals": true
@@ -54,7 +60,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "a0bd00bfa209641616d2",
+        "name": "4707fcb5d2051860756d",
         "field": {
           "Column": {
             "Expression": {
@@ -62,7 +68,7 @@
                 "Entity": "Deliverables"
               }
             },
-            "Property": "Season"
+            "Property": "Agreement_ID"
           }
         },
         "type": "Categorical"

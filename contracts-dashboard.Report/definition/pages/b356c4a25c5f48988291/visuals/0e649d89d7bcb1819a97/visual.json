@@ -1,0 +1,73 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "0e649d89d7bcb1819a97",
+  "position": {
+    "x": 415.20846941668003,
+    "y": 64.363622918695086,
+    "z": 15004,
+    "height": 79.50800478191745,
+    "width": 374.82345111475371,
+    "tabOrder": 14403
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Agreements"
+                    }
+                  },
+                  "Property": "Department_Owner"
+                }
+              },
+              "queryRef": "Agreements.Department_Owner",
+              "nativeQueryRef": "Department Owner",
+              "active": true,
+              "displayName": "Department Owner"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "9ec8558009eca82bd0dd",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Department_Owner"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

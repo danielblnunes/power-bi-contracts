@@ -2,8 +2,8 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "s0c32eeebfe",
   "position": {
-    "x": 14.396487395503261,
-    "y": 65.445459601055632,
+    "x": 331.91436916895697,
+    "y": 65.625654740630281,
     "z": 13000,
     "height": 80.841813836287542,
     "width": 299.00396898352926,
@@ -81,7 +81,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'PRO League Obligation'"
+                                "Value": "'Additional Rights'"
                               }
                             }
                           ]

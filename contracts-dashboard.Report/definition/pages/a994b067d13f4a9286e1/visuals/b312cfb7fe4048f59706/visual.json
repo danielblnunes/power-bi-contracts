@@ -17,28 +17,57 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Payments"
-                        }
-                      },
-                      "Property": "Payment_Type"
+                    "SourceRef": {
+                      "Entity": "Payments"
                     }
                   },
-                  "Function": 5
+                  "Property": "Payment_Type"
                 }
               },
-              "queryRef": "CountNonNull(Payments.Payment_Type)",
-              "nativeQueryRef": "Payment_Type",
-              "active": true
+              "queryRef": "Payments.Payment_Type",
+              "nativeQueryRef": "Payment Type",
+              "active": true,
+              "displayName": "Payment Type"
             }
           ]
         }
       }
     },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "8dbdbe2f73453703ad97",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Payments"
+              }
+            },
+            "Property": "Payment_Type"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

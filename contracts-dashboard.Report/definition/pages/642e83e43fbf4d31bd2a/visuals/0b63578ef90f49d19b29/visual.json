@@ -3,10 +3,10 @@
   "name": "0b63578ef90f49d19b29",
   "position": {
     "x": 20,
-    "y": 163.2,
+    "y": 158,
     "z": 0,
-    "height": 130,
-    "width": 375,
+    "height": 100,
+    "width": 306,
     "tabOrder": 3000
   },
   "visual": {
@@ -35,5 +35,23 @@
       }
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "862713bf75620905d435",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Deliverables"
+              }
+            },
+            "Property": "Completion Rate"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

@@ -4,7 +4,7 @@
   "position": {
     "x": 810,
     "y": 63.2,
-    "z": 1000,
+    "z": 2000,
     "height": 80,
     "width": 380,
     "tabOrder": 2000
@@ -17,28 +17,57 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Agreements"
-                        }
-                      },
-                      "Property": "Counterparty_Type"
+                    "SourceRef": {
+                      "Entity": "Agreements"
                     }
                   },
-                  "Function": 5
+                  "Property": "Counterparty_Type"
                 }
               },
-              "queryRef": "CountNonNull(Agreements.Counterparty_Type)",
-              "nativeQueryRef": "Counterparty_Type",
-              "active": true
+              "queryRef": "Agreements.Counterparty_Type",
+              "nativeQueryRef": "Counterparty Type",
+              "active": true,
+              "displayName": "Counterparty Type"
             }
           ]
         }
       }
     },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "7918cf198b5d06c10bad",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Counterparty_Type"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

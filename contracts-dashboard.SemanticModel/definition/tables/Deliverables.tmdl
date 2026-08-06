@@ -303,7 +303,7 @@ table Deliverables
 	/// Dynamic title for the Deliverables Report page based on Item_Group slicer.
 	measure 'Deliverables Report Title' =
 			VAR _sel = SELECTEDVALUE(Deliverables[Item_Group])
-			RETURN IF(_sel = BLANK(), "Deliverables — All Categories", "Deliverables — " & _sel)
+			RETURN IF(_sel = BLANK(), UPPER("Deliverables — All Categories"), UPPER("Deliverables — " & _sel))
 		displayFolder: Reporting
 		lineageTag: baafd759-f8a4-462f-ad78-3b4019f6338e
 

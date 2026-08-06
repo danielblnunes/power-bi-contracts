@@ -27,8 +27,9 @@
                 }
               },
               "queryRef": "Deliverables.Item_Group",
-              "nativeQueryRef": "Item_Group",
-              "active": true
+              "nativeQueryRef": "Item Group",
+              "active": true,
+              "displayName": "Item Group"
             }
           ]
         }
@@ -50,5 +51,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b62077176c56d3aa3069",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Deliverables"
+              }
+            },
+            "Property": "Item_Group"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

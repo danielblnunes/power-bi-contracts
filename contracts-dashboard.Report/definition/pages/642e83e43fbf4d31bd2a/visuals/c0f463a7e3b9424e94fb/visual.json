@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "c0f463a7e3b9424e94fb",
   "position": {
-    "x": 20,
-    "y": 653.2,
+    "x": 716.83407485919224,
+    "y": 275.12293718187311,
     "z": 8000,
-    "height": 290,
-    "width": 1560,
+    "height": 604.51324270695966,
+    "width": 863.22976620367524,
     "tabOrder": 9000
   },
   "visual": {
@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "Deliverables.Item_ID",
-              "nativeQueryRef": "Item_ID"
+              "nativeQueryRef": "Item ID",
+              "displayName": "Item ID"
             },
             {
               "field": {
@@ -41,7 +42,8 @@
                 }
               },
               "queryRef": "Deliverables.Item_Name",
-              "nativeQueryRef": "Item_Name"
+              "nativeQueryRef": "Item Name",
+              "displayName": "Item Name"
             },
             {
               "field": {
@@ -55,7 +57,8 @@
                 }
               },
               "queryRef": "Deliverables.Due_Date",
-              "nativeQueryRef": "Due_Date"
+              "nativeQueryRef": "Due Date",
+              "displayName": "Due Date"
             },
             {
               "field": {
@@ -97,12 +100,155 @@
                 }
               },
               "queryRef": "Deliverables.Responsible_Party",
-              "nativeQueryRef": "Responsible_Party"
+              "nativeQueryRef": "Responsible Party",
+              "displayName": "Responsible Party"
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Deliverables"
+                  }
+                },
+                "Property": "Item_ID"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
       }
     },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "93.84675089621786D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Deliverables.Status"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "306.27392815216D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Deliverables.Item_Name"
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {}
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "7df33602a9dd68932be1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Deliverables"
+              }
+            },
+            "Property": "Item_ID"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "0255b54910307800c794",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Deliverables"
+              }
+            },
+            "Property": "Item_Name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "15e762db0bb3e7c017a9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Deliverables"
+              }
+            },
+            "Property": "Due_Date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "71a8e9170e2d7c3a3d78",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Deliverables"
+              }
+            },
+            "Property": "Owner"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3051a512ea8e8a4b910e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Deliverables"
+              }
+            },
+            "Property": "Status"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "77dd521c101116528298",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Deliverables"
+              }
+            },
+            "Property": "Responsible_Party"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }
