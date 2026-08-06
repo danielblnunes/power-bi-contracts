@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "k161f2a9c5a",
   "position": {
-    "x": 963.1,
-    "y": 107.7,
+    "x": 966.77949971341127,
+    "y": 158.36149297420303,
     "z": 12000,
-    "height": 65.7,
-    "width": 302.0,
+    "height": 102.99025598321563,
+    "width": 302.3262353055685,
     "tabOrder": 9000
   },
   "visual": {
@@ -34,5 +34,23 @@
       }
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "bda759c101b0361702c5",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Deliverables"
+              }
+            },
+            "Property": "Overdue Deliverables Count"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

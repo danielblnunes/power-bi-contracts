@@ -2,16 +2,15 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "sf4760519d1",
   "position": {
-    "x": 638,
-    "y": 58,
-    "z": 0,
-    "width": 304,
-    "height": 32,
+    "x": 645.3964730911465,
+    "y": 67.447819941921878,
+    "z": 5000,
+    "height": 80.841813836287542,
+    "width": 305.64850162760769,
     "tabOrder": 7
   },
   "visual": {
     "visualType": "slicer",
-    "drillFilterOtherVisuals": true,
     "query": {
       "queryState": {
         "Values": {
@@ -28,11 +27,52 @@
                 }
               },
               "queryRef": "Agreements.Agreement_Type",
-              "nativeQueryRef": "Agreement_Type"
+              "nativeQueryRef": "Agreement Type",
+              "active": true,
+              "displayName": "Agreement Type"
             }
           ]
         }
       }
-    }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "32572b215e2d00a71dc3",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Agreement_Type"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

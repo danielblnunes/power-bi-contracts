@@ -57,18 +57,8 @@
           "type": "CustomTheme"
         },
         {
-          "name": "uaepl-icon22878582771581135.png",
-          "path": "uaepl-icon22878582771581135.png",
-          "type": "Image"
-        },
-        {
           "name": "uaepl-icon7036555012794949.png",
           "path": "uaepl-icon7036555012794949.png",
-          "type": "Image"
-        },
-        {
-          "name": "uaepl-logo.png",
-          "path": "uaepl-logo.png",
           "type": "Image"
         }
       ]

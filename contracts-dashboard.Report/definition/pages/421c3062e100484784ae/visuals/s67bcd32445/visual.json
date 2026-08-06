@@ -2,16 +2,15 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "s67bcd32445",
   "position": {
-    "x": 1266,
-    "y": 58,
-    "z": 0,
-    "width": 304,
-    "height": 32,
+    "x": 1277.7344963859439,
+    "y": 67.447819941921878,
+    "z": 8000,
+    "height": 80.841813836287542,
+    "width": 305.64850162760769,
     "tabOrder": 9
   },
   "visual": {
     "visualType": "slicer",
-    "drillFilterOtherVisuals": true,
     "query": {
       "queryState": {
         "Values": {
@@ -28,11 +27,47 @@
                 }
               },
               "queryRef": "Agreements.Counterparty_Type",
-              "nativeQueryRef": "Counterparty_Type"
+              "nativeQueryRef": "Counterparty Type",
+              "active": true,
+              "displayName": "Counterparty Type"
             }
           ]
         }
       }
-    }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "742e8237e859e1e63064",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Agreements"
+              }
+            },
+            "Property": "Counterparty_Type"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

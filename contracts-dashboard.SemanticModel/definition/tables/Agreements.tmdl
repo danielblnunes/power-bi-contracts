@@ -199,18 +199,22 @@ table Agreements
 			VAR _sel = SELECTEDVALUE(Agreements[Status])
 			RETURN IF(_sel = BLANK(), "Contracts — All Statuses", "Contracts — " & _sel)
 		displayFolder: Reporting
+		lineageTag: 7f30be80-e2f8-40dd-967d-bc65ff41a3d8
 
 	/// Static footer text for report pages.
 	measure 'Report Footer' = "Confidential — UAEPL Contract Management"
 		displayFolder: Reporting
+		lineageTag: eda2db9e-a4f6-4678-aa09-1f1ad2b0ff74
 
 	/// Static slogan text for report page banners.
 	measure 'UAEPL Slogan' = "UAEPL Contracts"
 		displayFolder: Reporting
+		lineageTag: c047ff00-f858-4f6c-b53a-17c7873bc377
 
 	/// Static logo text placeholder for report page banners.
 	measure 'Logo Text' = "UAEPL"
 		displayFolder: Reporting
+		lineageTag: 7adf0937-31be-4014-bcbc-3e3042ae9444
 
 	column Agreement_ID
 		dataType: string
@@ -477,3 +481,30 @@ table Agreements
 
 	annotation PBI_ResultType = Table
 
+	/// Static title for the Portfolio Overview page banner.
+	measure 'Portfolio Overview Title' = "Portfolio Overview"
+		displayFolder: Reporting
+
+	/// Static title for the Contract Lifecycle page banner.
+	measure 'Contract Lifecycle Title' = "Contract Lifecycle"
+		displayFolder: Reporting
+
+	/// Static title for the Payment & Cashflow page banner.
+	measure 'Payment & Cashflow Title' = "Payment & Cashflow"
+		displayFolder: Reporting
+
+	/// Static title for the Season Analysis page banner.
+	measure 'Season Analysis Title' = "Season Analysis"
+		displayFolder: Reporting
+
+	/// Static title for the Deliverables & Obligations page banner.
+	measure 'Deliverables & Obligations Title' = "Deliverables & Obligations"
+		displayFolder: Reporting
+
+	/// Static title for the Counterparty & Relationship page banner.
+	measure 'Counterparty & Relationship Title' = "Counterparty & Relationship"
+		displayFolder: Reporting
+
+	/// Static title for the Compliance & Governance page banner.
+	measure 'Compliance & Governance Title' = "Compliance & Governance"
+		displayFolder: Reporting
