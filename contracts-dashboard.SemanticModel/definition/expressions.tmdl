@@ -47,11 +47,11 @@ expression 'Sample File' =
 
 expression 'Transform File' =
 		let
-		    Source = (Parameter1) => let
-		        Source = Excel.Workbook(Parameter1, null, true),
-		        AgreementsTable_Table = Source{[Item="AgreementsTable",Kind="Table"]}[Data]
-		    in
-		        AgreementsTable_Table
+		    Source = (Parameter1 as binary) => let
+		    Source = Excel.Workbook(Parameter1, null, true),
+		    AgreementsTable_Table = Source{[Item="AgreementsTable",Kind="Table"]}[Data]
+		in
+		    AgreementsTable_Table
 		in
 		    Source
 	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transform Sample File""}" ]
@@ -88,11 +88,11 @@ expression 'Sample File (2)' =
 
 expression 'Transform File (2)' =
 		let
-		    Source = (Parameter2) => let
-		        Source = Excel.Workbook(Parameter2, null, true),
-		        DeliverablesTable_Table = Source{[Item="DeliverablesTable",Kind="Table"]}[Data]
-		    in
-		        DeliverablesTable_Table
+		    Source = (Parameter2 as binary) => let
+		    Source = Excel.Workbook(Parameter2, null, true),
+		    DeliverablesTable_Table = Source{[Item="DeliverablesTable",Kind="Table"]}[Data]
+		in
+		    DeliverablesTable_Table
 		in
 		    Source
 	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transform Sample File (2)""}" ]
@@ -129,11 +129,11 @@ expression 'Sample File (3)' =
 
 expression 'Transform File (3)' =
 		let
-		    Source = (Parameter3) => let
-		        Source = Excel.Workbook(Parameter3, null, true),
-		        PaymentsTable_Table = Source{[Item="PaymentsTable",Kind="Table"]}[Data]
-		    in
-		        PaymentsTable_Table
+		    Source = (Parameter3 as binary) => let
+		    Source = Excel.Workbook(Parameter3, null, true),
+		    PaymentsTable_Table = Source{[Item="PaymentsTable",Kind="Table"]}[Data]
+		in
+		    PaymentsTable_Table
 		in
 		    Source
 	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transform Sample File (3)""}" ]
