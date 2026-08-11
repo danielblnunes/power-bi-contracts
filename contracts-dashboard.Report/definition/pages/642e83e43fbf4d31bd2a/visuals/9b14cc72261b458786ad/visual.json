@@ -35,23 +35,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "00e2d91b7dccda890820",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Deliverables"
-              }
-            },
-            "Property": "Total Deliverables"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -4,10 +4,10 @@
   "position": {
     "x": 13.882350041287173,
     "y": 65.625654740630281,
-    "z": 8000,
+    "z": 4000,
     "height": 80.841813836287542,
     "width": 302.3262353055685,
-    "tabOrder": 3000
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "slicer",
@@ -45,6 +45,13 @@
                   "Value": "'Dropdown'"
                 }
               }
+            },
+            "isInvertedSelectionMode": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
             }
           }
         }
@@ -53,26 +60,21 @@
         {
           "properties": {}
         }
+      ],
+      "selection": [
+        {
+          "properties": {
+            "selectAllCheckboxEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "4707fcb5d2051860756d",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Deliverables"
-              }
-            },
-            "Property": "Agreement_ID"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

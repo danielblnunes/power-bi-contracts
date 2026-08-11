@@ -4,10 +4,10 @@
   "position": {
     "x": 1002.0532666165469,
     "y": 0,
-    "z": 15002,
+    "z": 12000,
     "height": 53.0053365212783,
     "width": 578.01057444632056,
-    "tabOrder": 14401
+    "tabOrder": 12000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -100,8 +100,9 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "Literal": {
-                      "Value": "'#DDB943'"
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
                     }
                   }
                 }
@@ -293,23 +294,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "461256a244dbe44ac00a",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Agreements"
-              }
-            },
-            "Property": "Payment & Cashflow Title"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

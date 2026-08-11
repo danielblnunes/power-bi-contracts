@@ -4,14 +4,13 @@
   "position": {
     "x": 1268,
     "y": 158,
-    "z": 0,
-    "width": 306,
+    "z": 1000,
     "height": 100,
-    "tabOrder": 5000
+    "width": 306,
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "card",
-    "drillFilterOtherVisuals": true,
     "query": {
       "queryState": {
         "Values": {
@@ -28,11 +27,13 @@
                 }
               },
               "queryRef": "Agreements.Expiring Soon Value",
-              "nativeQueryRef": "Expiring Soon Value"
+              "nativeQueryRef": "Expiring Soon Value (<90 days)",
+              "displayName": "Expiring Soon Value (<90 days)"
             }
           ]
         }
       }
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

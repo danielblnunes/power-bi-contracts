@@ -4,10 +4,10 @@
   "position": {
     "x": 14.396487395503261,
     "y": 158.36149297420303,
-    "z": 11000,
+    "z": 7000,
     "height": 102.99025598321563,
     "width": 302.3262353055685,
-    "tabOrder": 6000
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "card",
@@ -34,23 +34,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "0581ad162916d092262a",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Deliverables"
-              }
-            },
-            "Property": "Total Deliverable Value"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -4,7 +4,7 @@
   "position": {
     "x": 1070,
     "y": 63.2,
-    "z": 9000,
+    "z": 10000,
     "height": 80,
     "width": 510,
     "tabOrder": 2000
@@ -89,6 +89,19 @@
               "expr": {
                 "Literal": {
                   "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "selection": [
+        {
+          "properties": {
+            "selectAllCheckboxEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }

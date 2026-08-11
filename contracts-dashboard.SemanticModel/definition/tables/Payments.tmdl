@@ -6,7 +6,15 @@ table Payments
 		displayFolder: Payments
 		lineageTag: 8aef253d-d704-46b8-bc94-e794883b168a
 
-	measure 'Paid Amount' = CALCULATE([Total Payment Amount], Payments[Status] = "Paid")
+	measure 'Paid Amount' =
+			
+			COALESCE(
+			    CALCULATE(
+			        [Total Payment Amount],
+			        Payments[Status] = "Paid"
+			    ),
+			    0
+			)
 		formatString: #,##0
 		displayFolder: Payments
 		lineageTag: 0d49a144-6c6d-45b8-9699-5b746b640368
@@ -16,7 +24,15 @@ table Payments
 		displayFolder: Payments
 		lineageTag: 98807c7b-ee63-4269-bf04-412d2a7f917a
 
-	measure 'Overdue Amount' = CALCULATE([Total Payment Amount], Payments[Status] = "Overdue")
+	measure 'Overdue Amount' =
+			
+			COALESCE(
+			    CALCULATE(
+			        [Total Payment Amount],
+			        Payments[Status] = "Overdue"
+			    ),
+			    0
+			)
 		formatString: #,##0
 		displayFolder: Payments
 		lineageTag: bd2dd1bb-9334-493b-a291-a7eb9e2de62d
@@ -41,11 +57,15 @@ table Payments
 		lineageTag: bb274c7b-ae6d-4da1-834d-f754f19eed6f
 
 	measure 'Upcoming Payments 30d' =
-			CALCULATE(
-			    [Total Payment Amount],
-			    Payments[Due_Date] >= TODAY(),
-			    Payments[Due_Date] <= TODAY() + 30,
-			    Payments[Status] IN {"Not Due", "Due"}
+			
+			COALESCE(
+			    CALCULATE(
+			        [Total Payment Amount],
+			        Payments[Due_Date] >= TODAY(),
+			        Payments[Due_Date] <= TODAY() + 30,
+			        Payments[Status] IN { "Not Due", "Due" }
+			    ),
+			    0
 			)
 		formatString: #,##0
 		displayFolder: Payments
@@ -82,8 +102,19 @@ table Payments
 		lineageTag: 653147f7-53bb-4924-aff2-d3ea5ecd7cb7
 
 	measure 'MoM Growth %' =
-			VAR _prev = CALCULATE([Total Payment Amount], PREVIOUSMONTH('Date'[Date]))
-			RETURN DIVIDE([Total Payment Amount] - _prev, _prev)
+			
+			VAR _Current =
+			    COALESCE([Total Payment Amount], 0)
+			VAR _Previous =
+			    CALCULATE(
+			        [Total Payment Amount],
+			        PREVIOUSMONTH('Date'[Date])
+			    )
+			RETURN
+			    COALESCE(
+			        DIVIDE(_Current - _Previous, _Previous),
+			        0
+			    )
 		formatString: 0.0%;-0.0%
 		displayFolder: Trends
 		lineageTag: c038831c-5b82-44e0-8573-7f252158b634
@@ -187,7 +218,7 @@ table Payments
 
 	column Amount_AED
 		dataType: int64
-		formatString: 0
+		formatString: #,0
 		lineageTag: fae0fb43-e8da-4f0d-accd-b84246ec4a37
 		summarizeBy: sum
 		sourceColumn: Amount_AED
@@ -238,13 +269,25 @@ table Payments
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Source.Name'
+		dataType: string
+		lineageTag: f7c7cdda-5af7-46cd-9c35-9c9bd616c466
+		summarizeBy: none
+		sourceColumn: Source.Name
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Payments = m
 		mode: import
 		source =
 				let
-				  Source = Excel.Workbook(File.Contents("C:\Users\danie\Code\power-bi-contracts\contracts_data_collection_template.xlsx"), null, true),
-				  #"Navigation 1" = Source{[Item = "PaymentsTable", Kind = "Table"]}[Data],
-				  #"Changed column type" = Table.TransformColumnTypes(#"Navigation 1", {{"Payment_ID", type text}, {"Agreement_ID", type text}, {"Payment_Sequence", Int64.Type}, {"Season", type text}, {"Payment_Type", type text}, {"Milestone", type text}, {"Due_Date", type date}, {"Currency", type text}, {"Amount_AED", Int64.Type}, {"Amount_Original", Int64.Type}, {"Status", type text}, {"Days_To_Due", Int64.Type}}, "en-US"),
+				  Source = SharePoint.Files("https://proleagueuae.sharepoint.com/sites/Legal", [ApiVersion = "Auto"]),
+				    #"Filtered Hidden Files1" = Table.SelectRows(Source, each [Attributes]?[Hidden]? <> true),
+				    #"Invoke Custom Function1" = Table.AddColumn(#"Filtered Hidden Files1", "Transform File (3)", each #"Transform File (3)"([Content])),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Invoke Custom Function1", {"Name", "Source.Name"}),
+				    #"Removed Other Columns1" = Table.SelectColumns(#"Renamed Columns1", {"Source.Name", "Transform File (3)"}),
+				    #"Expanded Table Column1" = Table.ExpandTableColumn(#"Removed Other Columns1", "Transform File (3)", Table.ColumnNames(#"Transform File (3)"(#"Sample File (3)"))),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Expanded Table Column1", {{"Payment_ID", type text}, {"Agreement_ID", type text}, {"Payment_Sequence", Int64.Type}, {"Season", type text}, {"Payment_Type", type text}, {"Milestone", type text}, {"Due_Date", type date}, {"Currency", type text}, {"Amount_AED", Int64.Type}, {"Amount_Original", Int64.Type}, {"Status", type text}, {"Days_To_Due", Int64.Type}}, "en-US"),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Changed column type",{{"Invoice_Date", type date}, {"Payment_Date", type date}, {"VAT_AED", type number}}),
 				    #"Filtered Rows" = Table.SelectRows(#"Changed Type", each [Payment_ID] <> null and [Payment_ID] <> "")
 				in

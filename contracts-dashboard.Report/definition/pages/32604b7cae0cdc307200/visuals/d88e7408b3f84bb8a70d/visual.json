@@ -48,26 +48,21 @@
             }
           }
         }
+      ],
+      "selection": [
+        {
+          "properties": {
+            "selectAllCheckboxEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "7918cf198b5d06c10bad",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Agreements"
-              }
-            },
-            "Property": "Counterparty_Type"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

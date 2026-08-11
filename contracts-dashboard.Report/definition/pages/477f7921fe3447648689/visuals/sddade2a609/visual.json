@@ -4,10 +4,10 @@
   "position": {
     "x": 966.77949971341127,
     "y": 65.445459601055632,
-    "z": 5000,
+    "z": 3000,
     "height": 80.841813836287542,
     "width": 302.3262353055685,
-    "tabOrder": 4000
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "slicer",
@@ -27,8 +27,9 @@
                 }
               },
               "queryRef": "Deliverables.Responsible_Party",
-              "nativeQueryRef": "Responsible_Party",
-              "active": true
+              "nativeQueryRef": "Responsible Party",
+              "active": true,
+              "displayName": "Responsible Party"
             }
           ]
         }
@@ -47,26 +48,21 @@
             }
           }
         }
+      ],
+      "selection": [
+        {
+          "properties": {
+            "selectAllCheckboxEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "986de03bee64e00c38ab",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Deliverables"
-              }
-            },
-            "Property": "Responsible_Party"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

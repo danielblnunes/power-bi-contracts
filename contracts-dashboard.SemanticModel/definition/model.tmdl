@@ -7,9 +7,33 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
+queryGroup 'Transform File from Query'
+
+	annotation PBI_QueryGroupOrder = 2
+
+queryGroup 'Transform File from Query\Helper Queries'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transform File from https://proleagueuae sharepoint com/sites/Legal'
+
+	annotation PBI_QueryGroupOrder = 2
+
+queryGroup 'Transform File from https://proleagueuae sharepoint com/sites/Legal\Helper Queries'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transform File from https://proleagueuae sharepoint com/sites/Legal (2)'
+
+	annotation PBI_QueryGroupOrder = 4
+
+queryGroup 'Transform File from https://proleagueuae sharepoint com/sites/Legal (2)\Helper Queries'
+
+	annotation PBI_QueryGroupOrder = 0
+
 annotation __PBI_TimeIntelligenceEnabled = 0
 
-annotation PBI_QueryOrder = ["Agreements","Payments","Deliverables"]
+annotation PBI_QueryOrder = ["Agreements","Payments","Deliverables","Parameter1","Transform Sample File","Sample File","Transform File","Parameter2","Transform Sample File (2)","Sample File (2)","Transform File (2)","Parameter3","Transform Sample File (3)","Sample File (3)","Transform File (3)"]
 
 annotation PBI_ProTooling = ["DevMode","DaxQueryView_Desktop"]
 

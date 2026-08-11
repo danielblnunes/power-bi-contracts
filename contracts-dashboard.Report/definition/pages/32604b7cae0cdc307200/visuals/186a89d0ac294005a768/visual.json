@@ -35,23 +35,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "01942d08b0ea5e691ab8",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Agreements"
-              }
-            },
-            "Property": "Active Contracts"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

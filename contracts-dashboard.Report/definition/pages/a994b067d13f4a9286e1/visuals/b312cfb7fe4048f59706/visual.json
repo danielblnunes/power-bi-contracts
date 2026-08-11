@@ -4,7 +4,7 @@
   "position": {
     "x": 545,
     "y": 63.2,
-    "z": 1000,
+    "z": 2000,
     "height": 80,
     "width": 510,
     "tabOrder": 1000
@@ -48,26 +48,21 @@
             }
           }
         }
+      ],
+      "selection": [
+        {
+          "properties": {
+            "selectAllCheckboxEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "8dbdbe2f73453703ad97",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Payments"
-              }
-            },
-            "Property": "Payment_Type"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

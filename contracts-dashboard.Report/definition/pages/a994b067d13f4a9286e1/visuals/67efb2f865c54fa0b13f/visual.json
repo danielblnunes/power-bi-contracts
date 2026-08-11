@@ -4,10 +4,10 @@
   "position": {
     "x": 20.192509150963161,
     "y": 275.12293718187311,
-    "z": 4000,
+    "z": 5000,
     "height": 266.28871442832673,
     "width": 769.83941138047055,
-    "tabOrder": 7000
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "barChart",
@@ -54,37 +54,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "95c0ae6a5c6037c94a2b",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Payments"
-              }
-            },
-            "Property": "Status"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "11fd883ec2147c7dba76",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Payments"
-              }
-            },
-            "Property": "Total Payment Amount"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

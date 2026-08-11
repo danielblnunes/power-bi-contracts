@@ -4,10 +4,10 @@
   "position": {
     "x": 328.67375039007493,
     "y": 67.447819941921878,
-    "z": 7000,
+    "z": 5000,
     "height": 80.841813836287542,
     "width": 306.75592373495408,
-    "tabOrder": 6
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "slicer",
@@ -53,26 +53,21 @@
         {
           "properties": {}
         }
+      ],
+      "selection": [
+        {
+          "properties": {
+            "selectAllCheckboxEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "1922afce77b0674a1c05",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Agreements"
-              }
-            },
-            "Property": "Contract_Category"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

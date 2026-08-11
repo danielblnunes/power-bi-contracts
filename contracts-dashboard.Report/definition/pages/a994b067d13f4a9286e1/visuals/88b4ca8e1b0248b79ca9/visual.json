@@ -4,10 +4,10 @@
   "position": {
     "x": 810.22442968239693,
     "y": 275.12293718187311,
-    "z": 7000,
+    "z": 8000,
     "height": 604.51324270695966,
     "width": 769.83941138047055,
-    "tabOrder": 9000
+    "tabOrder": 10000
   },
   "visual": {
     "visualType": "tableEx",
@@ -29,21 +29,6 @@
               "queryRef": "Payments.Payment_ID",
               "nativeQueryRef": "Payment ID",
               "displayName": "Payment ID"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Payments"
-                    }
-                  },
-                  "Property": "Agreement_ID"
-                }
-              },
-              "queryRef": "Payments.Agreement_ID",
-              "nativeQueryRef": "Agreement ID",
-              "displayName": "Agreement ID"
             },
             {
               "field": {
@@ -120,110 +105,25 @@
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Payments"
+                  }
+                },
+                "Property": "Payment_ID"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "9c728f6ac651c03aac05",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Payments"
-              }
-            },
-            "Property": "Payment_ID"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "364430f00ba6bd29a38b",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Payments"
-              }
-            },
-            "Property": "Agreement_ID"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "80b1c25eee0e327001ab",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Payments"
-              }
-            },
-            "Property": "Milestone"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "88b4b8964162db59660c",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Payments"
-              }
-            },
-            "Property": "Due_Date"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "0808efbc1aa2a1868ea8",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Payments"
-              }
-            },
-            "Property": "Amount_AED"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "494ea6260080944082e0",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Payments"
-              }
-            },
-            "Property": "Days_To_Due"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "24102c14e560bdc388ca",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Payments"
-              }
-            },
-            "Property": "Status"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

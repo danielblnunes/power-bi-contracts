@@ -4,10 +4,10 @@
   "position": {
     "x": 20.192509150963161,
     "y": 275.12293718187311,
-    "z": 3000,
+    "z": 4000,
     "height": 280.1710644696139,
     "width": 657.518579228238,
-    "tabOrder": 6000
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "columnChart",
@@ -55,37 +55,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "5f5c10ac04b96cc7e009",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Agreements"
-              }
-            },
-            "Property": "Agreement_Type"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "55fdc897d80101ad1207",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Agreements"
-              }
-            },
-            "Property": "Avg Term Months"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -35,23 +35,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "3e8c77897450112a6e3c",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Deliverables"
-              }
-            },
-            "Property": "Deliverables Past Due"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

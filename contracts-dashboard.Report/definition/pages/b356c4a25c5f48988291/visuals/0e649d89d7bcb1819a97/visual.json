@@ -4,10 +4,10 @@
   "position": {
     "x": 415.20846941668003,
     "y": 64.363622918695086,
-    "z": 15004,
+    "z": 13000,
     "height": 79.50800478191745,
     "width": 374.82345111475371,
-    "tabOrder": 14403
+    "tabOrder": 13000
   },
   "visual": {
     "visualType": "slicer",
@@ -48,26 +48,21 @@
             }
           }
         }
+      ],
+      "selection": [
+        {
+          "properties": {
+            "selectAllCheckboxEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "9ec8558009eca82bd0dd",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Agreements"
-              }
-            },
-            "Property": "Department_Owner"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

@@ -4,10 +4,10 @@
   "position": {
     "x": 966.77949971341127,
     "y": 158.36149297420303,
-    "z": 12000,
+    "z": 8000,
     "height": 102.99025598321563,
     "width": 302.3262353055685,
-    "tabOrder": 9000
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "card",
@@ -34,23 +34,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "bda759c101b0361702c5",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Deliverables"
-              }
-            },
-            "Property": "Overdue Deliverables Count"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -35,23 +35,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "862713bf75620905d435",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Deliverables"
-              }
-            },
-            "Property": "Completion Rate"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -4,7 +4,7 @@
   "position": {
     "x": 1205.2403899481137,
     "y": 63.101591096759883,
-    "z": 1000,
+    "z": 2000,
     "height": 79.50800478191745,
     "width": 374.82345111475371,
     "tabOrder": 1000
@@ -47,26 +47,21 @@
             }
           }
         }
+      ],
+      "selection": [
+        {
+          "properties": {
+            "selectAllCheckboxEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "c16cf358b4ad63156708",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Agreements"
-              }
-            },
-            "Property": "Status"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

@@ -1,0 +1,144 @@
+expression Parameter1 = #"Sample File" meta [IsParameterQuery=true, BinaryIdentifier=#"Sample File", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: f9eabee9-d400-46cd-bb04-a5c54dcc9725
+	queryGroup: 'Transform File from Query\Helper Queries'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Binary
+
+expression Parameter2 = #"Sample File (2)" meta [IsParameterQuery=true, BinaryIdentifier=#"Sample File (2)", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: 01ff58e4-e40a-479f-82ca-095da349e7ca
+	queryGroup: 'Transform File from https://proleagueuae sharepoint com/sites/Legal\Helper Queries'
+
+	annotation PBI_ResultType = Binary
+
+expression Parameter3 = #"Sample File (3)" meta [IsParameterQuery=true, BinaryIdentifier=#"Sample File (3)", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: cbf8258a-c564-4892-95b8-17a3d6509a27
+	queryGroup: 'Transform File from https://proleagueuae sharepoint com/sites/Legal (2)\Helper Queries'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transform Sample File' =
+		let
+		    Source = Excel.Workbook(Parameter1, null, true),
+		    AgreementsTable_Table = Source{[Item="AgreementsTable",Kind="Table"]}[Data]
+		in
+		    AgreementsTable_Table
+	lineageTag: f4d5aed3-df75-4b07-a1d7-650e2b804766
+	queryGroup: 'Transform File from Query'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression 'Sample File' =
+		let
+		  Source = SharePoint.Files("https://proleagueuae.sharepoint.com/sites/Legal", [ApiVersion = 15]),
+		    #"Filtered Rows" = Table.SelectRows(Source, each true),
+		    #"contracts_data_collection_template xlsx_https://proleagueuae sharepoint com/sites/Legal/Contracts/" = #"Filtered Rows"{[Name="contracts_data_collection_template.xlsx",#"Folder Path"="https://proleagueuae.sharepoint.com/sites/Legal/Contracts/"]}[Content]
+		in
+		  #"contracts_data_collection_template xlsx_https://proleagueuae sharepoint com/sites/Legal/Contracts/"
+	lineageTag: eadf55ba-e932-4807-99e1-38e4e7d412a6
+	queryGroup: 'Transform File from Query\Helper Queries'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transform File' =
+		let
+		    Source = (Parameter1) => let
+		        Source = Excel.Workbook(Parameter1, null, true),
+		        AgreementsTable_Table = Source{[Item="AgreementsTable",Kind="Table"]}[Data]
+		    in
+		        AgreementsTable_Table
+		in
+		    Source
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transform Sample File""}" ]
+	lineageTag: bd377119-a2b6-4b23-80aa-8e471c08f29b
+	queryGroup: 'Transform File from Query\Helper Queries'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Function
+
+expression 'Transform Sample File (2)' =
+		let
+		    Source = Excel.Workbook(Parameter2, null, true),
+		    DeliverablesTable_Table = Source{[Item="DeliverablesTable",Kind="Table"]}[Data]
+		in
+		    DeliverablesTable_Table
+	lineageTag: bc1fb1ca-62b7-4818-87ed-1fbb99a8d71c
+	queryGroup: 'Transform File from https://proleagueuae sharepoint com/sites/Legal'
+
+	annotation PBI_ResultType = Table
+
+expression 'Sample File (2)' =
+		let
+		  Source = SharePoint.Files("https://proleagueuae.sharepoint.com/sites/Legal", [ApiVersion = "Auto"]),
+		    #"contracts_data_collection_template xlsx_https://proleagueuae sharepoint com/sites/Legal/Contracts/" = Source{[Name="contracts_data_collection_template.xlsx",#"Folder Path"="https://proleagueuae.sharepoint.com/sites/Legal/Contracts/"]}[Content]
+		in
+		  #"contracts_data_collection_template xlsx_https://proleagueuae sharepoint com/sites/Legal/Contracts/"
+	lineageTag: a251adca-6b82-4a07-9aeb-8e449cfb9f52
+	queryGroup: 'Transform File from https://proleagueuae sharepoint com/sites/Legal\Helper Queries'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transform File (2)' =
+		let
+		    Source = (Parameter2) => let
+		        Source = Excel.Workbook(Parameter2, null, true),
+		        DeliverablesTable_Table = Source{[Item="DeliverablesTable",Kind="Table"]}[Data]
+		    in
+		        DeliverablesTable_Table
+		in
+		    Source
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transform Sample File (2)""}" ]
+	lineageTag: 98cb871e-8c42-4769-b605-f39d0bd6b646
+	queryGroup: 'Transform File from https://proleagueuae sharepoint com/sites/Legal\Helper Queries'
+
+	annotation PBI_ResultType = Function
+
+expression 'Transform Sample File (3)' =
+		let
+		    Source = Excel.Workbook(Parameter3, null, true),
+		    PaymentsTable_Table = Source{[Item="PaymentsTable",Kind="Table"]}[Data]
+		in
+		    PaymentsTable_Table
+	lineageTag: 64a1e5cc-4075-4fba-a221-7254711dd38e
+	queryGroup: 'Transform File from https://proleagueuae sharepoint com/sites/Legal (2)'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression 'Sample File (3)' =
+		let
+		  Source = SharePoint.Files("https://proleagueuae.sharepoint.com/sites/Legal", [ApiVersion = "Auto"]),
+		    Navigation1 = Source{0}[Content]
+		in
+		  Navigation1
+	lineageTag: df346e4f-7d0a-4cde-b759-7cb5acfe66d9
+	queryGroup: 'Transform File from https://proleagueuae sharepoint com/sites/Legal (2)\Helper Queries'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transform File (3)' =
+		let
+		    Source = (Parameter3) => let
+		        Source = Excel.Workbook(Parameter3, null, true),
+		        PaymentsTable_Table = Source{[Item="PaymentsTable",Kind="Table"]}[Data]
+		    in
+		        PaymentsTable_Table
+		in
+		    Source
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transform Sample File (3)""}" ]
+	lineageTag: 52e60d67-5cd8-4565-b9bd-d3f0f782be16
+	queryGroup: 'Transform File from https://proleagueuae sharepoint com/sites/Legal (2)\Helper Queries'
+
+	annotation PBI_ResultType = Function
+

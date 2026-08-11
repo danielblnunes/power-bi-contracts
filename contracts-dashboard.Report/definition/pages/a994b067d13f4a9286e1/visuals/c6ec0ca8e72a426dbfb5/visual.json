@@ -7,7 +7,7 @@
     "z": 0,
     "height": 320,
     "width": 770,
-    "tabOrder": 8000
+    "tabOrder": 9000
   },
   "visual": {
     "visualType": "lineChart",
@@ -54,37 +54,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "b22ea4a3bde249376096",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Date"
-              }
-            },
-            "Property": "Date"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "4db4f708dddede255c2e",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Payments"
-              }
-            },
-            "Property": "Total Payment Amount"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

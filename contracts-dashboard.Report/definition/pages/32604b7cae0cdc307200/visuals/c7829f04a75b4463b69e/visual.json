@@ -55,37 +55,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "639a2ff350d2125ac89b",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Agreements"
-              }
-            },
-            "Property": "Agreement_Type"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "6f2e786107b8a0647355",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Agreements"
-              }
-            },
-            "Property": "Total Contract Value"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

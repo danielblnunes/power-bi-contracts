@@ -100,8 +100,9 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "Literal": {
-                      "Value": "'#DDB943'"
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
                     }
                   }
                 }
@@ -294,23 +295,5 @@
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "2017c55e416dd4a34b7a",
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "7a9ec15ae7944c1e9be1",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Deliverables"
-              }
-            },
-            "Property": "Deliverables Report Title"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
-  }
+  "parentGroupName": "2017c55e416dd4a34b7a"
 }

@@ -5318,6 +5318,16 @@ cultureInfo en-GB
 			          "expiring soon value": {
 			            "State": "Generated"
 			          }
+			        },
+			        {
+			          "Expiring Soon Value (<90 days)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -15579,9 +15589,183 @@ cultureInfo en-GB
 			          }
 			        }
 			      ]
+			    },
+			    "agreement.UAE_PL_title": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Agreements",
+			          "ConceptualProperty": "UAE PL Title"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "UAE PL title": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "title": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "PL title": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "uae pl designation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "pl designation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "uae pl name": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "uae pl award": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "uae pl call": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "uae pl heading": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "uae pl label": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "designation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "pl name": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "pl award": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
+			    "deliverable_has_agreement": {
+			      "Binding": {
+			        "ConceptualEntity": "Deliverables"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "deliverable": {
+			          "Target": {
+			            "Entity": "deliverable"
+			          }
+			        },
+			        "agreement": {
+			          "Target": {
+			            "Entity": "agreement"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "deliverable"
+			            },
+			            "Object": {
+			              "Role": "agreement"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "deliverables_have_agreements"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "agreement"
+			            },
+			            "Object": {
+			              "Role": "deliverable"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "agreements_have_deliverables"
+			        }
+			      ]
+			    },
 			    "payment_has_date": {
 			      "Binding": {
 			        "ConceptualEntity": "Payments"
@@ -15691,6 +15875,39 @@ cultureInfo en-GB
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "agreements_have_payments"
+			        }
+			      ]
+			    },
+			    "agreement_has_UAE_PL_title": {
+			      "Binding": {
+			        "ConceptualEntity": "Agreements"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "agreement": {
+			          "Target": {
+			            "Entity": "agreement"
+			          }
+			        },
+			        "agreement.UAE_PL_title": {
+			          "Target": {
+			            "Entity": "agreement.UAE_PL_title"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "agreement"
+			            },
+			            "Object": {
+			              "Role": "agreement.UAE_PL_title"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "agreements_have_UAE_PL_title"
 			        }
 			      ]
 			    },
@@ -21037,19 +21254,6 @@ cultureInfo en-GB
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "agreements_have_confidentiality_levels"
-			        },
-			        {
-			          "DynamicAdjective": {
-			            "Subject": {
-			              "Role": "agreement"
-			            },
-			            "Adjective": {
-			              "Role": "agreement.confidentiality_level"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "confidentiality_levels_describe_agreements"
 			        }
 			      ]
 			    },
@@ -22054,52 +22258,6 @@ cultureInfo en-GB
 			          "State": "Generated",
 			          "Weight": 0.9,
 			          "ID": "agreements_are_started_on_start_dates"
-			        }
-			      ]
-			    },
-			    "deliverable_has_agreement": {
-			      "Binding": {
-			        "ConceptualEntity": "Deliverables"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "deliverable": {
-			          "Target": {
-			            "Entity": "deliverable"
-			          }
-			        },
-			        "agreement": {
-			          "Target": {
-			            "Entity": "agreement"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "deliverable"
-			            },
-			            "Object": {
-			              "Role": "agreement"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "deliverables_have_agreements"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "agreement"
-			            },
-			            "Object": {
-			              "Role": "deliverable"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "agreements_have_deliverables"
 			        }
 			      ]
 			    },

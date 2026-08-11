@@ -1,7 +1,12 @@
 table Agreements
 	lineageTag: 4223d25d-85ad-4c50-bd6c-4c3922eaa3c0
 
-	measure 'Total Contract Value' = SUM(Agreements[Total_Contract_Value_AED])
+	measure 'Total Contract Value' =
+			
+			COALESCE(
+			    SUM(Agreements[Total_Contract_Value_AED]),
+			    0
+			)
 		formatString: #,##0
 		displayFolder: Base
 		lineageTag: f439c1d9-6e27-4a62-897e-c12dd4d24658
@@ -11,7 +16,12 @@ table Agreements
 		displayFolder: Base
 		lineageTag: a810cc24-7b20-4d2f-b412-60411e5eb0f3
 
-	measure 'Avg Contract Value' = AVERAGE(Agreements[Total_Contract_Value_AED])
+	measure 'Avg Contract Value' =
+			
+			COALESCE(
+			    AVERAGE(Agreements[Total_Contract_Value_AED]),
+			    0
+			)
 		formatString: #,##0
 		displayFolder: Base
 		lineageTag: b196eaed-0d15-40ae-9607-714253179015
@@ -57,42 +67,58 @@ table Agreements
 		lineageTag: 20350753-b5ea-4cf6-92a4-56135a2e8cdc
 
 	measure 'Contracts Expiring 90d' =
-			CALCULATE(
-			    [Total Agreements],
-			    Agreements[End_Date] >= TODAY(),
-			    Agreements[End_Date] <= TODAY() + 90
+			
+			COALESCE(
+			    CALCULATE(
+			        [Total Agreements],
+			        Agreements[End_Date] >= TODAY(),
+			        Agreements[End_Date] <= TODAY() + 90
+			    ),
+			    0
 			)
 		formatString: #,##0
 		displayFolder: Lifecycle
 		lineageTag: 48263cea-004b-48c3-b559-7af673a4f1b1
 
 	measure 'Contracts Expiring 180d' =
-			CALCULATE(
-			    [Total Agreements],
-			    Agreements[End_Date] >= TODAY(),
-			    Agreements[End_Date] <= TODAY() + 180
+			
+			COALESCE(
+			    CALCULATE(
+			        [Total Agreements],
+			        Agreements[End_Date] >= TODAY(),
+			        Agreements[End_Date] <= TODAY() + 180
+			    ),
+			    0
 			)
 		formatString: #,##0
 		displayFolder: Lifecycle
 		lineageTag: 6e6cc1f3-8d56-4104-ad87-3934def455b8
 
 	measure 'Contracts Expiring 365d' =
-			CALCULATE(
-			    [Total Agreements],
-			    Agreements[End_Date] >= TODAY(),
-			    Agreements[End_Date] <= TODAY() + 365
+			
+			COALESCE(
+			    CALCULATE(
+			        [Total Agreements],
+			        Agreements[End_Date] >= TODAY(),
+			        Agreements[End_Date] <= TODAY() + 365
+			    ),
+			    0
 			)
 		formatString: #,##0
 		displayFolder: Lifecycle
 		lineageTag: dc3b6711-1191-4555-bc29-3227a60e8147
 
 	measure 'Expired Still Active Flag' =
-			CALCULATE(
-			    [Total Agreements],
-			    Agreements[Status] = "Active",
-			    Agreements[End_Date] < TODAY()
+			
+			COALESCE(
+			    CALCULATE(
+			        [Total Agreements],
+			        Agreements[Status] = "Active",
+			        Agreements[End_Date] < TODAY()
+			    ),
+			    0
 			)
-		formatString: #,##0
+		formatString: 0
 		displayFolder: Lifecycle
 		lineageTag: b0fe0c91-b7ec-4e2e-88b5-7df9ea3e4bd1
 
@@ -171,7 +197,16 @@ table Agreements
 		lineageTag: c21dff7b-bc89-41a4-8d05-8b4c431a6939
 
 	/// Total contract value of agreements expiring within 90 days.
-	measure 'Expiring Soon Value' = CALCULATE([Total Contract Value], Agreements[End_Date] >= TODAY(), Agreements[End_Date] <= TODAY() + 90)
+	measure 'Expiring Soon Value' =
+			
+			COALESCE(
+			    CALCULATE(
+			        [Total Contract Value],
+			        Agreements[End_Date] >= TODAY(),
+			        Agreements[End_Date] <= TODAY() + 90
+			    ),
+			    0
+			)
 		formatString: #,##0
 		displayFolder: Reporting
 		lineageTag: 7aca899c-8c35-4e24-a105-b6cc011d87c8
@@ -250,6 +285,9 @@ table Agreements
 	measure 'Compliance & Governance Title' = "Compliance & Governance"
 		displayFolder: Reporting
 		lineageTag: 792c1ae4-713d-4dc4-9c42-e0ab82e18874
+
+	measure 'UAE PL Title' = UPPER("UAE Pro League")
+		lineageTag: 35dad960-3dd9-43b3-b863-7e2528feeadb
 
 	column Agreement_ID
 		dataType: string
@@ -500,17 +538,30 @@ table Agreements
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Source.Name'
+		dataType: string
+		lineageTag: 9f171083-59ef-43b2-89e3-81a492deb8f4
+		summarizeBy: none
+		sourceColumn: Source.Name
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Agreements = m
 		mode: import
 		source =
 				let
-				  Source = Excel.Workbook(File.Contents("C:\Users\danie\Code\power-bi-contracts\contracts_data_collection_template.xlsx"), null, true),
-				  #"Navigation 1" = Source{[Item = "AgreementsTable", Kind = "Table"]}[Data],
-				  #"Changed column type" = Table.TransformColumnTypes(#"Navigation 1", {{"Agreement_ID", type text}, {"Agreement_Type", type text}, {"Counterparty_Name", type text}, {"Counterparty_Type", type text}, {"Agreement_Title", type text}, {"Agreement_Number", type text}, {"Contract_Category", type text}, {"Department_Owner", type text}, {"Legal_Owner", type text}, {"Commercial_Owner", type text}, {"Status", type text}, {"Start_Date", type date}, {"End_Date", type date}, {"Term_Months", Int64.Type}, {"Seasons_Covered", type text}, {"Currency", type text}, {"Total_Contract_Value_AED", Int64.Type}, {"Annual_Value_AED", type number}, {"Payment_Frequency", type text}, {"Renewal_Option", type text}, {"Auto_Renewal", type text}, {"Notice_Period_Days", Int64.Type}, {"Confidentiality_Level", type text}, {"Source_System", type text}, {"Last_Reviewed_Date", type date}, {"Notes", type text}}, "en-US"),
+				 Source = SharePoint.Files("https://proleagueuae.sharepoint.com/sites/Legal", [ApiVersion = "Auto"]),
+				    #"Filtered Rows" = Table.SelectRows(Source, each true),
+				    #"Filtered Hidden Files1" = Table.SelectRows(#"Filtered Rows", each [Attributes]?[Hidden]? <> true),
+				    #"Invoke Custom Function1" = Table.AddColumn(#"Filtered Hidden Files1", "Transform File", each #"Transform File"([Content])),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Invoke Custom Function1", {"Name", "Source.Name"}),
+				    #"Removed Other Columns1" = Table.SelectColumns(#"Renamed Columns1", {"Source.Name", "Transform File"}),
+				    #"Expanded Table Column1" = Table.ExpandTableColumn(#"Removed Other Columns1", "Transform File", Table.ColumnNames(#"Transform File"(#"Sample File"))),
+				    #"Changed column type" = Table.TransformColumnTypes(#"Expanded Table Column1", {{"Agreement_ID", type text}, {"Agreement_Type", type text}, {"Counterparty_Name", type text}, {"Counterparty_Type", type text}, {"Agreement_Title", type text}, {"Agreement_Number", type text}, {"Contract_Category", type text}, {"Department_Owner", type text}, {"Legal_Owner", type text}, {"Commercial_Owner", type text}, {"Status", type text}, {"Start_Date", type date}, {"End_Date", type date}, {"Term_Months", Int64.Type}, {"Seasons_Covered", type text}, {"Currency", type text}, {"Total_Contract_Value_AED", Int64.Type}, {"Annual_Value_AED", type number}, {"Payment_Frequency", type text}, {"Renewal_Option", type text}, {"Auto_Renewal", type text}, {"Notice_Period_Days", Int64.Type}, {"Confidentiality_Level", type text}, {"Source_System", type text}, {"Last_Reviewed_Date", type date}, {"Notes", type text}}, "en-US"),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Changed column type",{{"Next_Action_Date", type date}}),
-				    #"Filtered Rows" = Table.SelectRows(#"Changed Type", each [Agreement_ID] <> null and [Agreement_ID] <> "")
+				    #"Filtered Rows1" = Table.SelectRows(#"Changed Type", each [Agreement_ID] <> null and [Agreement_ID] <> "")
 				in
-				  #"Filtered Rows"
+				  #"Filtered Rows1"
 
 	annotation PBI_NavigationStepName = Navigation
 

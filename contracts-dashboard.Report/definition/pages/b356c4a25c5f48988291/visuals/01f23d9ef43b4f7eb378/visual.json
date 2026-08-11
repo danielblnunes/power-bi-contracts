@@ -4,10 +4,10 @@
   "position": {
     "x": 695.37953388629387,
     "y": 275.12293718187311,
-    "z": 2000,
+    "z": 3000,
     "height": 600.72714724115406,
     "width": 884.6843071765735,
-    "tabOrder": 8000
+    "tabOrder": 9000
   },
   "visual": {
     "visualType": "tableEx",
@@ -121,110 +121,62 @@
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Agreements"
+                  }
+                },
+                "Property": "Notice_Period_Days"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
       }
     },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "79.59436827600867D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Agreements.Notice_Period_Days"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "78.29720910982454D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Agreements.Renewal_Option"
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {}
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "84e83ea1a78cb18de257",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Agreements"
-              }
-            },
-            "Property": "Agreement_ID"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "c5d00a6552ec773dd500",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Agreements"
-              }
-            },
-            "Property": "Agreement_Title"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "b488f7bf941a9ba377a8",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Agreements"
-              }
-            },
-            "Property": "Counterparty_Name"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "5e2c96d5aa8030cb8a87",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Agreements"
-              }
-            },
-            "Property": "End_Date"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "654f0508348c8974b58d",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Agreements"
-              }
-            },
-            "Property": "Status"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "af0fc87b093702ac870d",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Agreements"
-              }
-            },
-            "Property": "Renewal_Option"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "49d9cb107a52d5c9bc95",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Agreements"
-              }
-            },
-            "Property": "Notice_Period_Days"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

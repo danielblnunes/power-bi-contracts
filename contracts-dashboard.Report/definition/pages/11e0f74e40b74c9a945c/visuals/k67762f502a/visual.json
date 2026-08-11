@@ -4,14 +4,13 @@
   "position": {
     "x": 1268,
     "y": 158,
-    "z": 0,
-    "width": 306,
+    "z": 2000,
     "height": 100,
+    "width": 306,
     "tabOrder": 5000
   },
   "visual": {
     "visualType": "card",
-    "drillFilterOtherVisuals": true,
     "query": {
       "queryState": {
         "Values": {
@@ -33,6 +32,7 @@
           ]
         }
       }
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

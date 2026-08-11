@@ -16,7 +16,7 @@ dist/
 .DS_Store
 Thumbs.db
 
-*:Zone.Identifier
+**Zone.Identifier
 
 # Power BI PBIP cache (compiled database backup - machine-specific, must NOT sync)
 *.abf

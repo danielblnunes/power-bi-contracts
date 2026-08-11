@@ -6,7 +6,15 @@ table Deliverables
 		displayFolder: Deliverables
 		lineageTag: 5438f79b-cb0b-46e5-8cbf-fdbd28b43081
 
-	measure 'Delivered Count' = CALCULATE([Total Deliverables], Deliverables[Status] = "Delivered")
+	measure 'Delivered Count' =
+			
+			COALESCE(
+			    CALCULATE(
+			        [Total Deliverables],
+			        Deliverables[Status] = "Delivered"
+			    ),
+			    0
+			)
 		formatString: #,##0
 		displayFolder: Deliverables
 		lineageTag: 508e9b09-c77c-433f-b3cf-58b1af50358e
@@ -21,12 +29,28 @@ table Deliverables
 		displayFolder: Deliverables
 		lineageTag: a4506da9-b633-4565-952c-93d99545c6ed
 
-	measure 'Overdue Deliverables Count' = CALCULATE([Total Deliverables], Deliverables[Status] = "Overdue")
+	measure 'Overdue Deliverables Count' =
+			
+			COALESCE(
+			    CALCULATE(
+			        [Total Deliverables],
+			        Deliverables[Status] = "Overdue"
+			    ),
+			    0
+			)
 		formatString: #,##0
 		displayFolder: Deliverables
 		lineageTag: 6774cf57-b793-428e-9646-d50dbc2962b9
 
-	measure 'Applicable Deliverables' = CALCULATE([Total Deliverables], Deliverables[Applicable] = "Yes")
+	measure 'Applicable Deliverables' =
+			
+			COALESCE(
+			    CALCULATE(
+			        [Total Deliverables],
+			        Deliverables[Applicable] = "Yes"
+			    ),
+			    0
+			)
 		formatString: #,##0
 		displayFolder: Deliverables
 		lineageTag: d1991e9f-0404-493d-9645-9025c30ffc01
@@ -41,7 +65,12 @@ table Deliverables
 		displayFolder: Deliverables
 		lineageTag: 493cf30f-8eaa-48f2-a903-687403c29248
 
-	measure 'Total Deliverable Value' = SUM(Deliverables[Value_AED])
+	measure 'Total Deliverable Value' =
+			
+			COALESCE(
+			    SUM(Deliverables[Value_AED]),
+			    0
+			)
 		formatString: #,##0
 		displayFolder: Deliverables
 		lineageTag: 6f8a2125-fb37-4693-8346-21fee5971a54
@@ -51,12 +80,31 @@ table Deliverables
 		displayFolder: Deliverables
 		lineageTag: 468a9cf3-3746-4512-823f-6dd28e1a4d58
 
-	measure 'Deliverables Due 30d' = CALCULATE([Total Deliverables], Deliverables[Due_Date] >= TODAY(), Deliverables[Due_Date] <= TODAY() + 30, Deliverables[Status] <> "Delivered")
+	measure 'Deliverables Due 30d' =
+			
+			COALESCE(
+			    CALCULATE(
+			        [Total Deliverables],
+			        Deliverables[Due_Date] >= TODAY(),
+			        Deliverables[Due_Date] <= TODAY() + 30,
+			        Deliverables[Status] <> "Delivered"
+			    ),
+			    0
+			)
 		formatString: #,##0
 		displayFolder: Delivery
 		lineageTag: dff03dfb-6cc1-4d17-a631-50e0cdd02404
 
-	measure 'Deliverables Past Due' = CALCULATE([Total Deliverables], Deliverables[Due_Date] < TODAY(), Deliverables[Status] <> "Delivered")
+	measure 'Deliverables Past Due' =
+			
+			COALESCE(
+			    CALCULATE(
+			        [Total Deliverables],
+			        Deliverables[Due_Date] < TODAY(),
+			        Deliverables[Status] <> "Delivered"
+			    ),
+			    0
+			)
 		formatString: #,##0
 		displayFolder: Delivery
 		lineageTag: 3edf6a45-5f48-475c-8dc8-03ef539a2784
@@ -475,13 +523,25 @@ table Deliverables
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Source.Name'
+		dataType: string
+		lineageTag: e1d0cf6d-71dc-4072-b6f0-f2f13e317160
+		summarizeBy: none
+		sourceColumn: Source.Name
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Deliverables = m
 		mode: import
 		source =
 				let
-				  Source = Excel.Workbook(File.Contents("C:\Users\danie\Code\power-bi-contracts\contracts_data_collection_template.xlsx"), null, true),
-				  #"Navigation 1" = Source{[Item = "DeliverablesTable", Kind = "Table"]}[Data],
-				  #"Changed column type" = Table.TransformColumnTypes(#"Navigation 1", {{"Item_ID", type text}, {"Agreement_ID", type text}, {"Item_Group", type text}, {"Item_Category", type text}, {"Item_Name", type text}, {"Description", type text}, {"Quantity", Int64.Type}, {"Unit", type text}, {"Value_AED", Int64.Type}, {"Frequency", type text}, {"Season", type text}, {"Owner", type text}, {"Responsible_Party", type text}, {"Applicable", type text}, {"Status", type text}, {"Date_Delivered", type date}}, "en-US"),
+				  Source = SharePoint.Files("https://proleagueuae.sharepoint.com/sites/Legal", [ApiVersion = "Auto"]),
+				    #"Filtered Hidden Files1" = Table.SelectRows(Source, each [Attributes]?[Hidden]? <> true),
+				    #"Invoke Custom Function1" = Table.AddColumn(#"Filtered Hidden Files1", "Transform File (2)", each #"Transform File (2)"([Content])),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Invoke Custom Function1", {"Name", "Source.Name"}),
+				    #"Removed Other Columns1" = Table.SelectColumns(#"Renamed Columns1", {"Source.Name", "Transform File (2)"}),
+				    #"Expanded Table Column1" = Table.ExpandTableColumn(#"Removed Other Columns1", "Transform File (2)", Table.ColumnNames(#"Transform File (2)"(#"Sample File (2)"))),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Expanded Table Column1" , {{"Item_ID", type text}, {"Agreement_ID", type text}, {"Item_Group", type text}, {"Item_Category", type text}, {"Item_Name", type text}, {"Description", type text}, {"Quantity", Int64.Type}, {"Unit", type text}, {"Value_AED", Int64.Type}, {"Frequency", type text}, {"Season", type text}, {"Owner", type text}, {"Responsible_Party", type text}, {"Applicable", type text}, {"Status", type text}, {"Date_Delivered", type date}}, "en-US"),
 				  #"Replaced Value" = Table.ReplaceValue(#"Changed column type", "600 Delivered", "Delivered", Replacer.ReplaceText, {"Status"}),
 				  #"Changed Due_Date Type" = Table.TransformColumns(#"Replaced Value", {{"Due_Date", each try Date.From(_) otherwise null, type nullable date}}),
 				    #"Filtered Rows" = Table.SelectRows(#"Changed Due_Date Type", each [Item_ID] <> null and [Item_ID] <> "")
