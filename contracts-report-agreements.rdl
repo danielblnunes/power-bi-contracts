@@ -407,7 +407,7 @@ ORDER BY
 
           <!-- ===== DELIVERABLES TABLE (Tablix) ===== -->
           <Tablix Name="DeliverablesTable">
-            <TablixCorner><TablixCornerRows><TablixCornerRow><TablixCornerCell><CellContents><Textbox Name="tcEmpty"><CanGrow>true</CanGrow><Style /></Textbox></CellContents></TablixCornerCell></TablixCornerRow></TablixCornerRows></TablixCorner>
+            <TablixCorner><TablixCornerRows><TablixCornerRow><TablixCornerCell><CellContents><Textbox Name="tcEmpty"><CanGrow>true</CanGrow><Paragraphs><Paragraph><TextRuns><TextRun><Value /></TextRun></TextRuns></Paragraph></Paragraphs><Style /></Textbox></CellContents></TablixCornerCell></TablixCornerRow></TablixCornerRows></TablixCorner>
             <TablixBody>
               <TablixColumns>
                 <TablixColumn><Width>20mm</Width></TablixColumn>
@@ -490,7 +490,7 @@ ORDER BY
 
           <!-- ===== PAYMENTS TABLE (Tablix) ===== -->
           <Tablix Name="PaymentsTable">
-            <TablixCorner><TablixCornerRows><TablixCornerRow><TablixCornerCell><CellContents><Textbox Name="tcEmpty"><CanGrow>true</CanGrow><Style /></Textbox></CellContents></TablixCornerCell></TablixCornerRow></TablixCornerRows></TablixCorner>
+            <TablixCorner><TablixCornerRows><TablixCornerRow><TablixCornerCell><CellContents><Textbox Name="tcEmpty"><CanGrow>true</CanGrow><Paragraphs><Paragraph><TextRuns><TextRun><Value /></TextRun></TextRuns></Paragraph></Paragraphs><Style /></Textbox></CellContents></TablixCornerCell></TablixCornerRow></TablixCornerRows></TablixCorner>
             <TablixBody>
               <TablixColumns>
                 <TablixColumn><Width>14mm</Width></TablixColumn>
