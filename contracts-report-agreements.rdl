@@ -1,0 +1,673 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report MustUnderstand="df" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:df="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition/defaultfontfamily" xmlns:am="http://schemas.microsoft.com/sqlserver/reporting/authoringmetadata">
+  <rd:ReportUnitType>Mm</rd:ReportUnitType>
+  <rd:ReportID>268d5d69-7eed-4eae-bd96-93c4555ff819</rd:ReportID>
+  <am:AuthoringMetadata>
+    <am:CreatedBy>
+      <am:Name>WebAuthoring</am:Name>
+      <am:Version>2026.8.1.2170</am:Version>
+    </am:CreatedBy>
+    <am:UpdatedBy>
+      <am:Name>PBIRB</am:Name>
+      <am:Version>15.7.1819.28</am:Version>
+    </am:UpdatedBy>
+    <am:LastModifiedTimestamp>2026-08-12T08:33:41.5875413Z</am:LastModifiedTimestamp>
+  </am:AuthoringMetadata>
+  <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="contractsdashboard">
+      <rd:SecurityType>None</rd:SecurityType>
+      <ConnectionProperties>
+        <DataProvider>PBIDATASET</DataProvider>
+        <ConnectString>Data Source=pbiazure://api.powerbi.com/;Identity Provider="https://login.microsoftonline.com/common, https://analysis.windows.net/powerbi/api, f0b72488-7082-488a-a7e8-eada97bd842d";Initial Catalog=sobe_wowvirtualserver-a68b36a6-61da-4c30-a12d-c7301eab5794;Integrated Security=ClaimsToken</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>a389c5da-9c60-4c95-9b5b-97d9af5f70f8</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="AgreementDetail">
+      <Query>
+        <DataSourceName>contractsdashboard</DataSourceName>
+        <CommandText>EVALUATE
+FILTER(
+    Agreements,
+    Agreements[Agreement_ID] = @AgreementID
+)</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="Agreement_ID"><DataField>Agreement_ID</DataField><rd:TypeName>System.String</rd:TypeName></Field>
+        <Field Name="Agreement_Type"><DataField>Agreement_Type</DataField><rd:TypeName>System.String</rd:TypeName></Field>
+        <Field Name="Counterparty_Name"><DataField>Counterparty_Name</DataField><rd:TypeName>System.String</rd:TypeName></Field>
+        <Field Name="Agreement_Title"><DataField>Agreement_Title</DataField><rd:TypeName>System.String</rd:TypeName></Field>
+        <Field Name="Contract_Category"><DataField>Contract_Category</DataField><rd:TypeName>System.String</rd:TypeName></Field>
+        <Field Name="Department_Owner"><DataField>Department_Owner</DataField><rd:TypeName>System.String</rd:TypeName></Field>
+        <Field Name="Legal_Owner"><DataField>Legal_Owner</DataField><rd:TypeName>System.String</rd:TypeName></Field>
+        <Field Name="Commercial_Owner"><DataField>Commercial_Owner</DataField><rd:TypeName>System.String</rd:TypeName></Field>
+        <Field Name="Status"><DataField>Status</DataField><rd:TypeName>System.String</rd:TypeName></Field>
+        <Field Name="Start_Date"><DataField>Start_Date</DataField><rd:TypeName>System.DateTime</rd:TypeName></Field>
+        <Field Name="End_Date"><DataField>End_Date</DataField><rd:TypeName>System.DateTime</rd:TypeName></Field>
+        <Field Name="Term_Months"><DataField>Term_Months</DataField><rd:TypeName>System.Int64</rd:TypeName></Field>
+        <Field Name="Total_Contract_Value_AED"><DataField>Total_Contract_Value_AED</DataField><rd:TypeName>System.Int64</rd:TypeName></Field>
+        <Field Name="Annual_Value_AED"><DataField>Annual_Value_AED</DataField><rd:TypeName>System.Double</rd:TypeName></Field>
+        <Field Name="Payment_Frequency"><DataField>Payment_Frequency</DataField><rd:TypeName>System.String</rd:TypeName></Field>
+        <Field Name="Renewal_Option"><DataField>Renewal_Option</DataField><rd:TypeName>System.String</rd:TypeName></Field>
+        <Field Name="Auto_Renewal"><DataField>Auto_Renewal</DataField><rd:TypeName>System.String</rd:TypeName></Field>
+        <Field Name="Notice_Period_Days"><DataField>Notice_Period_Days</DataField><rd:TypeName>System.Int64</rd:TypeName></Field>
+        <Field Name="Confidentiality_Level"><DataField>Confidentiality_Level</DataField><rd:TypeName>System.String</rd:TypeName></Field>
+        <Field Name="Next_Action"><DataField>Next_Action</DataField><rd:TypeName>System.String</rd:TypeName></Field>
+        <Field Name="Next_Action_Date"><DataField>Next_Action_Date</DataField><rd:TypeName>System.DateTime</rd:TypeName></Field>
+        <Field Name="Notes"><DataField>Notes</DataField><rd:TypeName>System.String</rd:TypeName></Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="AgreementDeliverables">
+      <Query>
+        <DataSourceName>contractsdashboard</DataSourceName>
+        <CommandText>EVALUATE
+FILTER(
+    Deliverables,
+    Deliverables[Agreement_ID] = @AgreementID
+)
+ORDER BY 
+    Deliverables[Item_Group],
+    Deliverables[Item_Name]</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="Item_ID"><DataField>Item_ID</DataField><rd:TypeName>System.String</rd:TypeName></Field>
+        <Field Name="Agreement_ID"><DataField>Agreement_ID</DataField><rd:TypeName>System.String</rd:TypeName></Field>
+        <Field Name="Item_Group"><DataField>Item_Group</DataField><rd:TypeName>System.String</rd:TypeName></Field>
+        <Field Name="Item_Category"><DataField>Item_Category</DataField><rd:TypeName>System.String</rd:TypeName></Field>
+        <Field Name="Item_Name"><DataField>Item_Name</DataField><rd:TypeName>System.String</rd:TypeName></Field>
+        <Field Name="Description"><DataField>Description</DataField><rd:TypeName>System.String</rd:TypeName></Field>
+        <Field Name="Quantity"><DataField>Quantity</DataField><rd:TypeName>System.Int64</rd:TypeName></Field>
+        <Field Name="Unit"><DataField>Unit</DataField><rd:TypeName>System.String</rd:TypeName></Field>
+        <Field Name="Value_AED"><DataField>Value_AED</DataField><rd:TypeName>System.Int64</rd:TypeName></Field>
+        <Field Name="Frequency"><DataField>Frequency</DataField><rd:TypeName>System.String</rd:TypeName></Field>
+        <Field Name="Due_Date"><DataField>Due_Date</DataField><rd:TypeName>System.DateTime</rd:TypeName></Field>
+        <Field Name="Season"><DataField>Season</DataField><rd:TypeName>System.String</rd:TypeName></Field>
+        <Field Name="Owner"><DataField>Owner</DataField><rd:TypeName>System.String</rd:TypeName></Field>
+        <Field Name="Responsible_Party"><DataField>Responsible_Party</DataField><rd:TypeName>System.String</rd:TypeName></Field>
+        <Field Name="Applicable"><DataField>Applicable</DataField><rd:TypeName>System.String</rd:TypeName></Field>
+        <Field Name="Status"><DataField>Status</DataField><rd:TypeName>System.String</rd:TypeName></Field>
+        <Field Name="Date_Delivered"><DataField>Date_Delivered</DataField><rd:TypeName>System.DateTime</rd:TypeName></Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="AgreementPayments">
+      <Query>
+        <DataSourceName>contractsdashboard</DataSourceName>
+        <CommandText>EVALUATE
+FILTER(
+    Payments,
+    Payments[Agreement_ID] = @AgreementID
+)
+ORDER BY
+    Payments[Payment_Sequence]</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="Payment_ID"><DataField>Payment_ID</DataField><rd:TypeName>System.String</rd:TypeName></Field>
+        <Field Name="Agreement_ID"><DataField>Agreement_ID</DataField><rd:TypeName>System.String</rd:TypeName></Field>
+        <Field Name="Payment_Sequence"><DataField>Payment_Sequence</DataField><rd:TypeName>System.Int64</rd:TypeName></Field>
+        <Field Name="Season"><DataField>Season</DataField><rd:TypeName>System.String</rd:TypeName></Field>
+        <Field Name="Payment_Type"><DataField>Payment_Type</DataField><rd:TypeName>System.String</rd:TypeName></Field>
+        <Field Name="Milestone"><DataField>Milestone</DataField><rd:TypeName>System.String</rd:TypeName></Field>
+        <Field Name="Due_Date"><DataField>Due_Date</DataField><rd:TypeName>System.DateTime</rd:TypeName></Field>
+        <Field Name="Invoice_Date"><DataField>Invoice_Date</DataField><rd:TypeName>System.DateTime</rd:TypeName></Field>
+        <Field Name="Payment_Date"><DataField>Payment_Date</DataField><rd:TypeName>System.DateTime</rd:TypeName></Field>
+        <Field Name="Amount_AED"><DataField>Amount_AED</DataField><rd:TypeName>System.Int64</rd:TypeName></Field>
+        <Field Name="VAT_AED"><DataField>VAT_AED</DataField><rd:TypeName>System.Double</rd:TypeName></Field>
+        <Field Name="Status"><DataField>Status</DataField><rd:TypeName>System.String</rd:TypeName></Field>
+        <Field Name="Days_To_Due"><DataField>Days_To_Due</DataField><rd:TypeName>System.Int64</rd:TypeName></Field>
+      </Fields>
+    </DataSet>
+
+    <DataSet Name="AgreementList">
+      <Query>
+        <DataSourceName>contractsdashboard</DataSourceName>
+        <CommandText>EVALUATE
+SELECTCOLUMNS(
+    Agreements,
+    "Agreement_ID", Agreements[Agreement_ID]
+)
+ORDER BY
+    [Agreement_ID]</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="Agreement_ID"><DataField>Agreement_ID</DataField><rd:TypeName>System.String</rd:TypeName></Field>
+      </Fields>
+    </DataSet>
+
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="AgreementID">
+      <DataType>String</DataType>
+      <Prompt>Agreement ID</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>AgreementList</DataSetName>
+          <ValueField>Agreement_ID</ValueField>
+          <LabelField>Agreement_ID</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+  </ReportParameters>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>250mm</Height>
+        <Style />
+        <ReportItems>
+          <!-- ===== REPORT TITLE ===== -->
+          <Textbox Name="ReportTitle">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>UAEPL Contract Management</Value>
+                    <Style>
+                      <FontSize>10pt</FontSize>
+                      <Color>#666666</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Agreement Report</Value>
+                    <Style>
+                      <FontSize>18pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                      <Color>#DDB943</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>2mm</Top>
+            <Left>0mm</Left>
+            <Height>14mm</Height>
+            <Width>90mm</Width>
+            <Style>
+              <Border>
+                <BorderColor>
+                  <Default>#DDB943</Default>
+                </BorderColor>
+                <BorderStyle>
+                  <Bottom>Solid</Bottom>
+                  <Default>None</Default>
+                </BorderStyle>
+                <BorderWidth>
+                  <Bottom>2pt</Bottom>
+                  <Default>1pt</Default>
+                </BorderWidth>
+              </Border>
+            </Style>
+            <ZIndex>1</ZIndex>
+          </Textbox>
+
+          <!-- ===== AGREEMENT SUMMARY SECTION HEADER ===== -->
+          <Textbox Name="SummaryHeader">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Agreement Summary</Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                      <Color>#252423</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>18mm</Top>
+            <Left>0mm</Left>
+            <Height>8mm</Height>
+            <Width>184mm</Width>
+            <Style>
+              <Border>
+                <BorderColor><Default>#DDB943</Default></BorderColor>
+                <BorderStyle><Bottom>Solid</Bottom><Default>None</Default></BorderStyle>
+                <BorderWidth><Bottom>1pt</Bottom><Default>1pt</Default></BorderWidth>
+              </Border>
+            </Style>
+            <ZIndex>2</ZIndex>
+          </Textbox>
+
+          <!-- ===== AGREEMENT SUMMARY — LEFT COLUMN ===== -->
+          <Textbox Name="lblCounterparty">
+            <CanGrow>true</CanGrow><KeepTogether>true</KeepTogether>
+            <Paragraphs><Paragraph><TextRuns><TextRun><Value>Counterparty</Value><Style><FontWeight>Bold</FontWeight><FontSize>8pt</FontSize></Style></TextRun></TextRuns></Paragraph></Paragraphs>
+            <Top>28mm</Top><Left>0mm</Left><Height>5mm</Height><Width>40mm</Width><ZIndex>3</ZIndex>
+          </Textbox>
+          <Textbox Name="valCounterparty">
+            <CanGrow>true</CanGrow><KeepTogether>true</KeepTogether>
+            <Paragraphs><Paragraph><TextRuns><TextRun><Value>=First(Fields!Counterparty_Name.Value, "AgreementDetail")</Value><Style><FontSize>9pt</FontSize></Style></TextRun></TextRuns></Paragraph></Paragraphs>
+            <Top>28mm</Top><Left>42mm</Left><Height>5mm</Height><Width>50mm</Width><ZIndex>4</ZIndex>
+          </Textbox>
+
+          <Textbox Name="lblAgreementType">
+            <CanGrow>true</CanGrow><KeepTogether>true</KeepTogether>
+            <Paragraphs><Paragraph><TextRuns><TextRun><Value>Agreement Type</Value><Style><FontWeight>Bold</FontWeight><FontSize>8pt</FontSize></Style></TextRun></TextRuns></Paragraph></Paragraphs>
+            <Top>34mm</Top><Left>0mm</Left><Height>5mm</Height><Width>40mm</Width><ZIndex>5</ZIndex>
+          </Textbox>
+          <Textbox Name="valAgreementType">
+            <CanGrow>true</CanGrow><KeepTogether>true</KeepTogether>
+            <Paragraphs><Paragraph><TextRuns><TextRun><Value>=First(Fields!Agreement_Type.Value, "AgreementDetail")</Value><Style><FontSize>9pt</FontSize></Style></TextRun></TextRuns></Paragraph></Paragraphs>
+            <Top>34mm</Top><Left>42mm</Left><Height>5mm</Height><Width>50mm</Width><ZIndex>6</ZIndex>
+          </Textbox>
+
+          <Textbox Name="lblContractCategory">
+            <CanGrow>true</CanGrow><KeepTogether>true</KeepTogether>
+            <Paragraphs><Paragraph><TextRuns><TextRun><Value>Contract Category</Value><Style><FontWeight>Bold</FontWeight><FontSize>8pt</FontSize></Style></TextRun></TextRuns></Paragraph></Paragraphs>
+            <Top>40mm</Top><Left>0mm</Left><Height>5mm</Height><Width>40mm</Width><ZIndex>7</ZIndex>
+          </Textbox>
+          <Textbox Name="valContractCategory">
+            <CanGrow>true</CanGrow><KeepTogether>true</KeepTogether>
+            <Paragraphs><Paragraph><TextRuns><TextRun><Value>=First(Fields!Contract_Category.Value, "AgreementDetail")</Value><Style><FontSize>9pt</FontSize></Style></TextRun></TextRuns></Paragraph></Paragraphs>
+            <Top>40mm</Top><Left>42mm</Left><Height>5mm</Height><Width>50mm</Width><ZIndex>8</ZIndex>
+          </Textbox>
+
+          <Textbox Name="lblStatus">
+            <CanGrow>true</CanGrow><KeepTogether>true</KeepTogether>
+            <Paragraphs><Paragraph><TextRuns><TextRun><Value>Status</Value><Style><FontWeight>Bold</FontWeight><FontSize>8pt</FontSize></Style></TextRun></TextRuns></Paragraph></Paragraphs>
+            <Top>46mm</Top><Left>0mm</Left><Height>5mm</Height><Width>40mm</Width><ZIndex>9</ZIndex>
+          </Textbox>
+          <Textbox Name="valStatus">
+            <CanGrow>true</CanGrow><KeepTogether>true</KeepTogether>
+            <Paragraphs><Paragraph><TextRuns><TextRun><Value>=First(Fields!Status.Value, "AgreementDetail")</Value><Style><FontSize>9pt</FontSize></Style></TextRun></TextRuns></Paragraph></Paragraphs>
+            <Top>46mm</Top><Left>42mm</Left><Height>5mm</Height><Width>50mm</Width><ZIndex>10</ZIndex>
+          </Textbox>
+
+          <Textbox Name="lblDepartment">
+            <CanGrow>true</CanGrow><KeepTogether>true</KeepTogether>
+            <Paragraphs><Paragraph><TextRuns><TextRun><Value>Department</Value><Style><FontWeight>Bold</FontWeight><FontSize>8pt</FontSize></Style></TextRun></TextRuns></Paragraph></Paragraphs>
+            <Top>52mm</Top><Left>0mm</Left><Height>5mm</Height><Width>40mm</Width><ZIndex>11</ZIndex>
+          </Textbox>
+          <Textbox Name="valDepartment">
+            <CanGrow>true</CanGrow><KeepTogether>true</KeepTogether>
+            <Paragraphs><Paragraph><TextRuns><TextRun><Value>=First(Fields!Department_Owner.Value, "AgreementDetail")</Value><Style><FontSize>9pt</FontSize></Style></TextRun></TextRuns></Paragraph></Paragraphs>
+            <Top>52mm</Top><Left>42mm</Left><Height>5mm</Height><Width>50mm</Width><ZIndex>12</ZIndex>
+          </Textbox>
+
+          <Textbox Name="lblLegalOwner">
+            <CanGrow>true</CanGrow><KeepTogether>true</KeepTogether>
+            <Paragraphs><Paragraph><TextRuns><TextRun><Value>Legal Owner</Value><Style><FontWeight>Bold</FontWeight><FontSize>8pt</FontSize></Style></TextRun></TextRuns></Paragraph></Paragraphs>
+            <Top>58mm</Top><Left>0mm</Left><Height>5mm</Height><Width>40mm</Width><ZIndex>13</ZIndex>
+          </Textbox>
+          <Textbox Name="valLegalOwner">
+            <CanGrow>true</CanGrow><KeepTogether>true</KeepTogether>
+            <Paragraphs><Paragraph><TextRuns><TextRun><Value>=First(Fields!Legal_Owner.Value, "AgreementDetail")</Value><Style><FontSize>9pt</FontSize></Style></TextRun></TextRuns></Paragraph></Paragraphs>
+            <Top>58mm</Top><Left>42mm</Left><Height>5mm</Height><Width>50mm</Width><ZIndex>14</ZIndex>
+          </Textbox>
+
+          <Textbox Name="lblCommercialOwner">
+            <CanGrow>true</CanGrow><KeepTogether>true</KeepTogether>
+            <Paragraphs><Paragraph><TextRuns><TextRun><Value>Commercial Owner</Value><Style><FontWeight>Bold</FontWeight><FontSize>8pt</FontSize></Style></TextRun></TextRuns></Paragraph></Paragraphs>
+            <Top>64mm</Top><Left>0mm</Left><Height>5mm</Height><Width>40mm</Width><ZIndex>15</ZIndex>
+          </Textbox>
+          <Textbox Name="valCommercialOwner">
+            <CanGrow>true</CanGrow><KeepTogether>true</KeepTogether>
+            <Paragraphs><Paragraph><TextRuns><TextRun><Value>=First(Fields!Commercial_Owner.Value, "AgreementDetail")</Value><Style><FontSize>9pt</FontSize></Style></TextRun></TextRuns></Paragraph></Paragraphs>
+            <Top>64mm</Top><Left>42mm</Left><Height>5mm</Height><Width>50mm</Width><ZIndex>16</ZIndex>
+          </Textbox>
+
+          <!-- ===== AGREEMENT SUMMARY — RIGHT COLUMN ===== -->
+          <Textbox Name="lblContractValue">
+            <CanGrow>true</CanGrow><KeepTogether>true</KeepTogether>
+            <Paragraphs><Paragraph><TextRuns><TextRun><Value>Total Contract Value</Value><Style><FontWeight>Bold</FontWeight><FontSize>8pt</FontSize></Style></TextRun></TextRuns></Paragraph></Paragraphs>
+            <Top>28mm</Top><Left>100mm</Left><Height>5mm</Height><Width>40mm</Width><ZIndex>17</ZIndex>
+          </Textbox>
+          <Textbox Name="valContractValue">
+            <CanGrow>true</CanGrow><KeepTogether>true</KeepTogether>
+            <Paragraphs><Paragraph><TextRuns><TextRun><Value>=Format(First(Fields!Total_Contract_Value_AED.Value, "AgreementDetail"), "#,##0")</Value><Style><FontSize>9pt</FontSize></Style></TextRun></TextRuns></Paragraph></Paragraphs>
+            <Top>28mm</Top><Left>142mm</Left><Height>5mm</Height><Width>42mm</Width><Style><TextAlign>Right</TextAlign></Style><ZIndex>18</ZIndex>
+          </Textbox>
+
+          <Textbox Name="lblAnnualValue">
+            <CanGrow>true</CanGrow><KeepTogether>true</KeepTogether>
+            <Paragraphs><Paragraph><TextRuns><TextRun><Value>Annual Value</Value><Style><FontWeight>Bold</FontWeight><FontSize>8pt</FontSize></Style></TextRun></TextRuns></Paragraph></Paragraphs>
+            <Top>34mm</Top><Left>100mm</Left><Height>5mm</Height><Width>40mm</Width><ZIndex>19</ZIndex>
+          </Textbox>
+          <Textbox Name="valAnnualValue">
+            <CanGrow>true</CanGrow><KeepTogether>true</KeepTogether>
+            <Paragraphs><Paragraph><TextRuns><TextRun><Value>=Format(First(Fields!Annual_Value_AED.Value, "AgreementDetail"), "#,##0")</Value><Style><FontSize>9pt</FontSize></Style></TextRun></TextRuns></Paragraph></Paragraphs>
+            <Top>34mm</Top><Left>142mm</Left><Height>5mm</Height><Width>42mm</Width><Style><TextAlign>Right</TextAlign></Style><ZIndex>20</ZIndex>
+          </Textbox>
+
+          <Textbox Name="lblTerm">
+            <CanGrow>true</CanGrow><KeepTogether>true</KeepTogether>
+            <Paragraphs><Paragraph><TextRuns><TextRun><Value>Term</Value><Style><FontWeight>Bold</FontWeight><FontSize>8pt</FontSize></Style></TextRun></TextRuns></Paragraph></Paragraphs>
+            <Top>40mm</Top><Left>100mm</Left><Height>5mm</Height><Width>40mm</Width><ZIndex>21</ZIndex>
+          </Textbox>
+          <Textbox Name="valTerm">
+            <CanGrow>true</CanGrow><KeepTogether>true</KeepTogether>
+            <Paragraphs><Paragraph><TextRuns><TextRun><Value>=First(Fields!Term_Months.Value, "AgreementDetail") &amp; " months"</Value><Style><FontSize>9pt</FontSize></Style></TextRun></TextRuns></Paragraph></Paragraphs>
+            <Top>40mm</Top><Left>142mm</Left><Height>5mm</Height><Width>42mm</Width><ZIndex>22</ZIndex>
+          </Textbox>
+
+          <Textbox Name="lblStartDate">
+            <CanGrow>true</CanGrow><KeepTogether>true</KeepTogether>
+            <Paragraphs><Paragraph><TextRuns><TextRun><Value>Start Date</Value><Style><FontWeight>Bold</FontWeight><FontSize>8pt</FontSize></Style></TextRun></TextRuns></Paragraph></Paragraphs>
+            <Top>46mm</Top><Left>100mm</Left><Height>5mm</Height><Width>40mm</Width><ZIndex>23</ZIndex>
+          </Textbox>
+          <Textbox Name="valStartDate">
+            <CanGrow>true</CanGrow><KeepTogether>true</KeepTogether>
+            <Paragraphs><Paragraph><TextRuns><TextRun><Value>=Format(First(Fields!Start_Date.Value, "AgreementDetail"), "dd/MM/yyyy")</Value><Style><FontSize>9pt</FontSize></Style></TextRun></TextRuns></Paragraph></Paragraphs>
+            <Top>46mm</Top><Left>142mm</Left><Height>5mm</Height><Width>42mm</Width><ZIndex>24</ZIndex>
+          </Textbox>
+
+          <Textbox Name="lblEndDate">
+            <CanGrow>true</CanGrow><KeepTogether>true</KeepTogether>
+            <Paragraphs><Paragraph><TextRuns><TextRun><Value>End Date</Value><Style><FontWeight>Bold</FontWeight><FontSize>8pt</FontSize></Style></TextRun></TextRuns></Paragraph></Paragraphs>
+            <Top>52mm</Top><Left>100mm</Left><Height>5mm</Height><Width>40mm</Width><ZIndex>25</ZIndex>
+          </Textbox>
+          <Textbox Name="valEndDate">
+            <CanGrow>true</CanGrow><KeepTogether>true</KeepTogether>
+            <Paragraphs><Paragraph><TextRuns><TextRun><Value>=Format(First(Fields!End_Date.Value, "AgreementDetail"), "dd/MM/yyyy")</Value><Style><FontSize>9pt</FontSize></Style></TextRun></TextRuns></Paragraph></Paragraphs>
+            <Top>52mm</Top><Left>142mm</Left><Height>5mm</Height><Width>42mm</Width><ZIndex>26</ZIndex>
+          </Textbox>
+
+          <Textbox Name="lblRenewal">
+            <CanGrow>true</CanGrow><KeepTogether>true</KeepTogether>
+            <Paragraphs><Paragraph><TextRuns><TextRun><Value>Renewal Option</Value><Style><FontWeight>Bold</FontWeight><FontSize>8pt</FontSize></Style></TextRun></TextRuns></Paragraph></Paragraphs>
+            <Top>58mm</Top><Left>100mm</Left><Height>5mm</Height><Width>40mm</Width><ZIndex>27</ZIndex>
+          </Textbox>
+          <Textbox Name="valRenewal">
+            <CanGrow>true</CanGrow><KeepTogether>true</KeepTogether>
+            <Paragraphs><Paragraph><TextRuns><TextRun><Value>=First(Fields!Renewal_Option.Value, "AgreementDetail")</Value><Style><FontSize>9pt</FontSize></Style></TextRun></TextRuns></Paragraph></Paragraphs>
+            <Top>58mm</Top><Left>142mm</Left><Height>5mm</Height><Width>42mm</Width><ZIndex>28</ZIndex>
+          </Textbox>
+
+          <Textbox Name="lblAutoRenewal">
+            <CanGrow>true</CanGrow><KeepTogether>true</KeepTogether>
+            <Paragraphs><Paragraph><TextRuns><TextRun><Value>Auto Renewal</Value><Style><FontWeight>Bold</FontWeight><FontSize>8pt</FontSize></Style></TextRun></TextRuns></Paragraph></Paragraphs>
+            <Top>64mm</Top><Left>100mm</Left><Height>5mm</Height><Width>40mm</Width><ZIndex>29</ZIndex>
+          </Textbox>
+          <Textbox Name="valAutoRenewal">
+            <CanGrow>true</CanGrow><KeepTogether>true</KeepTogether>
+            <Paragraphs><Paragraph><TextRuns><TextRun><Value>=First(Fields!Auto_Renewal.Value, "AgreementDetail")</Value><Style><FontSize>9pt</FontSize></Style></TextRun></TextRuns></Paragraph></Paragraphs>
+            <Top>64mm</Top><Left>142mm</Left><Height>5mm</Height><Width>42mm</Width><ZIndex>30</ZIndex>
+          </Textbox>
+
+          <!-- ===== DELIVERABLES SECTION HEADER ===== -->
+          <Textbox Name="DeliverablesHeader">
+            <CanGrow>true</CanGrow><KeepTogether>true</KeepTogether>
+            <Paragraphs><Paragraph><TextRuns><TextRun><Value>Deliverables &amp; Rights</Value><Style><FontSize>12pt</FontSize><FontWeight>Bold</FontWeight><Color>#252423</Color></Style></TextRun></TextRuns></Paragraph></Paragraphs>
+            <Top>76mm</Top><Left>0mm</Left><Height>8mm</Height><Width>184mm</Width>
+            <Style>
+              <Border><BorderColor><Default>#DDB943</Default></BorderColor><BorderStyle><Bottom>Solid</Bottom><Default>None</Default></BorderStyle><BorderWidth><Bottom>1pt</Bottom><Default>1pt</Default></BorderWidth></Border>
+            </Style>
+            <ZIndex>31</ZIndex>
+          </Textbox>
+
+          <!-- ===== DELIVERABLES TABLE (Tablix) ===== -->
+          <Tablix Name="DeliverablesTable">
+            <TablixCorner />
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn><Width>20mm</Width></TablixColumn>
+                <TablixColumn><Width>42mm</Width></TablixColumn>
+                <TablixColumn><Width>22mm</Width></TablixColumn>
+                <TablixColumn><Width>24mm</Width></TablixColumn>
+                <TablixColumn><Width>20mm</Width></TablixColumn>
+                <TablixColumn><Width>21mm</Width></TablixColumn>
+                <TablixColumn><Width>19mm</Width></TablixColumn>
+                <TablixColumn><Width>16mm</Width></TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow><Height>6mm</Height><TablixCells>
+                  <TablixCell><CellContents><Textbox Name="dHdrCat"><CanGrow>true</CanGrow><Paragraphs><Paragraph><TextRuns><TextRun><Value>Item Group</Value></TextRun></TextRuns></Paragraph></Paragraphs><Style><BackgroundColor>#333333</BackgroundColor><Color>White</Color><FontWeight>Bold</FontWeight><FontSize>7pt</FontSize><TextAlign>Left</TextAlign><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight><PaddingTop>2pt</PaddingTop><PaddingBottom>2pt</PaddingBottom></Style></Textbox></CellContents></TablixCell>
+                  <TablixCell><CellContents><Textbox Name="dHdrItem"><CanGrow>true</CanGrow><Paragraphs><Paragraph><TextRuns><TextRun><Value>Item Name</Value></TextRun></TextRuns></Paragraph></Paragraphs><Style><BackgroundColor>#333333</BackgroundColor><Color>White</Color><FontWeight>Bold</FontWeight><FontSize>7pt</FontSize><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight><PaddingTop>2pt</PaddingTop><PaddingBottom>2pt</PaddingBottom></Style></Textbox></CellContents></TablixCell>
+                  <TablixCell><CellContents><Textbox Name="dHdrSubCat"><CanGrow>true</CanGrow><Paragraphs><Paragraph><TextRuns><TextRun><Value>Category</Value></TextRun></TextRuns></Paragraph></Paragraphs><Style><BackgroundColor>#333333</BackgroundColor><Color>White</Color><FontWeight>Bold</FontWeight><FontSize>7pt</FontSize><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight><PaddingTop>2pt</PaddingTop><PaddingBottom>2pt</PaddingBottom></Style></Textbox></CellContents></TablixCell>
+                  <TablixCell><CellContents><Textbox Name="dHdrValue"><CanGrow>true</CanGrow><Paragraphs><Paragraph><TextRuns><TextRun><Value>Value (AED)</Value></TextRun></TextRuns></Paragraph></Paragraphs><Style><BackgroundColor>#333333</BackgroundColor><Color>White</Color><FontWeight>Bold</FontWeight><FontSize>7pt</FontSize><TextAlign>Right</TextAlign><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight><PaddingTop>2pt</PaddingTop><PaddingBottom>2pt</PaddingBottom></Style></Textbox></CellContents></TablixCell>
+                  <TablixCell><CellContents><Textbox Name="dHdrStatus"><CanGrow>true</CanGrow><Paragraphs><Paragraph><TextRuns><TextRun><Value>Status</Value></TextRun></TextRuns></Paragraph></Paragraphs><Style><BackgroundColor>#333333</BackgroundColor><Color>White</Color><FontWeight>Bold</FontWeight><FontSize>7pt</FontSize><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight><PaddingTop>2pt</PaddingTop><PaddingBottom>2pt</PaddingBottom></Style></Textbox></CellContents></TablixCell>
+                  <TablixCell><CellContents><Textbox Name="dHdrDue"><CanGrow>true</CanGrow><Paragraphs><Paragraph><TextRuns><TextRun><Value>Due Date</Value></TextRun></TextRuns></Paragraph></Paragraphs><Style><BackgroundColor>#333333</BackgroundColor><Color>White</Color><FontWeight>Bold</FontWeight><FontSize>7pt</FontSize><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight><PaddingTop>2pt</PaddingTop><PaddingBottom>2pt</PaddingBottom></Style></Textbox></CellContents></TablixCell>
+                  <TablixCell><CellContents><Textbox Name="dHdrOwner"><CanGrow>true</CanGrow><Paragraphs><Paragraph><TextRuns><TextRun><Value>Owner</Value></TextRun></TextRuns></Paragraph></Paragraphs><Style><BackgroundColor>#333333</BackgroundColor><Color>White</Color><FontWeight>Bold</FontWeight><FontSize>7pt</FontSize><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight><PaddingTop>2pt</PaddingTop><PaddingBottom>2pt</PaddingBottom></Style></Textbox></CellContents></TablixCell>
+                  <TablixCell><CellContents><Textbox Name="dHdrParty"><CanGrow>true</CanGrow><Paragraphs><Paragraph><TextRuns><TextRun><Value>Resp. Party</Value></TextRun></TextRuns></Paragraph></Paragraphs><Style><BackgroundColor>#333333</BackgroundColor><Color>White</Color><FontWeight>Bold</FontWeight><FontSize>7pt</FontSize><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight><PaddingTop>2pt</PaddingTop><PaddingBottom>2pt</PaddingBottom></Style></Textbox></CellContents></TablixCell>
+                </TablixCells></TablixRow>
+                <TablixRow><Height>5mm</Height><TablixCells>
+                  <TablixCell><CellContents><Textbox Name="dCat"><CanGrow>true</CanGrow><Paragraphs><Paragraph><TextRuns><TextRun><Value>=Fields!Item_Group.Value</Value></TextRun></TextRuns></Paragraph></Paragraphs><Style><FontSize>8pt</FontSize><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight></Style></Textbox></CellContents></TablixCell>
+                  <TablixCell><CellContents><Textbox Name="dItem"><CanGrow>true</CanGrow><Paragraphs><Paragraph><TextRuns><TextRun><Value>=Fields!Item_Name.Value</Value></TextRun></TextRuns></Paragraph></Paragraphs><Style><FontSize>8pt</FontSize><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight></Style></Textbox></CellContents></TablixCell>
+                  <TablixCell><CellContents><Textbox Name="dSubCat"><CanGrow>true</CanGrow><Paragraphs><Paragraph><TextRuns><TextRun><Value>=Fields!Item_Category.Value</Value></TextRun></TextRuns></Paragraph></Paragraphs><Style><FontSize>8pt</FontSize><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight></Style></Textbox></CellContents></TablixCell>
+                  <TablixCell><CellContents><Textbox Name="dValue"><CanGrow>true</CanGrow><Paragraphs><Paragraph><TextRuns><TextRun><Value>=Format(Fields!Value_AED.Value, "#,##0")</Value></TextRun></TextRuns></Paragraph></Paragraphs><Style><FontSize>8pt</FontSize><TextAlign>Right</TextAlign><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight></Style></Textbox></CellContents></TablixCell>
+                  <TablixCell><CellContents><Textbox Name="dStatus"><CanGrow>true</CanGrow><Paragraphs><Paragraph><TextRuns><TextRun><Value>=Fields!Status.Value</Value></TextRun></TextRuns></Paragraph></Paragraphs><Style><FontSize>8pt</FontSize><Color>=IIF(Fields!Status.Value = "Overdue", "#CC0000", "#252423")</Color><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight></Style></Textbox></CellContents></TablixCell>
+                  <TablixCell><CellContents><Textbox Name="dDue"><CanGrow>true</CanGrow><Paragraphs><Paragraph><TextRuns><TextRun><Value>=IIF(IsNothing(Fields!Due_Date.Value), "", Format(Fields!Due_Date.Value, "dd/MM/yyyy"))</Value></TextRun></TextRuns></Paragraph></Paragraphs><Style><FontSize>8pt</FontSize><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight></Style></Textbox></CellContents></TablixCell>
+                  <TablixCell><CellContents><Textbox Name="dOwner"><CanGrow>true</CanGrow><Paragraphs><Paragraph><TextRuns><TextRun><Value>=Fields!Owner.Value</Value></TextRun></TextRuns></Paragraph></Paragraphs><Style><FontSize>8pt</FontSize><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight></Style></Textbox></CellContents></TablixCell>
+                  <TablixCell><CellContents><Textbox Name="dParty"><CanGrow>true</CanGrow><Paragraphs><Paragraph><TextRuns><TextRun><Value>=Fields!Responsible_Party.Value</Value></TextRun></TextRuns></Paragraph></Paragraphs><Style><FontSize>8pt</FontSize><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight></Style></Textbox></CellContents></TablixCell>
+                </TablixCells></TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember /><TablixMember /><TablixMember /><TablixMember />
+                <TablixMember /><TablixMember /><TablixMember /><TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <KeepWithGroup>After</KeepWithGroup>
+                  <RepeatOnNewPage>true</RepeatOnNewPage>
+                </TablixMember>
+                <TablixMember>
+                  <Group Name="DeliverablesDetailGroup">
+                    <GroupExpressions><GroupExpression>=Fields!Item_ID.Value</GroupExpression></GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression><Value>=Fields!Item_Group.Value</Value></SortExpression>
+                    <SortExpression><Value>=Fields!Item_Name.Value</Value></SortExpression>
+                  </SortExpressions>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <Top>86mm</Top>
+            <Left>0mm</Left>
+            <Width>184mm</Width>
+            <DataSetName>AgreementDeliverables</DataSetName>
+            <NoRowsMessage>No deliverables found for this agreement.</NoRowsMessage>
+            <Style>
+              <Border><BorderColor><Default>#CCCCCC</Default></BorderColor><BorderStyle><Default>Solid</Default></BorderStyle><BorderWidth><Default>0.5pt</Default></BorderWidth></Border>
+            </Style>
+            <ZIndex>32</ZIndex>
+          </Tablix>
+
+          <!-- ===== PAYMENTS SECTION HEADER ===== -->
+          <Textbox Name="PaymentsHeader">
+            <CanGrow>true</CanGrow><KeepTogether>true</KeepTogether>
+            <Paragraphs><Paragraph><TextRuns><TextRun><Value>Payment Schedule</Value><Style><FontSize>12pt</FontSize><FontWeight>Bold</FontWeight><Color>#252423</Color></Style></TextRun></TextRuns></Paragraph></Paragraphs>
+            <Top>160mm</Top>
+            <Left>0mm</Left><Height>8mm</Height><Width>184mm</Width>
+            <Style>
+              <Border><BorderColor><Default>#DDB943</Default></BorderColor><BorderStyle><Bottom>Solid</Bottom><Default>None</Default></BorderStyle><BorderWidth><Bottom>1pt</Bottom><Default>1pt</Default></BorderWidth></Border>
+            </Style>
+            <ZIndex>33</ZIndex>
+          </Textbox>
+
+          <!-- ===== PAYMENTS TABLE (Tablix) ===== -->
+          <Tablix Name="PaymentsTable">
+            <TablixCorner />
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn><Width>14mm</Width></TablixColumn>
+                <TablixColumn><Width>20mm</Width></TablixColumn>
+                <TablixColumn><Width>18mm</Width></TablixColumn>
+                <TablixColumn><Width>42mm</Width></TablixColumn>
+                <TablixColumn><Width>24mm</Width></TablixColumn>
+                <TablixColumn><Width>24mm</Width></TablixColumn>
+                <TablixColumn><Width>24mm</Width></TablixColumn>
+                <TablixColumn><Width>18mm</Width></TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow><Height>6mm</Height><TablixCells>
+                  <TablixCell><CellContents><Textbox Name="pHdrSeq"><CanGrow>true</CanGrow><Paragraphs><Paragraph><TextRuns><TextRun><Value>Seq</Value></TextRun></TextRuns></Paragraph></Paragraphs><Style><BackgroundColor>#333333</BackgroundColor><Color>White</Color><FontWeight>Bold</FontWeight><FontSize>7pt</FontSize><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight><PaddingTop>2pt</PaddingTop><PaddingBottom>2pt</PaddingBottom></Style></Textbox></CellContents></TablixCell>
+                  <TablixCell><CellContents><Textbox Name="pHdrSeason"><CanGrow>true</CanGrow><Paragraphs><Paragraph><TextRuns><TextRun><Value>Season</Value></TextRun></TextRuns></Paragraph></Paragraphs><Style><BackgroundColor>#333333</BackgroundColor><Color>White</Color><FontWeight>Bold</FontWeight><FontSize>7pt</FontSize><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight><PaddingTop>2pt</PaddingTop><PaddingBottom>2pt</PaddingBottom></Style></Textbox></CellContents></TablixCell>
+                  <TablixCell><CellContents><Textbox Name="pHdrType"><CanGrow>true</CanGrow><Paragraphs><Paragraph><TextRuns><TextRun><Value>Type</Value></TextRun></TextRuns></Paragraph></Paragraphs><Style><BackgroundColor>#333333</BackgroundColor><Color>White</Color><FontWeight>Bold</FontWeight><FontSize>7pt</FontSize><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight><PaddingTop>2pt</PaddingTop><PaddingBottom>2pt</PaddingBottom></Style></Textbox></CellContents></TablixCell>
+                  <TablixCell><CellContents><Textbox Name="pHdrMilestone"><CanGrow>true</CanGrow><Paragraphs><Paragraph><TextRuns><TextRun><Value>Milestone</Value></TextRun></TextRuns></Paragraph></Paragraphs><Style><BackgroundColor>#333333</BackgroundColor><Color>White</Color><FontWeight>Bold</FontWeight><FontSize>7pt</FontSize><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight><PaddingTop>2pt</PaddingTop><PaddingBottom>2pt</PaddingBottom></Style></Textbox></CellContents></TablixCell>
+                  <TablixCell><CellContents><Textbox Name="pHdrDue"><CanGrow>true</CanGrow><Paragraphs><Paragraph><TextRuns><TextRun><Value>Due Date</Value></TextRun></TextRuns></Paragraph></Paragraphs><Style><BackgroundColor>#333333</BackgroundColor><Color>White</Color><FontWeight>Bold</FontWeight><FontSize>7pt</FontSize><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight><PaddingTop>2pt</PaddingTop><PaddingBottom>2pt</PaddingBottom></Style></Textbox></CellContents></TablixCell>
+                  <TablixCell><CellContents><Textbox Name="pHdrAmount"><CanGrow>true</CanGrow><Paragraphs><Paragraph><TextRuns><TextRun><Value>Amount (AED)</Value></TextRun></TextRuns></Paragraph></Paragraphs><Style><BackgroundColor>#333333</BackgroundColor><Color>White</Color><FontWeight>Bold</FontWeight><FontSize>7pt</FontSize><TextAlign>Right</TextAlign><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight><PaddingTop>2pt</PaddingTop><PaddingBottom>2pt</PaddingBottom></Style></Textbox></CellContents></TablixCell>
+                  <TablixCell><CellContents><Textbox Name="pHdrVAT"><CanGrow>true</CanGrow><Paragraphs><Paragraph><TextRuns><TextRun><Value>VAT (AED)</Value></TextRun></TextRuns></Paragraph></Paragraphs><Style><BackgroundColor>#333333</BackgroundColor><Color>White</Color><FontWeight>Bold</FontWeight><FontSize>7pt</FontSize><TextAlign>Right</TextAlign><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight><PaddingTop>2pt</PaddingTop><PaddingBottom>2pt</PaddingBottom></Style></Textbox></CellContents></TablixCell>
+                  <TablixCell><CellContents><Textbox Name="pHdrPStatus"><CanGrow>true</CanGrow><Paragraphs><Paragraph><TextRuns><TextRun><Value>Status</Value></TextRun></TextRuns></Paragraph></Paragraphs><Style><BackgroundColor>#333333</BackgroundColor><Color>White</Color><FontWeight>Bold</FontWeight><FontSize>7pt</FontSize><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight><PaddingTop>2pt</PaddingTop><PaddingBottom>2pt</PaddingBottom></Style></Textbox></CellContents></TablixCell>
+                </TablixCells></TablixRow>
+                <TablixRow><Height>5mm</Height><TablixCells>
+                  <TablixCell><CellContents><Textbox Name="pSeq"><CanGrow>true</CanGrow><Paragraphs><Paragraph><TextRuns><TextRun><Value>=Fields!Payment_Sequence.Value</Value></TextRun></TextRuns></Paragraph></Paragraphs><Style><FontSize>8pt</FontSize><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight></Style></Textbox></CellContents></TablixCell>
+                  <TablixCell><CellContents><Textbox Name="pSeason"><CanGrow>true</CanGrow><Paragraphs><Paragraph><TextRuns><TextRun><Value>=Fields!Season.Value</Value></TextRun></TextRuns></Paragraph></Paragraphs><Style><FontSize>8pt</FontSize><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight></Style></Textbox></CellContents></TablixCell>
+                  <TablixCell><CellContents><Textbox Name="pType"><CanGrow>true</CanGrow><Paragraphs><Paragraph><TextRuns><TextRun><Value>=Fields!Payment_Type.Value</Value></TextRun></TextRuns></Paragraph></Paragraphs><Style><FontSize>8pt</FontSize><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight></Style></Textbox></CellContents></TablixCell>
+                  <TablixCell><CellContents><Textbox Name="pMilestone"><CanGrow>true</CanGrow><Paragraphs><Paragraph><TextRuns><TextRun><Value>=Fields!Milestone.Value</Value></TextRun></TextRuns></Paragraph></Paragraphs><Style><FontSize>8pt</FontSize><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight></Style></Textbox></CellContents></TablixCell>
+                  <TablixCell><CellContents><Textbox Name="pDue"><CanGrow>true</CanGrow><Paragraphs><Paragraph><TextRuns><TextRun><Value>=Format(Fields!Due_Date.Value, "dd/MM/yyyy")</Value></TextRun></TextRuns></Paragraph></Paragraphs><Style><FontSize>8pt</FontSize><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight></Style></Textbox></CellContents></TablixCell>
+                  <TablixCell><CellContents><Textbox Name="pAmount"><CanGrow>true</CanGrow><Paragraphs><Paragraph><TextRuns><TextRun><Value>=Format(Fields!Amount_AED.Value, "#,##0")</Value></TextRun></TextRuns></Paragraph></Paragraphs><Style><FontSize>8pt</FontSize><TextAlign>Right</TextAlign><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight></Style></Textbox></CellContents></TablixCell>
+                  <TablixCell><CellContents><Textbox Name="pVAT"><CanGrow>true</CanGrow><Paragraphs><Paragraph><TextRuns><TextRun><Value>=IIF(IsNothing(Fields!VAT_AED.Value), "", Format(Fields!VAT_AED.Value, "#,##0"))</Value></TextRun></TextRuns></Paragraph></Paragraphs><Style><FontSize>8pt</FontSize><TextAlign>Right</TextAlign><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight></Style></Textbox></CellContents></TablixCell>
+                  <TablixCell><CellContents><Textbox Name="pStatus"><CanGrow>true</CanGrow><Paragraphs><Paragraph><TextRuns><TextRun><Value>=Fields!Status.Value</Value></TextRun></TextRuns></Paragraph></Paragraphs><Style><FontSize>8pt</FontSize><Color>=IIF(Fields!Status.Value = "Overdue", "#CC0000", IIF(Fields!Status.Value = "Paid", "#007A33", "#252423"))</Color><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight></Style></Textbox></CellContents></TablixCell>
+                </TablixCells></TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember /><TablixMember /><TablixMember /><TablixMember />
+                <TablixMember /><TablixMember /><TablixMember /><TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <KeepWithGroup>After</KeepWithGroup>
+                  <RepeatOnNewPage>true</RepeatOnNewPage>
+                </TablixMember>
+                <TablixMember>
+                  <Group Name="PaymentsDetailGroup">
+                    <GroupExpressions><GroupExpression>=Fields!Payment_ID.Value</GroupExpression></GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression><Value>=Fields!Payment_Sequence.Value</Value></SortExpression>
+                  </SortExpressions>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <Top>170mm</Top>
+            <Left>0mm</Left>
+            <Width>184mm</Width>
+            <DataSetName>AgreementPayments</DataSetName>
+            <NoRowsMessage>No payments scheduled for this agreement.</NoRowsMessage>
+            <Style>
+              <Border><BorderColor><Default>#CCCCCC</Default></BorderColor><BorderStyle><Default>Solid</Default></BorderStyle><BorderWidth><Default>0.5pt</Default></BorderWidth></Border>
+            </Style>
+            <ZIndex>34</ZIndex>
+          </Tablix>
+
+        </ReportItems>
+      </Body>
+      <Width>184.2mm</Width>
+      <Page>
+        <PageHeader>
+          <Height>10mm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="PageHeaderLeft">
+              <CanGrow>true</CanGrow>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun><Value>UAEPL Contract Management</Value><Style><FontSize>7pt</FontSize><Color>#888888</Color></Style></TextRun>
+                  </TextRuns>
+                </Paragraph>
+              </Paragraphs>
+              <Top>2mm</Top><Left>0mm</Left><Height>5mm</Height><Width>90mm</Width>
+            </Textbox>
+            <Textbox Name="PageHeaderRight">
+              <CanGrow>true</CanGrow>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun><Value>=Format(Globals!ExecutionTime, "dd/MM/yyyy HH:mm")</Value><Style><FontSize>7pt</FontSize><Color>#888888</Color></Style></TextRun>
+                  </TextRuns>
+                </Paragraph>
+              </Paragraphs>
+              <Top>2mm</Top><Left>134mm</Left><Height>5mm</Height><Width>50mm</Width>
+              <Style><TextAlign>Right</TextAlign></Style>
+            </Textbox>
+          </ReportItems>
+        </PageHeader>
+        <PageFooter>
+          <Height>8mm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="PageFooterLeft">
+              <CanGrow>true</CanGrow>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun><Value>Confidential — UAEPL</Value><Style><FontSize>7pt</FontSize><Color>#888888</Color><FontStyle>Italic</FontStyle></Style></TextRun>
+                  </TextRuns>
+                </Paragraph>
+              </Paragraphs>
+              <Top>1mm</Top><Left>0mm</Left><Height>5mm</Height><Width>60mm</Width>
+            </Textbox>
+            <Textbox Name="PageFooterCenter">
+              <CanGrow>true</CanGrow>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun><Value>=Globals!PageNumber &amp; " of " &amp; Globals!TotalPages</Value><Style><FontSize>7pt</FontSize><Color>#888888</Color></Style></TextRun>
+                  </TextRuns>
+                </Paragraph>
+              </Paragraphs>
+              <Top>1mm</Top><Left>77mm</Left><Height>5mm</Height><Width>30mm</Width>
+              <Style><TextAlign>Center</TextAlign></Style>
+            </Textbox>
+            <Textbox Name="PageFooterRight">
+              <CanGrow>true</CanGrow>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun><Value>=Parameters!AgreementID.Value</Value><Style><FontSize>7pt</FontSize><Color>#888888</Color></Style></TextRun>
+                  </TextRuns>
+                </Paragraph>
+              </Paragraphs>
+              <Top>1mm</Top><Left>134mm</Left><Height>5mm</Height><Width>50mm</Width>
+              <Style><TextAlign>Right</TextAlign></Style>
+            </Textbox>
+          </ReportItems>
+        </PageFooter>
+        <PageHeight>297mm</PageHeight>
+        <PageWidth>210mm</PageWidth>
+        <LeftMargin>12.7mm</LeftMargin>
+        <RightMargin>12.7mm</RightMargin>
+        <TopMargin>12.7mm</TopMargin>
+        <BottomMargin>12.7mm</BottomMargin>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>4</NumberOfColumns>
+      <NumberOfRows>2</NumberOfRows>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
+  <Language>=User!Language</Language>
+  <Variables>
+    <Variable Name="Theme_BackGroundColor">
+      <Value>#FFFFFF</Value>
+    </Variable>
+    <Variable Name="Theme_ForeGroundColor">
+      <Value>#252423</Value>
+    </Variable>
+    <Variable Name="Theme_TableAccentColor">
+      <Value>#118DFF</Value>
+    </Variable>
+  </Variables>
+</Report>
