@@ -145,22 +145,30 @@ ORDER BY
     <DataSet Name="AgreementList">
       <Query>
         <DataSourceName>Legal_contractsdashboard</DataSourceName>
-        <CommandText>EVALUATE VALUES(Agreements[Agreement_ID])</CommandText>
+        <CommandText>EVALUATE
+SELECTCOLUMNS(
+    Agreements,
+    "Agreement_ID", Agreements[Agreement_ID],
+    "Agreement_Label", Agreements[Counterparty_Name] &amp; " (" &amp; Agreements[Agreement_ID] &amp; ")"
+)
+ORDER BY
+    [Agreement_ID]</CommandText>
       </Query>
       <Fields>
         <Field Name="Agreements_Agreement_ID_"><rd:TypeName>System.String</rd:TypeName><DataField>Agreements[Agreement_ID]</DataField></Field>
+        <Field Name="Agreement_Label"><rd:TypeName>System.String</rd:TypeName><DataField>Agreement_Label</DataField></Field>
       </Fields>
     </DataSet>
   </DataSets>
   <ReportParameters>
     <ReportParameter Name="AgreementID">
       <DataType>String</DataType>
-      <Prompt>Agreement ID</Prompt>
+      <Prompt>Agreement</Prompt>
       <ValidValues>
         <DataSetReference>
           <DataSetName>AgreementList</DataSetName>
           <ValueField>Agreements_Agreement_ID_</ValueField>
-          <LabelField>Agreements_Agreement_ID_</LabelField>
+          <LabelField>Agreement_Label</LabelField>
         </DataSetReference>
       </ValidValues>
       <cl:ComponentMetadata>
