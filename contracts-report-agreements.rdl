@@ -644,7 +644,6 @@ ORDER BY
       </Page>
     </ReportSection>
   </ReportSections>
-  <ReportParametersLayout />
   <Language>=User!Language</Language>
   <Variables>
     <Variable Name="Theme_BackGroundColor">
