@@ -644,12 +644,7 @@ ORDER BY
       </Page>
     </ReportSection>
   </ReportSections>
-  <ReportParametersLayout>
-    <GridLayoutDefinition>
-      <NumberOfColumns>1</NumberOfColumns>
-      <NumberOfRows>1</NumberOfRows>
-    </GridLayoutDefinition>
-  </ReportParametersLayout>
+  <ReportParametersLayout />
   <Language>=User!Language</Language>
   <Variables>
     <Variable Name="Theme_BackGroundColor">
