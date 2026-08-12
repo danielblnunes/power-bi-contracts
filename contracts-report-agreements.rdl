@@ -123,35 +123,12 @@ ORDER BY
       </Fields>
     </DataSet>
 
-    <DataSet Name="AgreementList">
-      <Query>
-        <DataSourceName>contractsdashboard</DataSourceName>
-        <CommandText>EVALUATE
-SELECTCOLUMNS(
-    Agreements,
-    "Agreement_ID", Agreements[Agreement_ID]
-)
-ORDER BY
-    [Agreement_ID]</CommandText>
-        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
-      </Query>
-      <Fields>
-        <Field Name="Agreement_ID"><DataField>Agreement_ID</DataField><rd:TypeName>System.String</rd:TypeName></Field>
-      </Fields>
-    </DataSet>
-
   </DataSets>
   <ReportParameters>
     <ReportParameter Name="AgreementID">
       <DataType>String</DataType>
       <Prompt>Agreement ID</Prompt>
-      <ValidValues>
-        <DataSetReference>
-          <DataSetName>AgreementList</DataSetName>
-          <ValueField>Agreement_ID</ValueField>
-          <LabelField>Agreement_ID</LabelField>
-        </DataSetReference>
-      </ValidValues>
+      <AllowBlank>false</AllowBlank>
     </ReportParameter>
   </ReportParameters>
   <ReportSections>
@@ -644,6 +621,12 @@ ORDER BY
       </Page>
     </ReportSection>
   </ReportSections>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>1</NumberOfColumns>
+      <NumberOfRows>1</NumberOfRows>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
   <Language>=User!Language</Language>
   <Variables>
     <Variable Name="Theme_BackGroundColor">
