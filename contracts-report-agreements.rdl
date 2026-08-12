@@ -197,17 +197,9 @@ ORDER BY
             <Width>90mm</Width>
             <Style>
               <Border>
-                <Color>
-                  <Default>#DDB943</Default>
-                </Color>
-                <Style>
-                  <Bottom>Solid</Bottom>
-                  <Default>None</Default>
-                </Style>
-                <Width>
-                  <Bottom>2pt</Bottom>
-                  <Default>1pt</Default>
-                </Width>
+                <Color>#DDB943</Color>
+                <Style>Solid</Style>
+                <Width>2pt</Width>
               </Border>
             </Style>
             <ZIndex>1</ZIndex>
@@ -238,9 +230,9 @@ ORDER BY
             <Width>184mm</Width>
             <Style>
               <Border>
-                <Color><Default>#DDB943</Default></Color>
-                <Style><Bottom>Solid</Bottom><Default>None</Default></Style>
-                <Width><Bottom>1pt</Bottom><Default>1pt</Default></Width>
+                <Color>#DDB943</Color>
+                <Style>Solid</Style>
+                <Width>1pt</Width>
               </Border>
             </Style>
             <ZIndex>2</ZIndex>
@@ -408,7 +400,7 @@ ORDER BY
             <Paragraphs><Paragraph><TextRuns><TextRun><Value>Deliverables &amp; Rights</Value><Style><FontSize>12pt</FontSize><FontWeight>Bold</FontWeight><Color>#252423</Color></Style></TextRun></TextRuns></Paragraph></Paragraphs>
             <Top>76mm</Top><Left>0mm</Left><Height>8mm</Height><Width>184mm</Width>
             <Style>
-              <Border><Color><Default>#DDB943</Default></Color><Style><Bottom>Solid</Bottom><Default>None</Default></Style><Width><Bottom>1pt</Bottom><Default>1pt</Default></Width></Border>
+              <Border><Color>#DDB943</Color><Style>Solid</Style><Width>1pt</Width></Border>
             </Style>
             <ZIndex>31</ZIndex>
           </Textbox>
@@ -479,7 +471,7 @@ ORDER BY
             <DataSetName>AgreementDeliverables</DataSetName>
             <NoRowsMessage>No deliverables found for this agreement.</NoRowsMessage>
             <Style>
-              <Border><Color><Default>#CCCCCC</Default></Color><Style><Default>Solid</Default></Style><Width><Default>0.5pt</Default></Width></Border>
+              <Border><Color>#CCCCCC</Color><Style>Solid</Style><Width>0.5pt</Width></Border>
             </Style>
             <ZIndex>32</ZIndex>
           </Tablix>
@@ -491,7 +483,7 @@ ORDER BY
             <Top>160mm</Top>
             <Left>0mm</Left><Height>8mm</Height><Width>184mm</Width>
             <Style>
-              <Border><Color><Default>#DDB943</Default></Color><Style><Bottom>Solid</Bottom><Default>None</Default></Style><Width><Bottom>1pt</Bottom><Default>1pt</Default></Width></Border>
+              <Border><Color>#DDB943</Color><Style>Solid</Style><Width>1pt</Width></Border>
             </Style>
             <ZIndex>33</ZIndex>
           </Textbox>
@@ -561,7 +553,7 @@ ORDER BY
             <DataSetName>AgreementPayments</DataSetName>
             <NoRowsMessage>No payments scheduled for this agreement.</NoRowsMessage>
             <Style>
-              <Border><Color><Default>#CCCCCC</Default></Color><Style><Default>Solid</Default></Style><Width><Default>0.5pt</Default></Width></Border>
+              <Border><Color>#CCCCCC</Color><Style>Solid</Style><Width>0.5pt</Width></Border>
             </Style>
             <ZIndex>34</ZIndex>
           </Tablix>
