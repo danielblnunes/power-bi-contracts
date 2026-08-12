@@ -146,17 +146,15 @@ ORDER BY
       <Query>
         <DataSourceName>Legal_contractsdashboard</DataSourceName>
         <CommandText>EVALUATE
-SELECTCOLUMNS(
-    Agreements,
-    "Agreement_ID", Agreements[Agreement_ID],
-    "Agreement_Label", Agreements[Counterparty_Name] &amp; " (" &amp; Agreements[Agreement_ID] &amp; ")"
+SUMMARIZECOLUMNS(
+    Agreements[Agreement_ID],
+    Agreements[Counterparty_Name]
 )
-ORDER BY
-    [Agreement_ID]</CommandText>
+ORDER BY Agreements[Counterparty_Name]</CommandText>
       </Query>
       <Fields>
         <Field Name="Agreements_Agreement_ID_"><rd:TypeName>System.String</rd:TypeName><DataField>Agreements[Agreement_ID]</DataField></Field>
-        <Field Name="Agreement_Label"><rd:TypeName>System.String</rd:TypeName><DataField>Agreement_Label</DataField></Field>
+        <Field Name="Agreements_Counterparty_Name_"><rd:TypeName>System.String</rd:TypeName><DataField>Agreements[Counterparty_Name]</DataField></Field>
       </Fields>
     </DataSet>
   </DataSets>
@@ -168,7 +166,7 @@ ORDER BY
         <DataSetReference>
           <DataSetName>AgreementList</DataSetName>
           <ValueField>Agreements_Agreement_ID_</ValueField>
-          <LabelField>Agreement_Label</LabelField>
+          <LabelField>Agreements_Counterparty_Name_</LabelField>
         </DataSetReference>
       </ValidValues>
       <cl:ComponentMetadata>
