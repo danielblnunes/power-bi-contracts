@@ -142,11 +142,27 @@ ORDER BY
         </Filter>
       </Filters>
     </DataSet>
+    <DataSet Name="AgreementList">
+      <Query>
+        <DataSourceName>Legal_contractsdashboard</DataSourceName>
+        <CommandText>EVALUATE VALUES(Agreements[Agreement_ID])</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Agreements_Agreement_ID_"><rd:TypeName>System.String</rd:TypeName><DataField>Agreements[Agreement_ID]</DataField></Field>
+      </Fields>
+    </DataSet>
   </DataSets>
   <ReportParameters>
     <ReportParameter Name="AgreementID">
       <DataType>String</DataType>
       <Prompt>Agreement ID</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>AgreementList</DataSetName>
+          <ValueField>Agreements_Agreement_ID_</ValueField>
+          <LabelField>Agreements_Agreement_ID_</LabelField>
+        </DataSetReference>
+      </ValidValues>
       <cl:ComponentMetadata>
         <cl:HideUpdateNotifications>true</cl:HideUpdateNotifications>
       </cl:ComponentMetadata>
