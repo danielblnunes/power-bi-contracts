@@ -31,11 +31,7 @@
     <DataSet Name="AgreementDetail">
       <Query>
         <DataSourceName>Legal_contractsdashboard</DataSourceName>
-        <CommandText>EVALUATE
-FILTER(
-    Agreements,
-    Agreements[Agreement_ID] = @AgreementID
-)</CommandText>
+        <CommandText>EVALUATE Agreements</CommandText>
       </Query>
       <Fields>
         <Field Name="Agreements_Agreement_ID_"><rd:TypeName>System.String</rd:TypeName><DataField>Agreements[Agreement_ID]</DataField></Field>
@@ -61,6 +57,15 @@ FILTER(
         <Field Name="Agreements_Next_Action_Date_"><rd:TypeName>System.DateTime</rd:TypeName><DataField>Agreements[Next_Action_Date]</DataField></Field>
         <Field Name="Agreements_Notes_"><rd:TypeName>System.String</rd:TypeName><DataField>Agreements[Notes]</DataField></Field>
       </Fields>
+      <Filters>
+        <Filter>
+          <FilterExpression>=Fields!Agreements_Agreement_ID_.Value</FilterExpression>
+          <Operator>Equal</Operator>
+          <FilterValues>
+            <FilterValue>=Parameters!AgreementID.Value</FilterValue>
+          </FilterValues>
+        </Filter>
+      </Filters>
     </DataSet>
     <DataSet Name="AgreementDeliverables">
       <Query>
@@ -68,7 +73,7 @@ FILTER(
         <CommandText>EVALUATE
 FILTER(
     Deliverables,
-    Deliverables[Agreement_ID] = @AgreementID
+    NOT ISBLANK(Deliverables[Agreement_ID])
 )
 ORDER BY
     Deliverables[Item_Group],
@@ -91,6 +96,15 @@ ORDER BY
         <Field Name="Deliverables_Status_"><rd:TypeName>System.String</rd:TypeName><DataField>Deliverables[Status]</DataField></Field>
         <Field Name="Deliverables_Date_Delivered_"><rd:TypeName>System.DateTime</rd:TypeName><DataField>Deliverables[Date_Delivered]</DataField></Field>
       </Fields>
+      <Filters>
+        <Filter>
+          <FilterExpression>=Fields!Deliverables_Agreement_ID_.Value</FilterExpression>
+          <Operator>Equal</Operator>
+          <FilterValues>
+            <FilterValue>=Parameters!AgreementID.Value</FilterValue>
+          </FilterValues>
+        </Filter>
+      </Filters>
     </DataSet>
     <DataSet Name="AgreementPayments">
       <Query>
@@ -98,7 +112,7 @@ ORDER BY
         <CommandText>EVALUATE
 FILTER(
     Payments,
-    Payments[Agreement_ID] = @AgreementID
+    NOT ISBLANK(Payments[Agreement_ID])
 )
 ORDER BY
     Payments[Payment_Sequence]</CommandText>
@@ -118,6 +132,15 @@ ORDER BY
         <Field Name="Payments_Status_"><rd:TypeName>System.String</rd:TypeName><DataField>Payments[Status]</DataField></Field>
         <Field Name="Payments_Days_To_Due_"><rd:TypeName>System.Int64</rd:TypeName><DataField>Payments[Days_To_Due]</DataField></Field>
       </Fields>
+      <Filters>
+        <Filter>
+          <FilterExpression>=Fields!Payments_Agreement_ID_.Value</FilterExpression>
+          <Operator>Equal</Operator>
+          <FilterValues>
+            <FilterValue>=Parameters!AgreementID.Value</FilterValue>
+          </FilterValues>
+        </Filter>
+      </Filters>
     </DataSet>
   </DataSets>
   <ReportParameters>
