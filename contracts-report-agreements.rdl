@@ -321,7 +321,7 @@ ORDER BY
               </TablixRows>
             </TablixBody>
             <TablixColumnHierarchy><TablixMembers><TablixMember/><TablixMember/><TablixMember/><TablixMember/><TablixMember/><TablixMember/><TablixMember/><TablixMember/></TablixMembers></TablixColumnHierarchy>
-            <TablixRowHierarchy><TablixMembers><TablixMember><KeepWithGroup>After</KeepWithGroup></TablixMember><TablixMember><Group Name="Details"/></TablixMember></TablixMembers></TablixRowHierarchy>
+            <TablixRowHierarchy><TablixMembers><TablixMember><KeepWithGroup>After</KeepWithGroup></TablixMember><TablixMember><Group Name="DeliverablesDetails"/></TablixMember></TablixMembers></TablixRowHierarchy>
             <DataSetName>AgreementDeliverables</DataSetName>
             <Top>83mm</Top><Left>0mm</Left><Width>168mm</Width>
             <ZIndex>32</ZIndex>
@@ -375,7 +375,7 @@ ORDER BY
               </TablixRows>
             </TablixBody>
             <TablixColumnHierarchy><TablixMembers><TablixMember/><TablixMember/><TablixMember/><TablixMember/><TablixMember/><TablixMember/><TablixMember/><TablixMember/></TablixMembers></TablixColumnHierarchy>
-            <TablixRowHierarchy><TablixMembers><TablixMember><KeepWithGroup>After</KeepWithGroup></TablixMember><TablixMember><Group Name="Details"/></TablixMember></TablixMembers></TablixRowHierarchy>
+            <TablixRowHierarchy><TablixMembers><TablixMember><KeepWithGroup>After</KeepWithGroup></TablixMember><TablixMember><Group Name="PaymentsDetails"/></TablixMember></TablixMembers></TablixRowHierarchy>
             <DataSetName>AgreementPayments</DataSetName>
             <Top>159mm</Top><Left>0mm</Left><Width>161mm</Width>
             <ZIndex>34</ZIndex>
