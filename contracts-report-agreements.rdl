@@ -646,8 +646,8 @@ ORDER BY
   </ReportSections>
   <ReportParametersLayout>
     <GridLayoutDefinition>
-      <NumberOfColumns>4</NumberOfColumns>
-      <NumberOfRows>2</NumberOfRows>
+      <NumberOfColumns>1</NumberOfColumns>
+      <NumberOfRows>1</NumberOfRows>
     </GridLayoutDefinition>
   </ReportParametersLayout>
   <Language>=User!Language</Language>
